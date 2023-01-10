@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <title>空气kill的网站</title>
 
-  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			font-size: 14px;
+			background: white;
+			color: gainsboro;
+		}
+		.center{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			width: 18px;
+			height: 18px;
+		}
+		.center > div{
+			transform-origin: left center;
+			/* display: none; */
+			position: absolute;
+			height: 18px;
+			transition: 0.5s transform;
+			text-shadow: 0 0 20px orange;
+		}
+		p{	
+			position: absolute;
+			transform-origin: left center;
+			width: 50px;
+			text-align: center;
+			transition: 0.5s color;
+		}
+		.ck{
+			color: yellow;
+		}
+		
+		
+		.m{
+			color: rgba(255, 0, 0, .8);
+		}
+		.d{
+			color: rgba(255, 0, 0, 1);
+		}
+		.h{
+			color: rgba(255, 0, 0, .8);
+		}
+		.mm{
+			color: rgba(255, 0, 0, .8);
+		}
+		.center .s{
+			color: rgba(255, 0, 0, .8);
+		}
+	</style>
   
   <!-- HTML -->
   
@@ -27,7 +82,7 @@ body { padding:0px;margin: 0px; }
 #lyrow .biaotilan { height:60px !important;flex-direction:row;display:flex !important; } 
 #lyrow .zhubuju { width:100%;height:100%;background-image:url(http://www.58html.com/folder/imgcss/202301/2c79add6a38fcf994f4a0dc98e18a5ce.jpg);background-size:auto auto; } 
 #lyrow .html_biaoti { width:200px !important;height:100%;flex-direction:row;display:flex !important; } 
-#lyrow .html_biaoti_wenben { align-items:center;display:flex !important;font-size:25px; } 
+#lyrow .html_biaoti_wenben { align-items:center;display:flex !important;font-size:25px;color:rgba(0, 0, 0, 1); } 
 
 </style>
 <!--下载font-awesome.css图标包-->
@@ -38,7 +93,60 @@ body { padding:0px;margin: 0px; }
     <img src="http://www.58html.com/folder/imgs/202301/1eac3a40541dc09a4387335aabb1a2c4.jpg" >
 <div class="html_biaoti"> 
     <h1 class="html_biaoti_wenben">空气kill的网站</h1></div> </div>
-<div class="zhubuju"> </div>
+<div class="zhubuju">
+  <body>
+    <div class="center">
+      <div class="m"></div>
+      <div class="d"></div>
+      <div class="h"></div>
+      <div class="mm"></div>
+      <div class="s"></div>
+    </div>
+    <script>
+      let is = 0
+      let m = document.querySelector('.m')
+      let d = document.querySelector('.d')
+      let h = document.querySelector('.h')
+      let mm = document.querySelector('.mm')
+      let s = document.querySelector('.s')
+      addText(m,12,30,'月')
+      addText(d,31,65,'日')
+      addText(h,24,100,'时')
+      addText(mm,60,135,'分',true)
+      addText(s,60,170,'秒')
+  
+      function addText(dom,max,trans,txt,ck){
+        for(let i = 0; i < max; i++){
+          let pm = document.createElement('p')
+          pm.innerHTML = (ck ? i : i+1)+txt
+          pm.style.transform = `rotate(${i*(360/max)}deg) translateX(${trans}px)`
+          dom.appendChild(pm)
+        }
+      }
+      
+      setInterval(()=>{
+            let date = new Date()
+          setTime(m,date.getMonth(),12)
+          setTime(d,date.getDate(),31)
+          setTime(h,date.getHours(),24)
+          setTime(mm,date.getMinutes()+1,60)
+          setTime(s,date.getSeconds(),60)
+          
+      },1000)
+      
+      function setTime(dom,timer,max){
+        let p = dom.querySelectorAll('p')
+        dom.style.transform = 'rotate('+(dom==m ? timer : timer -1)*(-360/max)+'deg)'
+        p.forEach(v=>{
+          v.classList.remove('ck')
+        })
+        p[dom==m ? timer : timer-1].classList.add('ck')
+      }
+      
+      
+    </script>
+  </body>
+</div>
 </div>
   <!-- Project -->
   <script src="main.js"></script>
