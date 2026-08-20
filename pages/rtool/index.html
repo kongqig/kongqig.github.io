@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="红色工具箱 - 快速访问国家官方网站" />
+  <title>红色工具箱 · 快速访问国家官方网站</title>
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">★</span>
+        <div class="brand-text">
+          <h1>红色工具箱</h1>
+          <p>快速访问国家官方网站</p>
+        </div>
+      </div>
+      <div class="header-meta" id="header-meta" aria-live="polite">加载中…</div>
+      <button id="guide-btn" class="guide-btn" type="button" title="行政办事指南">📋 办事指南</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="search-wrap">
+        <label class="visually-hidden" for="search">搜索网站</label>
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input
+          id="search"
+          type="search"
+          class="search-input"
+          placeholder="搜索名称 / 网址 / 描述，支持 * 和 ? 通配符"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="clear-btn" class="clear-btn" type="button" aria-label="清空搜索" hidden>✕</button>
+      </div>
+      <p class="search-hint">
+        无通配符按子串匹配，例如「税务」；<code>*</code> 匹配任意字符序列，<code>?</code> 匹配单字符。
+      </p>
+
+      <div class="category-bar">
+        <label class="visually-hidden" for="cat-filter">筛选分类</label>
+        <input
+          id="cat-filter"
+          type="search"
+          class="cat-filter-input"
+          placeholder="筛选分类…"
+          autocomplete="off"
+        />
+        <span class="cat-count" id="cat-count"></span>
+      </div>
+      <nav class="categories" id="categories" aria-label="按分类筛选">
+        <!-- 分类芯片由 JS 动态生成 -->
+      </nav>
+    </section>
+
+    <section class="quick-access" id="quick-access" hidden>
+      <h2 class="section-title">快捷方式</h2>
+      <div class="quick-grid" id="quick-grid">
+        <!-- 快捷按钮由 JS 动态生成 -->
+      </div>
+    </section>
+
+    <section class="results-meta">
+      <span id="result-count">—</span>
+      <button id="reset-btn" class="reset-btn" type="button" hidden>重置筛选</button>
+    </section>
+
+    <section id="results" class="results" aria-live="polite">
+      <!-- 网站卡片由 JS 动态生成 -->
+    </section>
+
+    <template id="card-template">
+      <article class="card" tabindex="0">
+        <div class="card-head">
+          <span class="card-category" data-cat></span>
+          <span class="card-id" data-id></span>
+        </div>
+        <h3 class="card-name" data-name></h3>
+        <p class="card-desc" data-desc></p>
+        <div class="card-tags" data-tags></div>
+        <button class="card-desc-toggle" type="button" data-desc-toggle>展开 ▾</button>
+        <a class="card-url" data-url href="#" target="_blank" rel="noopener noreferrer"></a>
+        <div class="card-actions">
+          <a class="btn btn-primary" data-open href="#" target="_blank" rel="noopener noreferrer">打开网站</a>
+          <button class="btn btn-ghost" type="button" data-copy>复制网址</button>
+        </div>
+      </article>
+    </template>
+
+    <div id="empty-state" class="empty-state" hidden>
+      <div class="empty-icon" aria-hidden="true">⊘</div>
+      <p class="empty-title">未找到匹配的网站</p>
+      <p class="empty-hint">尝试更换关键词或使用通配符，例如「*政府*」</p>
+    </div>
+
+    <div id="error-state" class="empty-state error-state" hidden>
+      <div class="empty-icon" aria-hidden="true">!</div>
+      <p class="empty-title">数据加载失败</p>
+      <p class="empty-hint" data-err-msg>请通过本地服务器访问（如 <code>python -m http.server</code>），不能直接双击打开 HTML。</p>
+    </div>
+  </main>
+
+  <!-- 办事指南模态框 -->
+  <div id="guide-modal" class="modal" hidden>
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📋 行政办事指南</h2>
+        <button class="modal-close" type="button" data-close-modal aria-label="关闭">✕</button>
+      </div>
+      <div class="modal-tabs">
+        <button class="modal-tab active" type="button" data-tab="guide">办事找谁</button>
+        <button class="modal-tab" type="button" data-tab="depts">部门职责</button>
+        <button class="modal-tab" type="button" data-tab="levels">行政等级</button>
+      </div>
+      <div class="modal-search">
+        <input id="guide-search" type="search" placeholder="搜索办事事项，如：身份证、护照、社保…" autocomplete="off" />
+      </div>
+      <div class="modal-body" id="guide-body">
+        <p class="modal-loading">加载中…</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>红色工具箱 · 浏览器版 · 数据共 <span id="footer-count">—</span> 条官方网站</p>
+    <p class="footer-note">本人精力有限，所以数据多为AI辅助收集，或有错漏，请见谅。</p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>

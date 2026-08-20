@@ -1,0 +1,2626 @@
+[
+  {
+    "id": "gov-cn",
+    "name": "中国政府网",
+    "url": "https://www.gov.cn",
+    "description": "中华人民共和国中央人民政府门户网站，发布国务院政策文件、法规、人事任免与重大新闻",
+    "category": "综合政务",
+    "keywords": "国务院政策，政府文件查询，政务公开，政策解读，国务院新闻，政府公告，法规文件，中国政府"
+  },
+  {
+    "id": "hmo-gov-cn",
+    "name": "国务院港澳事务办公室",
+    "url": "https://www.hmo.gov.cn",
+    "description": "国务院港澳事务办公室，负责港澳与内地交流合作及涉港澳事务协调",
+    "category": "综合政务",
+    "keywords": "港澳事务，内地港澳交流，涉港澳政策，港澳签证，港澳居民服务，粤港澳大湾区"
+  },
+  {
+    "id": "ndrc-gov-cn",
+    "name": "国家发展和改革委员会",
+    "url": "https://www.ndrc.gov.cn",
+    "description": "国家发展和改革委员会，负责宏观经济调控、中长期规划与经济体制改革",
+    "category": "部委",
+    "keywords": "发改委，宏观经济，发展规划，经济体制改革，产业政策，投资项目审批，物价管理"
+  },
+  {
+    "id": "moe-gov-cn",
+    "name": "中华人民共和国教育部",
+    "url": "https://www.moe.gov.cn",
+    "description": "中华人民共和国教育部，主管全国教育事业、语言文字与学位工作",
+    "category": "部委",
+    "keywords": "教育部，教育政策，高考改革，学位认证，教师招聘，义务教育，职业教育，高等教育"
+  },
+  {
+    "id": "most-gov-cn",
+    "name": "中华人民共和国科学技术部",
+    "url": "https://www.most.gov.cn",
+    "description": "中华人民共和国科学技术部，主管全国科技创新与高新技术发展",
+    "category": "部委",
+    "keywords": "科技部，科技创新，高新技术，科研项目申报，国家重点研发计划，科技成果转化"
+  },
+  {
+    "id": "miit-gov-cn",
+    "name": "中华人民共和国工业和信息化部",
+    "url": "https://www.miit.gov.cn",
+    "description": "中华人民共和国工业和信息化部，主管工业、通信业与信息化推进",
+    "category": "部委",
+    "keywords": "ICP备案，中小企业，信息化，工业发展，工信部，新能源汽车，无线电管理，查ICP备案，电信运营商，通信管理"
+  },
+  {
+    "id": "neac-gov-cn",
+    "name": "国家民族事务委员会",
+    "url": "https://www.neac.gov.cn",
+    "description": "国家民族事务委员会，主管少数民族事务与民族团结进步事业",
+    "category": "部委",
+    "keywords": "民委，少数民族事务，民族团结，民族政策，少数民族文化，民族地区发展"
+  },
+  {
+    "id": "mps-gov-cn",
+    "name": "中华人民共和国公安部",
+    "url": "https://www.mps.gov.cn",
+    "description": "中华人民共和国公安部，主管社会治安、户籍、出入境与刑事侦查",
+    "category": "部委",
+    "keywords": "公安部，户籍办理，出入境管理，身份证，护照签证，交通管理，治安管理，边防检查"
+  },
+  {
+    "id": "mca-gov-cn",
+    "name": "中华人民共和国民政部",
+    "url": "https://www.mca.gov.cn",
+    "description": "中华人民共和国民政部，主管社会救助、基层政权、社会组织与行政区划",
+    "category": "部委",
+    "keywords": "民政部，社会救助，低保，婚姻登记，社会组织，行政区划，养老院，残疾人服务"
+  },
+  {
+    "id": "moj-gov-cn",
+    "name": "中华人民共和国司法部",
+    "url": "https://www.moj.gov.cn",
+    "description": "中华人民共和国司法部，主管法治宣传、律师公证、监狱与司法鉴定",
+    "category": "部委",
+    "keywords": "司法部，法律援助，律师公证，司法鉴定，监狱管理，普法宣传，法律职业资格考试"
+  },
+  {
+    "id": "mof-gov-cn",
+    "name": "中华人民共和国财政部",
+    "url": "https://www.mof.gov.cn",
+    "description": "中华人民共和国财政部，主管国家财政收支、税收政策与国有资本管理",
+    "category": "部委",
+    "keywords": "财政部，财政预算，税收政策，政府采购，国有资本，地方政府债券，财政收支"
+  },
+  {
+    "id": "mohrss-gov-cn",
+    "name": "中华人民共和国人力资源和社会保障部",
+    "url": "https://www.mohrss.gov.cn",
+    "description": "中华人民共和国人力资源和社会保障部，主管就业、社保与劳动关系",
+    "category": "部委",
+    "keywords": "人才引进，人社部，公务员考试，养老保险，劳动仲裁，失业保险，就业创业，查养老保险，查社保，社保查询"
+  },
+  {
+    "id": "mnr-gov-cn",
+    "name": "中华人民共和国自然资源部",
+    "url": "https://www.mnr.gov.cn",
+    "description": "中华人民共和国自然资源部，主管土地、矿产、海洋等自然资源确权与开发利用",
+    "category": "部委",
+    "keywords": "不动产登记，国土空间规划，土地管理，房产证，查不动产，查土地，测绘地理，海洋资源，矿产开发，自然资源部"
+  },
+  {
+    "id": "mee-gov-cn",
+    "name": "中华人民共和国生态环境部",
+    "url": "https://www.mee.gov.cn",
+    "description": "中华人民共和国生态环境部，主管环境保护、污染防治与生态监管",
+    "category": "部委",
+    "keywords": "生态环境部，环保，污染防治，环评，碳排放，空气质量，水污染，固废管理"
+  },
+  {
+    "id": "mohurd-gov-cn",
+    "name": "中华人民共和国住房和城乡建设部",
+    "url": "https://www.mohurd.gov.cn",
+    "description": "中华人民共和国住房和城乡建设部，主管城乡建设、房地产与工程质量",
+    "category": "部委",
+    "keywords": "住建部，房地产，住房公积金，建筑施工，工程质量，城市更新，保障房，物业管理"
+  },
+  {
+    "id": "mot-gov-cn",
+    "name": "中华人民共和国交通运输部",
+    "url": "https://www.mot.gov.cn",
+    "description": "中华人民共和国交通运输部，主管公路、水路、铁路与民航综合运输管理",
+    "category": "部委",
+    "keywords": "交通运输部，公路运输，水路运输，铁路管理，民航管理，交通规划，网约车，收费公路"
+  },
+  {
+    "id": "mwr-gov-cn",
+    "name": "中华人民共和国水利部",
+    "url": "https://www.mwr.gov.cn",
+    "description": "中华人民共和国水利部，主管水资源管理、防汛抗旱与水利工程建设",
+    "category": "部委",
+    "keywords": "南水北调，查水情，查洪水，水利工程，水利部，水土保持，水文监测，水资源，河长制，防汛，防汛抗旱"
+  },
+  {
+    "id": "moa-gov-cn",
+    "name": "中华人民共和国农业农村部",
+    "url": "https://www.moa.gov.cn",
+    "description": "中华人民共和国农业农村部，主管农业、农村发展与农民事务",
+    "category": "部委",
+    "keywords": "农业农村部，三农政策，种粮补贴，宅基地，农产品质量安全，乡村振兴，畜牧兽医"
+  },
+  {
+    "id": "mofcom-gov-cn",
+    "name": "中华人民共和国商务部",
+    "url": "https://www.mofcom.gov.cn",
+    "description": "中华人民共和国商务部，主管国内外贸易、外商投资与经济合作",
+    "category": "部委",
+    "keywords": "商务部，外贸政策，外商投资，跨境电商，反倾销，服务贸易，消费促进，自贸区"
+  },
+  {
+    "id": "mct-gov-cn",
+    "name": "中华人民共和国文化和旅游部",
+    "url": "https://www.mct.gov.cn",
+    "description": "中华人民共和国文化和旅游部，主管文化艺术、旅游产业与文化遗产",
+    "category": "部委",
+    "keywords": "文旅部，文化旅游，文物保护单位，非遗，演出审批，旅行社，文化产业，公共文化服务"
+  },
+  {
+    "id": "nhc-gov-cn",
+    "name": "国家卫生健康委员会",
+    "url": "https://www.nhc.gov.cn",
+    "description": "国家卫生健康委员会，主管医疗卫生、公共卫生、人口与健康管理",
+    "category": "部委",
+    "keywords": "卫健委，医疗卫生，公共卫生，疫情防控，医院管理，计划生育，健康中国，医患纠纷"
+  },
+  {
+    "id": "mva-gov-cn",
+    "name": "中华人民共和国退役军人事务部",
+    "url": "https://www.mva.gov.cn",
+    "description": "中华人民共和国退役军人事务部，主管退役军人服务、安置与优抚",
+    "category": "部委",
+    "keywords": "退役军人事务部，退役军人安置，优抚，军人优待，退役军人就业，残疾军人，光荣院"
+  },
+  {
+    "id": "mem-gov-cn",
+    "name": "中华人民共和国应急管理部",
+    "url": "https://www.mem.gov.cn",
+    "description": "中华人民共和国应急管理部，主管安全生产、灾害应对与综合防灾减灾",
+    "category": "部委",
+    "keywords": "应急管理部，安全生产，灾害应对，防汛抗旱，消防管理，危化品监管，事故调查"
+  },
+  {
+    "id": "pbc-gov-cn",
+    "name": "中国人民银行",
+    "url": "https://www.pbc.gov.cn",
+    "description": "中国人民银行，制定货币政策、维护金融稳定与发行人民币的中央银行",
+    "category": "国家监管",
+    "keywords": "人民币发行，利率，央行，征信，数字人民币，查征信，查汇率，汇率，货币政策，金融稳定"
+  },
+  {
+    "id": "audit-gov-cn",
+    "name": "中华人民共和国审计署",
+    "url": "https://www.audit.gov.cn",
+    "description": "中华人民共和国审计署，对国务院各部门及中央企业进行审计监督",
+    "category": "国家监管",
+    "keywords": "审计署，审计监督，政府审计，经济责任审计，中央企业审计，财政审计，审计公告"
+  },
+  {
+    "id": "chinatax-gov-cn",
+    "name": "国家税务总局",
+    "url": "https://www.chinatax.gov.cn",
+    "description": "国家税务总局，主管税收征管、纳税服务与税收政策执行",
+    "category": "国家监管",
+    "keywords": "个税，企业所得税，办税，发票查询，增值税，查税务，税务局，税务总局，税务登记，税收政策，纳税申报"
+  },
+  {
+    "id": "samr-gov-cn",
+    "name": "国家市场监督管理总局",
+    "url": "https://www.samr.gov.cn",
+    "description": "国家市场监督管理总局，主管市场监管、质量监管与综合执法",
+    "category": "国家监管",
+    "keywords": "企业注册，反垄断，市场监管，市场监管总局，查市监，查营业执照，消费维权，特种设备，营业执照，质量监管，食品安全，食品药品安全"
+  },
+  {
+    "id": "stats-gov-cn",
+    "name": "国家统计局",
+    "url": "https://www.stats.gov.cn",
+    "description": "国家统计局，组织实施国民经济核算与统计调查，发布官方统计数据",
+    "category": "国家监管",
+    "keywords": "统计局，统计数据，GDP，CPI，人口普查，经济数据，统计公报，数据查询"
+  },
+  {
+    "id": "nhsa-gov-cn",
+    "name": "国家医疗保障局",
+    "url": "https://www.nhsa.gov.cn",
+    "description": "国家医疗保障局，主管医疗保险、生育保险、医疗救助与药价招标",
+    "category": "国家监管",
+    "keywords": "医保局，医保报销，医保查询，医保目录，医疗救助，异地就医，查医保，生育保险，药品集采"
+  },
+  {
+    "id": "beijing-gov-cn",
+    "name": "北京市人民政府",
+    "url": "https://www.beijing.gov.cn",
+    "description": "北京市人民政府门户网站，发布首都政务、政策与便民服务信息",
+    "category": "地方政府",
+    "keywords": "北京市政府，北京政务，北京便民服务，北京政策，北京办事，北京户口，北京便民"
+  },
+  {
+    "id": "shanghai-gov-cn",
+    "name": "上海市人民政府",
+    "url": "https://www.shanghai.gov.cn",
+    "description": "上海市人民政府门户网站，发布上海政务、政策与便民服务信息",
+    "category": "地方政府",
+    "keywords": "上海市政府，上海政务，上海便民服务，上海政策，上海办事，上海户口，上海便民"
+  },
+  {
+    "id": "tj-gov-cn",
+    "name": "天津市人民政府",
+    "url": "https://www.tj.gov.cn",
+    "description": "天津市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "天津市政府，天津政务，天津便民服务，天津政策，天津办事，天津户口"
+  },
+  {
+    "id": "cq-gov-cn",
+    "name": "重庆市人民政府",
+    "url": "https://www.cq.gov.cn",
+    "description": "重庆市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "重庆市政府，重庆政务，重庆便民服务，重庆政策，重庆办事，重庆户口"
+  },
+  {
+    "id": "nmg-gov-cn",
+    "name": "内蒙古自治区人民政府",
+    "url": "https://www.nmg.gov.cn",
+    "description": "内蒙古自治区人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "内蒙古政府，内蒙古政务，内蒙古便民服务，内蒙古政策，内蒙古办事"
+  },
+  {
+    "id": "gxzf-gov-cn",
+    "name": "广西壮族自治区人民政府",
+    "url": "https://www.gxzf.gov.cn",
+    "description": "广西壮族自治区人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "广西政府，广西政务，广西便民服务，广西政策，广西办事，广西南宁"
+  },
+  {
+    "id": "xizang-gov-cn",
+    "name": "西藏自治区人民政府",
+    "url": "https://www.xizang.gov.cn",
+    "description": "西藏自治区人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "西藏政府，西藏政务，西藏便民服务，西藏政策，西藏办事，拉萨"
+  },
+  {
+    "id": "nx-gov-cn",
+    "name": "宁夏回族自治区人民政府",
+    "url": "https://www.nx.gov.cn",
+    "description": "宁夏回族自治区人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "宁夏政府，宁夏政务，宁夏便民服务，宁夏政策，宁夏办事，银川"
+  },
+  {
+    "id": "xinjiang-gov-cn",
+    "name": "新疆维吾尔自治区人民政府",
+    "url": "https://www.xinjiang.gov.cn",
+    "description": "新疆维吾尔自治区人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "新疆政府，新疆政务，新疆便民服务，新疆政策，新疆办事，乌鲁木齐"
+  },
+  {
+    "id": "hebei-gov-cn",
+    "name": "河北省人民政府",
+    "url": "https://www.hebei.gov.cn",
+    "description": "河北省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "河北省政府，河北政务，河北便民服务，河北政策，河北办事，石家庄"
+  },
+  {
+    "id": "shanxi-gov-cn",
+    "name": "山西省人民政府",
+    "url": "https://www.shanxi.gov.cn",
+    "description": "山西省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "山西省政府，山西政务，山西便民服务，山西政策，山西办事，太原"
+  },
+  {
+    "id": "ln-gov-cn",
+    "name": "辽宁省人民政府",
+    "url": "https://www.ln.gov.cn",
+    "description": "辽宁省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "辽宁省政府，辽宁政务，辽宁便民服务，辽宁政策，辽宁办事，沈阳"
+  },
+  {
+    "id": "jl-gov-cn",
+    "name": "吉林省人民政府",
+    "url": "https://www.jl.gov.cn",
+    "description": "吉林省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "吉林省政府，吉林政务，吉林便民服务，吉林政策，吉林办事，长春"
+  },
+  {
+    "id": "hlj-gov-cn",
+    "name": "黑龙江省人民政府",
+    "url": "https://www.hlj.gov.cn",
+    "description": "黑龙江省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "黑龙江省政府，黑龙江政务，黑龙江便民服务，黑龙江政策，黑龙江办事，哈尔滨"
+  },
+  {
+    "id": "jiangsu-gov-cn",
+    "name": "江苏省人民政府",
+    "url": "https://www.jiangsu.gov.cn",
+    "description": "江苏省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "江苏省政府，江苏政务，江苏便民服务，江苏政策，江苏办事，南京"
+  },
+  {
+    "id": "zj-gov-cn",
+    "name": "浙江省人民政府",
+    "url": "https://www.zj.gov.cn",
+    "description": "浙江省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "浙江省政府，浙江政务，浙江便民服务，浙江政策，浙江办事，杭州"
+  },
+  {
+    "id": "ah-gov-cn",
+    "name": "安徽省人民政府",
+    "url": "https://www.ah.gov.cn",
+    "description": "安徽省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "安徽省政府，安徽政务，安徽便民服务，安徽政策，安徽办事，合肥"
+  },
+  {
+    "id": "fujian-gov-cn",
+    "name": "福建省人民政府",
+    "url": "https://www.fujian.gov.cn",
+    "description": "福建省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "福建省政府，福建政务，福建便民服务，福建政策，福建办事，福州"
+  },
+  {
+    "id": "jiangxi-gov-cn",
+    "name": "江西省人民政府",
+    "url": "https://www.jiangxi.gov.cn",
+    "description": "江西省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "江西省政府，江西政务，江西便民服务，江西政策，江西办事，南昌"
+  },
+  {
+    "id": "shandong-gov-cn",
+    "name": "山东省人民政府",
+    "url": "https://www.shandong.gov.cn",
+    "description": "山东省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "山东省政府，山东政务，山东便民服务，山东政策，山东办事，济南"
+  },
+  {
+    "id": "henan-gov-cn",
+    "name": "河南省人民政府",
+    "url": "https://www.henan.gov.cn",
+    "description": "河南省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "河南省政府，河南政务，河南便民服务，河南政策，河南办事，郑州"
+  },
+  {
+    "id": "hubei-gov-cn",
+    "name": "湖北省人民政府",
+    "url": "https://www.hubei.gov.cn",
+    "description": "湖北省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "湖北省政府，湖北政务，湖北便民服务，湖北政策，湖北办事，武汉"
+  },
+  {
+    "id": "hunan-gov-cn",
+    "name": "湖南省人民政府",
+    "url": "https://www.hunan.gov.cn",
+    "description": "湖南省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "湖南省政府，湖南政务，湖南便民服务，湖南政策，湖南办事，长沙"
+  },
+  {
+    "id": "gd-gov-cn",
+    "name": "广东省人民政府",
+    "url": "https://www.gd.gov.cn",
+    "description": "广东省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "广东省政府，广东政务，广东便民服务，广东政策，广东办事，广州"
+  },
+  {
+    "id": "hainan-gov-cn",
+    "name": "海南省人民政府",
+    "url": "https://www.hainan.gov.cn",
+    "description": "海南省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "海南省政府，海南政务，海南便民服务，海南政策，海南办事，海口，自贸港"
+  },
+  {
+    "id": "sc-gov-cn",
+    "name": "四川省人民政府",
+    "url": "https://www.sc.gov.cn",
+    "description": "四川省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "四川省政府，四川政务，四川便民服务，四川政策，四川办事，成都"
+  },
+  {
+    "id": "guizhou-gov-cn",
+    "name": "贵州省人民政府",
+    "url": "https://www.guizhou.gov.cn",
+    "description": "贵州省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "贵州省政府，贵州政务，贵州便民服务，贵州政策，贵州办事，贵阳"
+  },
+  {
+    "id": "yn-gov-cn",
+    "name": "云南省人民政府",
+    "url": "https://www.yn.gov.cn",
+    "description": "云南省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "云南省政府，云南政务，云南便民服务，云南政策，云南办事，昆明"
+  },
+  {
+    "id": "shaanxi-gov-cn",
+    "name": "陕西省人民政府",
+    "url": "https://www.shaanxi.gov.cn",
+    "description": "陕西省人民政府门户网站（域名用 shaanxi 以区分山西 shanxi）",
+    "category": "地方政府",
+    "keywords": "陕西省政府，陕西政务，陕西便民服务，陕西政策，陕西办事，西安"
+  },
+  {
+    "id": "gansu-gov-cn",
+    "name": "甘肃省人民政府",
+    "url": "https://www.gansu.gov.cn",
+    "description": "甘肃省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "甘肃省政府，甘肃政务，甘肃便民服务，甘肃政策，甘肃办事，兰州"
+  },
+  {
+    "id": "qinghai-gov-cn",
+    "name": "青海省人民政府",
+    "url": "https://www.qinghai.gov.cn",
+    "description": "青海省人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "青海省政府，青海政务，青海便民服务，青海政策，青海办事，西宁"
+  },
+  {
+    "id": "hk-gov",
+    "name": "香港特别行政区政府",
+    "url": "https://www.gov.hk",
+    "description": "香港特别行政区政府一站通门户",
+    "category": "地方政府",
+    "keywords": "香港政府，香港政务，香港一站通，香港签证，香港服务，港府，香港办事"
+  },
+  {
+    "id": "mo-gov",
+    "name": "澳门特别行政区政府",
+    "url": "https://www.gov.mo",
+    "description": "澳门特别行政区政府入口网站",
+    "category": "地方政府",
+    "keywords": "澳门政府，澳门政务，澳门入口网站，澳门签证，澳门服务，澳府，澳门办事"
+  },
+  {
+    "id": "cctv-com",
+    "name": "央视网",
+    "url": "https://www.cctv.com",
+    "description": "央视网，中央广播电视总台主办的网络电视台，提供新闻、综艺、体育等内容",
+    "category": "新闻媒体",
+    "keywords": "央视网，CCTV，央视新闻，央视直播，新闻联播，央视综艺，央视体育，在线看电视"
+  },
+  {
+    "id": "news-cn",
+    "name": "新华网",
+    "url": "https://www.news.cn",
+    "description": "新华网，新华社主办的国家重点新闻网站，发布时政、经济、国际新闻",
+    "category": "新闻媒体",
+    "keywords": "新华网，新华社新闻，时政新闻，国内新闻，国际新闻，经济新闻，新华评论"
+  },
+  {
+    "id": "people-com-cn",
+    "name": "人民网",
+    "url": "https://www.people.com.cn",
+    "description": "人民网，人民日报社主办的国家重点新闻网站，提供时政评论与舆情",
+    "category": "新闻媒体",
+    "keywords": "人民网，人民日报，人民日报电子版，时政评论，舆情，领导留言，人民时评"
+  },
+  {
+    "id": "chinanews-com-cn",
+    "name": "中国新闻网",
+    "url": "https://www.chinanews.com.cn",
+    "description": "中国新闻网，中新社主办的综合性新闻网站，提供华文新闻资讯",
+    "category": "新闻媒体",
+    "keywords": "中国新闻网，中新社，中新新闻，华文新闻，国内新闻，国际新闻，华人资讯"
+  },
+  {
+    "id": "gmw-cn",
+    "name": "光明网",
+    "url": "https://www.gmw.cn",
+    "description": "光明网，光明日报社主办，以知识分子为主要读者群的新闻网站",
+    "category": "新闻媒体",
+    "keywords": "光明网，光明日报，知识分子，理论评论，学术思想，教育文化，光明时评"
+  },
+  {
+    "id": "huanqiu-com",
+    "name": "环球网",
+    "url": "https://www.huanqiu.com",
+    "description": "环球网，人民日报社主管的国际新闻网站，提供全球视野的时政报道",
+    "category": "新闻媒体",
+    "keywords": "环球网，环球时报，国际新闻，全球视野，时政报道，中美关系，国际局势"
+  },
+  {
+    "id": "ce-cn",
+    "name": "中国经济网",
+    "url": "https://www.ce.cn",
+    "description": "中国经济网，经济日报社主办，专注财经、产业与市场资讯",
+    "category": "新闻媒体",
+    "keywords": "中国经济网，经济日报，财经新闻，产业资讯，市场动态，经济数据，商业资讯"
+  },
+  {
+    "id": "chinadaily-com-cn",
+    "name": "中国日报网",
+    "url": "https://www.chinadaily.com.cn",
+    "description": "中国日报网，中国英文媒体旗舰，向世界传播中国声音",
+    "category": "新闻媒体",
+    "keywords": "中国日报，中国日报网，英文新闻，中国英文媒体，对外传播，国际新闻"
+  },
+  {
+    "id": "cri-cn",
+    "name": "国际在线",
+    "url": "https://www.cri.cn",
+    "description": "国际在线，中国国际广播电台主办的多语种国际传播平台",
+    "category": "新闻媒体",
+    "keywords": "国际在线，中国国际广播电台，多语种新闻，国际传播，外语新闻，海外资讯"
+  },
+  {
+    "id": "qstheory-cn",
+    "name": "求是网",
+    "url": "https://www.qstheory.cn",
+    "description": "求是网，中共中央机关刊《求是》杂志主办的理论宣传与思想评论平台",
+    "category": "新闻媒体",
+    "keywords": "求是网，求是杂志，党的理论，意识形态，理论宣传，思想评论，党建理论"
+  },
+  {
+    "id": "cma-gov-cn",
+    "name": "中国气象局",
+    "url": "https://www.cma.gov.cn",
+    "description": "中国气象局，主管全国气象预报、气候监测与气象灾害预警",
+    "category": "天文气象",
+    "keywords": "气象局，天气预报，气象灾害，暴雨预警，台风预警，气候监测，气象服务"
+  },
+  {
+    "id": "nmc-cn",
+    "name": "中央气象台",
+    "url": "https://www.nmc.cn",
+    "description": "中央气象台，发布全国天气预报、暴雨台风预警与海洋气象预报",
+    "category": "天文气象",
+    "keywords": "中央气象台，全国天气，台风路径，台风预警，天气预报，暴雨预警，查天气，气温预报，海洋气象"
+  },
+  {
+    "id": "ntsc-ac-cn",
+    "name": "中国科学院国家授时中心",
+    "url": "https://www.ntsc.ac.cn",
+    "description": "中国科学院国家授时中心，国家时间频率标准与授时服务",
+    "category": "天文气象",
+    "keywords": "国家授时中心，标准时间，北京时间，对时，时间频率，授时服务，网络授时"
+  },
+  {
+    "id": "edu-cn",
+    "name": "中国教育和科研计算机网",
+    "url": "https://www.edu.cn",
+    "description": "中国教育和科研计算机网，连接全国高校与科研院所的学术网络",
+    "category": "教育",
+    "keywords": "中国教育网，高校网络，教育科研网，学术网络，大学网络，科研网络，CERNET"
+  },
+  {
+    "id": "zxx-edu-cn",
+    "name": "国家中小学智慧教育平台",
+    "url": "https://basic.smartedu.cn",
+    "description": "提供中小学优质数字教育资源与教学服务",
+    "category": "教育",
+    "keywords": "中小学智慧教育，中小学资源，网课，在线课程，国家中小学平台，智慧教育，基础教育资源"
+  },
+  {
+    "id": "smartedu-cn",
+    "name": "国家智慧教育平台",
+    "url": "https://www.smartedu.cn",
+    "description": "国家智慧教育平台，教育部主办，汇集优质课程与教育资源的公共服务平台",
+    "category": "教育",
+    "keywords": "国家智慧教育，教育资源，在线课程，智慧教育平台，优质课程，教育公共服务"
+  },
+  {
+    "id": "chsi-com-cn",
+    "name": "中国高等教育学生信息网",
+    "url": "https://www.chsi.com.cn",
+    "description": "中国高等教育学生信息网（学信网），查询学历、学籍与高考报名",
+    "category": "教育",
+    "keywords": "学位查询，学信网，学历认证，学籍查询，查学历，查毕业证，毕业证查询，考研，考研报名，高考报名"
+  },
+  {
+    "id": "icourse163-org",
+    "name": "中国大学MOOC",
+    "url": "https://www.icourse163.org",
+    "description": "中国大学MOOC，教育部主管的在线开放课程平台，提供高校优质课程",
+    "category": "教育",
+    "keywords": "中国大学MOOC，慕课，在线课程，高校公开课，免费课程，大学网课，MOOC平台"
+  },
+  {
+    "id": "neea-edu-cn",
+    "name": "教育部教育考试院",
+    "url": "https://www.neea.edu.cn",
+    "description": "教育部教育考试院，负责全国各类教育考试组织与成绩查询",
+    "category": "教育",
+    "keywords": "教育考试院，高考，考研，自学考试，四六级，成绩查询，考试报名，教师资格"
+  },
+  {
+    "id": "nfra-gov-cn",
+    "name": "国家金融监督管理总局",
+    "url": "https://www.nfra.gov.cn",
+    "description": "国家金融监督管理总局，统一监督管理银行、保险与信托等金融机构",
+    "category": "财税民生",
+    "keywords": "保险监管，信托监管，查保险，查银行，理财投诉，金融机构，金融监管，金融监管总局，银行监管"
+  },
+  {
+    "id": "csrc-gov-cn",
+    "name": "中国证券监督管理委员会",
+    "url": "https://www.csrc.gov.cn",
+    "description": "中国证券监督管理委员会，主管证券期货市场与上市公司监管",
+    "category": "财税民生",
+    "keywords": "IPO，上市公司，上市公司监管，期货，查基金，查股票，股票发行，股票市场，证券期货，证券监管，证监会"
+  },
+  {
+    "id": "safe-gov-cn",
+    "name": "国家外汇管理局",
+    "url": "https://www.safe.gov.cn",
+    "description": "国家外汇管理局，主管外汇收支、国际收支与汇率政策",
+    "category": "财税民生",
+    "keywords": "外汇管理局，外汇政策，汇率，外汇收支，国际收支，外汇管理，结售汇"
+  },
+  {
+    "id": "gov-zhengce",
+    "name": "中国政府网政策文件库",
+    "url": "https://www.gov.cn/zhengce/",
+    "description": "集中发布国务院及各部门政策文件与权威解读",
+    "category": "综合政务",
+    "keywords": "政策文件库，国务院政策，政策查询，政策解读，政府文件，中央政策"
+  },
+  {
+    "id": "openstd-samr-gov-cn",
+    "name": "国家标准全文公开系统",
+    "url": "https://openstd.samr.gov.cn",
+    "description": "国家标准全文公开系统，市场监管总局主办，提供国家标准在线阅读",
+    "category": "标准知识产权",
+    "keywords": "GB标准，国家标准查询，国家标准阅读，国标，国标下载，国标全文，查国家标准，标准文本，标准查询"
+  },
+  {
+    "id": "std-samr-gov-cn",
+    "name": "全国标准信息公共服务平台",
+    "url": "https://std.samr.gov.cn",
+    "description": "全国标准信息公共服务平台，检索国家标准、行业标准与地方标准",
+    "category": "标准知识产权",
+    "keywords": "标准信息查询，国家标准，行业标准，地方标准，团体标准，标准检索"
+  },
+  {
+    "id": "sac-gov-cn",
+    "name": "国家标准化管理委员会",
+    "url": "https://www.sac.gov.cn",
+    "description": "国家标准化管理委员会，主管全国标准化工作与国家标准制定",
+    "category": "标准知识产权",
+    "keywords": "国家标准化，国标委，国家标准制定，标准化工作，标准制定，国标管理"
+  },
+  {
+    "id": "flk-npc-gov-cn",
+    "name": "国家法律法规数据库",
+    "url": "https://flk.npc.gov.cn",
+    "description": "国家法律法规数据库，全国人大常委会主办，权威发布现行法律文本",
+    "category": "法律司法",
+    "keywords": "司法解释，查法律，查法规，法律文本，法律条文，法律法规，法案查询，立法"
+  },
+  {
+    "id": "npc-gov-cn",
+    "name": "中国人大网",
+    "url": "https://www.npc.gov.cn",
+    "description": "中国人大网，全国人民代表大会及其常委会的立法、监督与代表工作平台",
+    "category": "法律司法",
+    "keywords": "人大网，全国人大，立法，人大代表，人大常委会，法律制定，人大代表履职"
+  },
+  {
+    "id": "court-gov-cn",
+    "name": "最高人民法院",
+    "url": "https://www.court.gov.cn",
+    "description": "最高人民法院，最高审判机关，发布司法解释与指导全国法院审判工作",
+    "category": "法律司法",
+    "keywords": "最高法院，最高人民法院，司法解释，审判指导，法院判例，司法案例，最高法"
+  },
+  {
+    "id": "spp-gov-cn",
+    "name": "最高人民检察院",
+    "url": "https://www.spp.gov.cn",
+    "description": "最高人民检察院，最高检察机关，履行法律监督与公诉职能",
+    "category": "法律司法",
+    "keywords": "最高检，最高人民检察院，检察监督，公诉，反贪，公益诉讼，检察服务"
+  },
+  {
+    "id": "data-stats-gov-cn",
+    "name": "国家数据",
+    "url": "https://data.stats.gov.cn",
+    "description": "国家数据，国家统计局主办，提供国民经济与社会发展统计数据查询",
+    "category": "国家监管",
+    "keywords": "CPI，CPI数据，GDP，GDP查询，人口数据，国家数据，数据查询，查统计数据，经济数据，经济数据查询，统计数据库"
+  },
+  {
+    "id": "cas-cn",
+    "name": "中国科学院",
+    "url": "https://www.cas.cn",
+    "description": "中国科学院，中国自然科学最高学术机构与综合性研究与发展中心",
+    "category": "科研学术",
+    "keywords": "中国科学院，中科院，科学院，自然科学研究，科研项目，中科院研究所"
+  },
+  {
+    "id": "cae-cn",
+    "name": "中国工程院",
+    "url": "https://www.cae.cn",
+    "description": "中国工程院，中国工程科学技术界最高荣誉性、咨询性学术机构",
+    "category": "科研学术",
+    "keywords": "中国工程院，工程院士，工程科技，工程院，院士，工程技术研究"
+  },
+  {
+    "id": "cast-org-cn",
+    "name": "中国科学技术协会",
+    "url": "https://www.cast.org.cn",
+    "description": "中国科学技术协会，中国科技工作者的群众组织与学术交流平台",
+    "category": "科研学术",
+    "keywords": "中国科协，科学技术协会，科技工作者，学术交流，科普，科技活动"
+  },
+  {
+    "id": "nsfc-gov-cn",
+    "name": "国家自然科学基金委员会",
+    "url": "https://www.nsfc.gov.cn",
+    "description": "国家自然科学基金委员会，管理国家自然科学基金与科技人才培养",
+    "category": "科研学术",
+    "keywords": "国家自然科学基金，国自然，基金申请，查科研基金，科学基金，科研基金，科研项目，科研项目申报，自然科学基金"
+  },
+  {
+    "id": "cass-cn",
+    "name": "中国社会科学院",
+    "url": "https://www.cass.cn",
+    "description": "人文社会科学最高学术研究与咨询机构",
+    "category": "科研学术",
+    "keywords": "中国社会科学院，社科院，人文社会科学，学术研究，社科研究"
+  },
+  {
+    "id": "cnsa-gov-cn",
+    "name": "国家航天局",
+    "url": "https://www.cnsa.gov.cn",
+    "description": "国家航天局，主管民用航天与国际太空合作的政府机构",
+    "category": "航空航天",
+    "keywords": "国家航天局，国际太空合作，太空，查航天，民用航天，空间站，航天发射，航天工程，航天政策"
+  },
+  {
+    "id": "caac-gov-cn",
+    "name": "中国民用航空局",
+    "url": "https://www.caac.gov.cn",
+    "description": "中国民用航空局，主管民航运输、航空安全与机场管理",
+    "category": "航空航天",
+    "keywords": "机场管理，机票，查航班，查飞机，民航，民航局，民航运输，航班管理，航空安全，航空监管，航空管理"
+  },
+  {
+    "id": "spacechina-com",
+    "name": "中国航天科技集团",
+    "url": "https://www.spacechina.com",
+    "description": "中国航天科技集团，运载火箭、卫星与载人航天工程主力军",
+    "category": "航空航天",
+    "keywords": "航天科技集团，运载火箭，卫星，载人航天，航天科技，中国航天"
+  },
+  {
+    "id": "casic-com-cn",
+    "name": "中国航天科工集团",
+    "url": "https://www.casic.com.cn",
+    "description": "中国航天科工集团，导弹武器与防御系统研制的国有特大型企业",
+    "category": "航空航天",
+    "keywords": "航天科工集团，导弹武器，防御系统，航天防务，军工集团，航天科技"
+  },
+  {
+    "id": "comac-cc",
+    "name": "中国商用飞机有限责任公司",
+    "url": "https://www.comac.cc",
+    "description": "中国商用飞机有限责任公司，ARJ21与C919民用飞机研制主体",
+    "category": "航空航天",
+    "keywords": "中国商飞，ARJ21，C919，民用飞机，国产大飞机，飞机制造，商飞"
+  },
+  {
+    "id": "avic-com",
+    "name": "中国航空工业集团",
+    "url": "https://www.avic.com",
+    "description": "中国航空工业集团，军用与民用航空装备研制的国有特大型企业",
+    "category": "航空航天",
+    "keywords": "航空工业集团，中航工业，军用飞机，民用航空装备，航空装备，航空制造"
+  },
+  {
+    "id": "mod-gov-cn",
+    "name": "中华人民共和国国防部",
+    "url": "https://www.mod.gov.cn",
+    "description": "中华人民共和国国防部，发布国防政策、军事动态与权威信息",
+    "category": "国防外交",
+    "keywords": "军事动态，军事新闻，国防建设，国防政策，国防白皮书，国防部，查军工"
+  },
+  {
+    "id": "81-cn",
+    "name": "中国军网",
+    "url": "https://www.81.cn",
+    "description": "中国军网，中央军委机关报《解放军报》主办，军事新闻门户",
+    "category": "国防外交",
+    "keywords": "中国军网，解放军报，军事新闻，军队建设，国防新闻，军事动态"
+  },
+  {
+    "id": "dpm-org-cn",
+    "name": "故宫博物院",
+    "url": "https://www.dpm.org.cn",
+    "description": "故宫博物院，明清宫廷文物收藏与展览的国家一级博物馆",
+    "category": "人文社科",
+    "keywords": "故宫博物院，故宫，故宫门票，故宫参观，故宫文物，紫禁城，故宫展览"
+  },
+  {
+    "id": "chnmuseum-cn",
+    "name": "中国国家博物馆",
+    "url": "https://www.chnmuseum.cn",
+    "description": "中国国家博物馆，中华文物收藏、研究与展示的最高历史文化殿堂",
+    "category": "人文社科",
+    "keywords": "国家博物馆，国博，博物馆参观，历史文物，国博展览，国家文物，博物馆门票"
+  },
+  {
+    "id": "nlc-cn",
+    "name": "中国国家图书馆",
+    "url": "https://www.nlc.cn",
+    "description": "中国国家图书馆，国家文献信息资源总库与全国书目中心",
+    "category": "人文社科",
+    "keywords": "国家图书馆，国图，图书检索，文献借阅，国家书目，电子图书，图书馆办卡"
+  },
+  {
+    "id": "saac-gov-cn",
+    "name": "中央档案馆",
+    "url": "https://www.saac.gov.cn",
+    "description": "中央档案馆，保管党和国家中央机关档案的国家级档案馆",
+    "category": "人文社科",
+    "keywords": "中央档案馆，档案查询，中央档案，历史档案，档案管理，党政档案"
+  },
+  {
+    "id": "ihchina-cn",
+    "name": "中国非物质文化遗产网",
+    "url": "https://www.ihchina.cn",
+    "description": "中国非物质文化遗产网，文化部非遗司主办，非遗项目名录与传承人",
+    "category": "人文社科",
+    "keywords": "传统文化，查非遗，非物质文化遗产，非遗传承人，非遗名录，非遗申报，非遗网"
+  },
+  {
+    "id": "ctaweb-org",
+    "name": "中国旅游研究院",
+    "url": "https://ctaweb.org",
+    "description": "中国旅游研究院，文化和旅游部直属，旅游产业研究与政策咨询",
+    "category": "人文社科",
+    "keywords": "旅游研究院，旅游研究，旅游产业，旅游政策，旅游数据，文旅研究"
+  },
+  {
+    "id": "nea-gov-cn",
+    "name": "国家能源局",
+    "url": "https://www.nea.gov.cn",
+    "description": "国家能源局，主管能源行业管理、能源节约与可再生能源发展",
+    "category": "能源",
+    "keywords": "可再生能源，新能源，查煤炭，查能源，电力，电力监管，能源局，能源政策，能源管理，能源节约"
+  },
+  {
+    "id": "sgcc-com-cn",
+    "name": "国家电网有限公司",
+    "url": "https://www.sgcc.com.cn",
+    "description": "国家电网有限公司，建设和运营全球最大的输电网络，供电覆盖26省",
+    "category": "能源",
+    "keywords": "国家电网，电网，交电费，停电报修，电力服务，网上国网，国家电网网上营业厅"
+  },
+  {
+    "id": "chng-com-cn",
+    "name": "中国华能集团有限公司",
+    "url": "https://www.chng.com.cn",
+    "description": "中国华能集团，以电力生产为主的国有特大型能源企业",
+    "category": "能源",
+    "keywords": "华能集团，华能电力，电力生产，能源企业，火电，清洁能源，华能"
+  },
+  {
+    "id": "china-cdt-com",
+    "name": "中国大唐集团有限公司",
+    "url": "https://www.china-cdt.com",
+    "description": "中国大唐集团，大型综合性电力生产企业，清洁能源与火电并举",
+    "category": "能源",
+    "keywords": "大唐集团，大唐发电，电力生产，清洁能源，火电，大唐电力"
+  },
+  {
+    "id": "cgn-com-cn",
+    "name": "中国广核集团",
+    "url": "https://www.cgnpc.com.cn",
+    "description": "核电与清洁能源开发运营央企",
+    "category": "能源",
+    "keywords": "中广核，核电，清洁能源，核电站，中广核集团，核能"
+  },
+  {
+    "id": "ctg-com-cn",
+    "name": "中国长江三峡集团有限公司",
+    "url": "https://www.ctg.com.cn",
+    "description": "中国长江三峡集团，全球最大水电开发运营企业与清洁能源集团",
+    "category": "能源",
+    "keywords": "三峡集团，长江三峡，水电开发，清洁能源，水利工程，三峡大坝"
+  },
+  {
+    "id": "forestry-gov-cn",
+    "name": "国家林业和草原局",
+    "url": "https://www.forestry.gov.cn",
+    "description": "国家林业和草原局，主管森林、草原、湿地与野生动植物保护",
+    "category": "生态保护",
+    "keywords": "林草局，林业，草原，湿地保护，野生动植物，森林防火，国家公园"
+  },
+  {
+    "id": "nationalpark-gov-cn",
+    "name": "国家公园管理局",
+    "url": "https://www.forestry.gov.cn/nationalpark/",
+    "description": "统一管理国家公园与自然保护地的机构（隶属国家林草局）",
+    "category": "生态保护",
+    "keywords": "国家公园，自然保护区，自然保护地，生态保护，国家公园管理，自然遗产"
+  },
+  {
+    "id": "cwca-org-cn",
+    "name": "中国野生动物保护协会",
+    "url": "https://www.cwca.org.cn",
+    "description": "中国野生动物保护协会，全国性野生动物保护公益组织",
+    "category": "生态保护",
+    "keywords": "野生动物保护，野生动物，动物保护协会，濒危动物，野生动物救助"
+  },
+  {
+    "id": "acef-com-cn",
+    "name": "中华环保联合会",
+    "url": "https://www.acef.com.cn",
+    "description": "中华环保联合会，全国性环保社会组织，推动生态文明建设",
+    "category": "生态保护",
+    "keywords": "环保联合会，生态文明，环境保护，环保公益，环境治理，绿色低碳"
+  },
+  {
+    "id": "cnipa-gov-cn",
+    "name": "国家知识产权局",
+    "url": "https://www.cnipa.gov.cn",
+    "description": "国家知识产权局，主管专利、商标与集成电路布图设计",
+    "category": "标准知识产权",
+    "keywords": "专利查询，专利检索，专利申请，商标注册，查专利，查商标，申请专利，知识产权保护，知识产权局"
+  },
+  {
+    "id": "ccopyright-com-cn",
+    "name": "中国版权保护中心",
+    "url": "https://www.ccopyright.com.cn",
+    "description": "中国版权保护中心，国家版权局直属，负责版权登记与版权服务",
+    "category": "标准知识产权",
+    "keywords": "查版权，版权保护，版权服务，版权查询，版权登记，著作权，著作权登记，软件著作权"
+  },
+  {
+    "id": "customs-gov-cn",
+    "name": "中华人民共和国海关总署",
+    "url": "https://www.customs.gov.cn",
+    "description": "中华人民共和国海关总署，主管进出口监管、关税征管与口岸管理",
+    "category": "国防外交",
+    "keywords": "关税，口岸管理，报关，查海关，海关，海关总署，海关查验，海关清关，进出口，进出口监管"
+  },
+  {
+    "id": "ccpit-org",
+    "name": "中国国际贸易促进委员会",
+    "url": "https://www.ccpit.org",
+    "description": "中国国际贸易促进委员会，促进对外贸易与招商引资的全国性机构",
+    "category": "国防外交",
+    "keywords": "贸促会，国际贸易，招商引资，商事认证，贸易促进，出证认证，贸促会原产地证"
+  },
+  {
+    "id": "fmprc-gov-cn",
+    "name": "中华人民共和国外交部",
+    "url": "https://www.fmprc.gov.cn",
+    "description": "中华人民共和国外交部，发布外交政策、领事提醒与涉外事务",
+    "category": "国防外交",
+    "keywords": "外交部，外交政策，领事提醒，签证信息，海外安全，涉外事务，外交动态"
+  },
+  {
+    "id": "cs-mfa-gov-cn",
+    "name": "领事直通车",
+    "url": "https://cs.mfa.gov.cn",
+    "description": "领事直通车，外交部领事司主办，发布海外安全提醒与领事服务",
+    "category": "国防外交",
+    "keywords": "领事直通车，海外安全提醒，领事服务，外交部领事司，出国提醒，海外安全"
+  },
+  {
+    "id": "redcross-org-cn",
+    "name": "中国红十字会",
+    "url": "https://www.redcross.org.cn",
+    "description": "中国红十字会，从事人道救助、应急救护与无偿献血的社会救助团体",
+    "category": "应急防灾",
+    "keywords": "红十字会，人道救助，无偿献血，应急救护，红十字公益，灾害救助"
+  },
+  {
+    "id": "china-railway-com-cn",
+    "name": "中国国家铁路集团有限公司",
+    "url": "https://www.china-railway.com.cn",
+    "description": "中国国家铁路集团有限公司，负责全国铁路建设、运营与运输管理",
+    "category": "交通城建",
+    "keywords": "国铁集团，中国铁路，铁路建设，铁路运营，铁路运输，高铁建设"
+  },
+  {
+    "id": "12306-cn",
+    "name": "中国铁路12306",
+    "url": "https://www.12306.cn",
+    "description": "中国铁路12306，官方火车票网上订票平台，提供购票、退票与时刻表查询",
+    "category": "交通城建",
+    "keywords": "买火车票，余票查询，列车时刻表，动车票，学生票，抢票，查列车时刻表，查高铁票，退票改签，高铁票"
+  },
+  {
+    "id": "122-gov-cn",
+    "name": "公安部交管局交通管理综合服务平台",
+    "url": "https://www.122.gov.cn",
+    "description": "公安部交管局交通管理综合服务平台，处理违章、满分学习与车牌预约",
+    "category": "交通城建",
+    "keywords": "交管12123，交通违章，处理违章，扣分查询，机动车业务，查违章，满分学习，车牌预约，违章查询，驾照，驾驶证"
+  },
+  {
+    "id": "cebpubservice-com",
+    "name": "中国招标投标公共服务平台",
+    "url": "https://www.cebpubservice.com",
+    "description": "中国招标投标公共服务平台，全国招投标信息发布与查询",
+    "category": "企业招投标",
+    "keywords": "招标投标，招投标信息，招标公告，中标公告，招标查询，投标"
+  },
+  {
+    "id": "ggzy-gov-cn",
+    "name": "全国公共资源交易平台",
+    "url": "https://www.ggzy.gov.cn",
+    "description": "全国公共资源交易平台，工程、货物、服务招投标信息汇总",
+    "category": "企业招投标",
+    "keywords": "公共资源交易，招投标，工程招标，政府采购，公共资源，招标信息"
+  },
+  {
+    "id": "cac-gov-cn",
+    "name": "国家互联网信息办公室",
+    "url": "https://www.cac.gov.cn",
+    "description": "国家互联网信息办公室，主管网络安全、网络内容与信息化发展",
+    "category": "互联网",
+    "keywords": "互联网信息，信息化发展，查网信，网信办，网络内容，网络安全，网络监管"
+  },
+  {
+    "id": "caict-ac-cn",
+    "name": "中国信息通信研究院",
+    "url": "https://www.caict.ac.cn",
+    "description": "中国信息通信研究院，工信部直属，从事信息通信技术与产业政策研究",
+    "category": "互联网",
+    "keywords": "信通院，信息通信研究院，通信产业研究，ICT研究，通信政策，数字中国"
+  },
+  {
+    "id": "cdpf-org-cn",
+    "name": "中国残疾人联合会",
+    "url": "https://www.cdpf.org.cn",
+    "description": "中国残疾人联合会，全国残疾人代表组织，维护残疾人权益并推动残疾人事业",
+    "category": "社会服务",
+    "keywords": "助残，查残疾人，残疾人服务，残疾人权益，残疾人联合会，残疾人证，残联"
+  },
+  {
+    "id": "cdweb-org-cn",
+    "name": "中国残疾人福利基金会",
+    "url": "https://www.cfdp.org.cn",
+    "description": "从事残疾人福利事业的全国性公募基金会",
+    "category": "综合政务",
+    "keywords": "残疾人福利基金会，残疾人福利，残疾人公益，助残基金，残疾人救助"
+  },
+  {
+    "id": "nao-cas-cn",
+    "name": "中国科学院国家天文台",
+    "url": "https://www.nao.cas.cn",
+    "description": "中国科学院国家天文台，从事天体物理观测与天文研究",
+    "category": "天文气象",
+    "keywords": "国家天文台，天文观测，天体物理，天文研究，星空，天文数据，天文台"
+  },
+  {
+    "id": "china-vo-org",
+    "name": "中国虚拟天文台",
+    "url": "https://www.china-vo.org",
+    "description": "中国虚拟天文台，天文数据共享与在线天文研究平台",
+    "category": "天文气象",
+    "keywords": "虚拟天文台，天文数据，在线天文研究，天文共享，数据天文，星图数据"
+  },
+  {
+    "id": "cmse-gov-cn",
+    "name": "中国载人航天工程办公室",
+    "url": "https://www.cmse.gov.cn",
+    "description": "中国载人航天工程办公室，主管载人航天工程与空间站建设",
+    "category": "天文气象",
+    "keywords": "载人航天，空间站，神舟飞船，天宫空间站，航天员，载人航天工程"
+  },
+  {
+    "id": "ihep-ac-cn",
+    "name": "中国科学院高能物理研究所",
+    "url": "https://www.ihep.ac.cn",
+    "description": "中国科学院高能物理研究所，粒子物理与高能天体物理研究",
+    "category": "天文气象",
+    "keywords": "高能物理研究所，粒子物理，高能天体物理，加速器，北京正负电子对撞机，高能所"
+  },
+  {
+    "id": "tianditu-gov-cn",
+    "name": "天地图",
+    "url": "https://www.tianditu.gov.cn",
+    "description": "国家测绘地理信息局主办的官方在线地图，提供全国地理信息与位置服务",
+    "category": "综合政务",
+    "keywords": "天地图，在线地图，国家地图，地理信息，位置服务，地图查询，中国地图"
+  },
+  {
+    "id": "bzdt-ch-mnr-gov-cn",
+    "name": "自然资源部标准地图服务",
+    "url": "https://bzdt.ch.mnr.gov.cn",
+    "description": "自然资源部标准地图服务，提供官方权威标准地图下载与在线浏览",
+    "category": "综合政务",
+    "keywords": "标准地图，官方地图，地图下载，标准地图服务，中国地图，地理信息"
+  },
+  {
+    "id": "caai-cn",
+    "name": "中国人工智能学会",
+    "url": "https://www.caai.cn",
+    "description": "中国人工智能学会，人工智能领域全国性学术团体与交流平台",
+    "category": "人工智能",
+    "keywords": "人工智能学会，AI学会，智能科学，人工智能学术，CAAI，智能学"
+  },
+  {
+    "id": "openi-org-cn",
+    "name": "OpenI 启智社区",
+    "url": "https://www.openi.org.cn",
+    "description": "OpenI 启智社区，国产开源人工智能与深度学习模型协作平台",
+    "category": "人工智能",
+    "keywords": "启智社区，开源AI，深度学习模型，开源人工智能，AI开源，模型协作"
+  },
+  {
+    "id": "nscc-cn",
+    "name": "国家超级计算中心",
+    "url": "https://www.nscc.cn",
+    "description": "国家超级计算中心，提供高性能计算与算力服务的国家级平台",
+    "category": "人工智能",
+    "keywords": "超算中心，国家超级计算，高性能计算，算力服务，超算，科学计算"
+  },
+  {
+    "id": "cnic-cn",
+    "name": "中国科学院计算机网络信息中心",
+    "url": "https://www.cnic.cn",
+    "description": "中国科学院计算机网络信息中心，科研信息化与网络技术服务",
+    "category": "人工智能",
+    "keywords": "计算机网络信息中心，科研信息化，网络技术服务，中科院网络，超级计算"
+  },
+  {
+    "id": "cnnic-cn",
+    "name": "中国互联网络信息中心",
+    "url": "https://www.cnnic.cn",
+    "description": "中国互联网络信息中心，负责国家域名注册管理、IP地址分配与互联网发展统计",
+    "category": "互联网",
+    "keywords": "CNNIC，域名注册，IP地址，互联网发展，中国互联网络，网络信息中心，cn域名"
+  },
+  {
+    "id": "isc-org-cn",
+    "name": "中国互联网协会",
+    "url": "https://www.isc.org.cn",
+    "description": "中国互联网协会，全国互联网行业性组织，推动行业自律与交流",
+    "category": "互联网",
+    "keywords": "互联网协会，行业自律，互联网行业，网络交流，行业发展，互联网组织"
+  },
+  {
+    "id": "gsxt-gov-cn",
+    "name": "国家企业信用信息公示系统",
+    "url": "https://www.gsxt.gov.cn",
+    "description": "国家企业信用信息公示系统，查询企业注册信息、经营状态与处罚记录",
+    "category": "企业招投标",
+    "keywords": "企业信息，企业信息查询，企业信用，企业工商信息，企业查询，工商注册，查企业，查营业执照，经营异常，营业执照查询"
+  },
+  {
+    "id": "sasac-gov-cn",
+    "name": "国务院国有资产监督管理委员会",
+    "url": "https://www.sasac.gov.cn",
+    "description": "国务院国有资产监督管理委员会，监管中央企业与国有资产",
+    "category": "企业招投标",
+    "keywords": "国资委，央企监管，中央企业，国资管理，国有企业，央企名录"
+  },
+  {
+    "id": "creditchina-gov-cn",
+    "name": "信用中国",
+    "url": "https://www.creditchina.gov.cn",
+    "description": "信用中国，国家发改委主办，查询个人与企业信用记录",
+    "category": "企业招投标",
+    "keywords": "个人信用，企业信用，信用中国，信用报告，信用查询，信用记录，失信查询，查信用"
+  },
+  {
+    "id": "icbc-com-cn",
+    "name": "中国工商银行",
+    "url": "https://www.icbc.com.cn",
+    "description": "中国工商银行，国有大型商业银行，资产规模全球最大银行之一",
+    "category": "银行",
+    "keywords": "工商银行，工行，网上银行，ICBC，工商银行网上营业厅，银行服务，工行办卡"
+  },
+  {
+    "id": "abchina-com",
+    "name": "中国农业银行",
+    "url": "https://www.abchina.com",
+    "description": "中国农业银行，国有大型商业银行，服务三农与城乡经济",
+    "category": "银行",
+    "keywords": "农业银行，农行，网上银行，ABC，农行网上营业厅，银行服务，农行办卡"
+  },
+  {
+    "id": "boc-cn",
+    "name": "中国银行",
+    "url": "https://www.boc.cn",
+    "description": "中国银行，国有大型商业银行，国际化程度最高的中资银行",
+    "category": "银行",
+    "keywords": "中国银行，中行，网上银行，BOC，中行网上营业厅，外汇业务，中行办卡"
+  },
+  {
+    "id": "ccb-com",
+    "name": "中国建设银行",
+    "url": "https://www.ccb.com",
+    "description": "中国建设银行，国有大型商业银行，基建融资与个人金融服务",
+    "category": "银行",
+    "keywords": "建设银行，建行，网上银行，CCB，建行网上营业厅，银行服务，建行办卡"
+  },
+  {
+    "id": "bankcomm-com",
+    "name": "交通银行",
+    "url": "https://www.bankcomm.com",
+    "description": "交通银行，国有大型商业银行，综合金融服务",
+    "category": "银行",
+    "keywords": "交通银行，交行，网上银行，BCM，交行网上营业厅，银行服务，交行办卡"
+  },
+  {
+    "id": "psbc-com",
+    "name": "中国邮政储蓄银行",
+    "url": "https://www.psbc.com",
+    "description": "中国邮政储蓄银行，国有大型商业银行，网点覆盖最广的零售银行",
+    "category": "银行",
+    "keywords": "邮储银行，邮政储蓄，网上银行，PSBC，邮储网上营业厅，银行服务，邮储办卡"
+  },
+  {
+    "id": "cdb-com-cn",
+    "name": "国家开发银行",
+    "url": "https://www.cdb.com.cn",
+    "description": "国家开发银行，政策性银行，服务国家战略与中长期投融资",
+    "category": "银行",
+    "keywords": "国开行，国家开发银行，政策性银行，中长期融资，国家战略，开发性金融"
+  },
+  {
+    "id": "eximbank-gov-cn",
+    "name": "中国进出口银行",
+    "url": "https://www.eximbank.gov.cn",
+    "description": "中国进出口银行，政策性银行，支持对外贸易与国际经济合作",
+    "category": "银行",
+    "keywords": "进出口银行，政策性银行，对外贸易，国际经济合作，出口信贷"
+  },
+  {
+    "id": "adbc-com-cn",
+    "name": "中国农业发展银行",
+    "url": "https://www.adbc.com.cn",
+    "description": "中国农业发展银行，政策性银行，服务三农与农村基础设施建设",
+    "category": "银行",
+    "keywords": "农发行，农业发展银行，政策性银行，三农金融，农村基建，农业金融"
+  },
+  {
+    "id": "jsj-moe-gov-cn",
+    "name": "教育涉外监管信息网",
+    "url": "https://jsj.moe.gov.cn",
+    "description": "教育涉外监管信息网，查询中外合作办学与境外大学资质",
+    "category": "教育",
+    "keywords": "教育涉外监管，中外合作办学，留学预警，境外大学，国外学历认证，留学资质"
+  },
+  {
+    "id": "cdgdc-edu-cn",
+    "name": "中国学位与研究生教育发展中心",
+    "url": "https://www.cdgdc.edu.cn",
+    "description": "中国学位与研究生教育发展中心，负责学位认证与学科评估",
+    "category": "教育",
+    "keywords": "学位认证，学位中心，学科评估，学位查询，学位证书认证，研究生教育，学位网"
+  },
+  {
+    "id": "gaokao-chsi-com-cn",
+    "name": "阳光高考",
+    "url": "https://gaokao.chsi.com.cn",
+    "description": "阳光高考，教育部高校招生阳光工程指定平台，发布招生计划与政策",
+    "category": "教育",
+    "keywords": "阳光高考，高考招生，大学招生计划，高校招生，志愿填报，招生政策，高考报名"
+  },
+  {
+    "id": "piyao-org-cn",
+    "name": "中国互联网联合辟谣平台",
+    "url": "https://www.piyao.org.cn",
+    "description": "中央网信办主办的权威网络谣言查证与澄清平台",
+    "category": "宣传出版",
+    "keywords": "辟谣平台，网络谣言，查谣言，辟谣，谣言澄清，网络辟谣，网信办辟谣"
+  },
+  {
+    "id": "xuexi-cn",
+    "name": "学习强国",
+    "url": "https://www.xuexi.cn",
+    "description": "学习强国，中共中央宣传部主办的学习平台，提供时政、理论与文化内容",
+    "category": "宣传出版",
+    "keywords": "学习强国，理论学习，时政学习，党课学习，党员学习，积分学习，中宣部学习"
+  },
+  {
+    "id": "gqt-org-cn",
+    "name": "共青团中央",
+    "url": "https://www.gqt.org.cn",
+    "description": "共青团中央，中国共产主义青年团中央委员会，青年群体官方组织",
+    "category": "宣传出版",
+    "keywords": "共青团，共青团中央，青年组织，团委，青年团，团员，共青团委"
+  },
+  {
+    "id": "women-org-cn",
+    "name": "中华全国妇女联合会",
+    "url": "https://www.women.org.cn",
+    "description": "中华全国妇女联合会，全国妇女群众团体，维护妇女儿童权益",
+    "category": "宣传出版",
+    "keywords": "全国妇联，妇女联合会，妇女权益，儿童权益，妇联组织，妇女儿童"
+  },
+  {
+    "id": "acftu-org",
+    "name": "中华全国总工会",
+    "url": "https://www.acftu.org",
+    "description": "中华全国总工会，全国工会联合组织，维护职工权益与劳动保障",
+    "category": "宣传出版",
+    "keywords": "全国总工会，工会，职工权益，劳动保障，工会组织，劳动者权益，总工会"
+  },
+  {
+    "id": "cppcc-gov-cn",
+    "name": "全国政协",
+    "url": "https://www.cppcc.gov.cn",
+    "description": "中国人民政治协商会议全国委员会，履行政治协商、民主监督与参政议政职能",
+    "category": "综合政务",
+    "keywords": "全国政协，政协委员，政治协商，民主监督，参政议政，政协会议"
+  },
+  {
+    "id": "drc-gov-cn",
+    "name": "国务院发展研究中心",
+    "url": "https://www.drc.gov.cn",
+    "description": "国务院发展研究中心，从事综合性政策研究与决策咨询的直属事业单位",
+    "category": "综合政务",
+    "keywords": "国务院发展研究中心，政策研究，决策咨询，发展研究，智库，国务院智库"
+  },
+  {
+    "id": "gwytb-gov-cn",
+    "name": "国务院台湾事务办公室",
+    "url": "https://www.gwytb.gov.cn",
+    "description": "国务院台湾事务办公室，负责两岸关系与涉台事务管理",
+    "category": "综合政务",
+    "keywords": "国台办，台湾事务，两岸关系，涉台政策，台胞服务，两岸交流"
+  },
+  {
+    "id": "gqb-gov-cn",
+    "name": "国务院侨务办公室",
+    "url": "https://www.gqb.gov.cn",
+    "description": "国务院侨务办公室，负责海外侨胞与归侨侨眷事务管理",
+    "category": "综合政务",
+    "keywords": "侨办，侨务办公室，海外侨胞，归侨侨眷，侨务政策，侨务服务"
+  },
+  {
+    "id": "scio-gov-cn",
+    "name": "国务院新闻办公室",
+    "url": "https://www.scio.gov.cn",
+    "description": "国务院新闻办公室，统筹协调全国对外宣传与新闻发布工作",
+    "category": "综合政务",
+    "keywords": "国务院新闻办，对外宣传，新闻发布，白皮书，国新办，新闻发言人"
+  },
+  {
+    "id": "tv-cctv-com",
+    "name": "央视节目官网",
+    "url": "https://tv.cctv.com",
+    "description": "央视节目官网，提供CCTV各频道节目回看、直播与专题节目",
+    "category": "新闻媒体",
+    "keywords": "央视节目回看，CCTV直播，央视专题节目，电视回看，央视节目表，在线看电视"
+  },
+  {
+    "id": "cgtn-com",
+    "name": "CGTN 中国国际电视台",
+    "url": "https://www.cgtn.com",
+    "description": "CGTN 中国国际电视台，中央广播电视总台主办的英语国际新闻频道",
+    "category": "新闻媒体",
+    "keywords": "CGTN，中国国际电视台，英语新闻，国际传播，英文新闻，对外报道，全球新闻"
+  },
+  {
+    "id": "youth-cn",
+    "name": "中国青年网",
+    "url": "https://www.youth.cn",
+    "description": "中国青年网，共青团中央主办，服务青年成长与青年话题",
+    "category": "新闻媒体",
+    "keywords": "中国青年网，青年新闻，共青团，青年话题，青年成长，青年资讯，学生新闻"
+  },
+  {
+    "id": "china-com-cn",
+    "name": "中国网",
+    "url": "https://www.china.com.cn",
+    "description": "中国网，国务院新闻办领导的国家重点新闻网站，多语种对外传播",
+    "category": "新闻媒体",
+    "keywords": "中国网，国家重点新闻，多语种新闻，对外传播，中国新闻，国际报道"
+  },
+  {
+    "id": "china-org-cn",
+    "name": "中国网（国际传播）",
+    "url": "https://www.china.org.cn",
+    "description": "中国网国际传播版，多语种向世界介绍中国的权威平台",
+    "category": "新闻媒体",
+    "keywords": "中国网国际版，多语种传播，中国介绍，对外宣传，英文中国，国际传播"
+  },
+  {
+    "id": "cyol-com",
+    "name": "中国青年报",
+    "url": "https://www.cyol.com",
+    "description": "中国青年报，共青团中央机关报，报道青年、教育与社会新闻",
+    "category": "新闻媒体",
+    "keywords": "中国青年报，共青团机关报，青年新闻，教育新闻，社会新闻，青年话题"
+  },
+  {
+    "id": "farmer-com-cn",
+    "name": "农民日报",
+    "url": "https://www.farmer.com.cn",
+    "description": "农民日报，农业农村部主管，报道三农政策、农业技术与农村发展",
+    "category": "新闻媒体",
+    "keywords": "农民日报，三农新闻，农业政策，农村发展，农业技术，农民资讯"
+  },
+  {
+    "id": "weather-com-cn",
+    "name": "中国天气网",
+    "url": "https://www.weather.com.cn",
+    "description": "中国天气网，中国气象局公共服务平台，提供全国城市天气与生活指数",
+    "category": "天文气象",
+    "keywords": "中国天气网，台风路径，城市天气，天气预报，暴雨预警，查城市天气，查天气，空气质量，穿衣指数"
+  },
+  {
+    "id": "msa-gov-cn",
+    "name": "中国海事局",
+    "url": "https://www.msa.gov.cn",
+    "description": "中国海事局，主管水上交通安全、船舶登记与海上搜救",
+    "category": "交通城建",
+    "keywords": "海事局，水上安全，船舶登记，海上搜救，航运管理，海事监管"
+  },
+  {
+    "id": "nra-gov-cn",
+    "name": "国家铁路局",
+    "url": "https://www.nra.gov.cn",
+    "description": "国家铁路局，监督管理铁路运输安全、工程质量与标准",
+    "category": "交通城建",
+    "keywords": "国家铁路局，铁路监管，铁路安全，铁路工程，铁路标准，铁路运输"
+  },
+  {
+    "id": "spb-gov-cn",
+    "name": "国家邮政局",
+    "url": "https://www.spb.gov.cn",
+    "description": "国家邮政局，主管邮政行业、快递服务与邮政市场监管",
+    "category": "交通城建",
+    "keywords": "国家邮政局，快递投诉，快递服务，快递查询，查快递，邮政投诉，邮政监管，邮政管理，邮政行业"
+  },
+  {
+    "id": "nmpa-gov-cn",
+    "name": "国家药品监督管理局",
+    "url": "https://www.nmpa.gov.cn",
+    "description": "国家药品监督管理局，监管药品、医疗器械与化妆品安全",
+    "category": "生命健康",
+    "keywords": "GMP，化妆品，化妆品监管，医疗器械，查药品，药品安全，药品审批，药品查询，药监局"
+  },
+  {
+    "id": "cma-org-cn",
+    "name": "中华医学会",
+    "url": "https://www.cma.org.cn",
+    "description": "中华医学会，医学学术团体与临床指南发布机构",
+    "category": "生命健康",
+    "keywords": "中华医学会，医学学术，临床指南，医学期刊，医学会，医学继续教育"
+  },
+  {
+    "id": "ncc-org-cn",
+    "name": "国家癌症中心",
+    "url": "https://www.ncc.org.cn",
+    "description": "国家癌症中心，肿瘤防治与癌症登记的国家级机构",
+    "category": "生命健康",
+    "keywords": "国家癌症中心，癌症防治，肿瘤登记，癌症筛查，抗肿瘤，癌症研究"
+  },
+  {
+    "id": "12348-gov-cn",
+    "name": "中国法律服务网",
+    "url": "https://www.12348.gov.cn",
+    "description": "中国法律服务网，司法部主办，提供法律咨询、法律援助与普法服务",
+    "category": "法律司法",
+    "keywords": "中国法律服务网，法律咨询，法律援助，免费律师，普法，法律问答，12348"
+  },
+  {
+    "id": "12309-gov-cn",
+    "name": "12309检察服务",
+    "url": "https://www.12309.gov.cn",
+    "description": "12309检察服务中心，最高人民检察院主办，提供控告申诉与案件查询",
+    "category": "法律司法",
+    "keywords": "12309，检察服务，控告申诉，案件查询，举报职务犯罪，检察服务中心"
+  },
+  {
+    "id": "gjzwfw-gov-cn",
+    "name": "国家政务服务平台",
+    "url": "https://www.gjzwfw.gov.cn",
+    "description": "全国一体化在线政务服务平台，提供行政审批、公共服务与办事指南统一入口",
+    "category": "综合政务",
+    "keywords": "政务服务，国家政务平台，网上办事，行政审批，办事指南，便民服务，一站式办事"
+  },
+  {
+    "id": "nrta-gov-cn",
+    "name": "国家广播电视总局",
+    "url": "https://www.nrta.gov.cn",
+    "description": "国家广播电视总局，主管广播电视、网络视听与卫星地面接收",
+    "category": "部委",
+    "keywords": "广电总局，广播电视，网络视听，电视管理，广播电视管理，卫星接收"
+  },
+  {
+    "id": "ncha-gov-cn",
+    "name": "国家文物局",
+    "url": "https://www.ncha.gov.cn",
+    "description": "国家文物局，主管文物保护、考古发掘与博物馆事业",
+    "category": "部委",
+    "keywords": "国家文物局，文物保护，考古发掘，博物馆，文物管理，文物考古"
+  },
+  {
+    "id": "sport-gov-cn",
+    "name": "国家体育总局",
+    "url": "https://www.sport.gov.cn",
+    "description": "国家体育总局，主管全国体育事业、竞技体育与全民健身",
+    "category": "部委",
+    "keywords": "体育总局，体育管理，竞技体育，全民健身，体育赛事，国家队，体育事业"
+  },
+  {
+    "id": "cidca-gov-cn",
+    "name": "国家国际发展合作署",
+    "url": "https://www.cidca.gov.cn",
+    "description": "国家国际发展合作署，负责对外援助与国际发展合作事务",
+    "category": "部委",
+    "keywords": "国家国际发展合作署，对外援助，国际发展，外援，人道援助，国际合作"
+  },
+  {
+    "id": "nia-gov-cn",
+    "name": "国家移民管理局",
+    "url": "https://www.nia.gov.cn",
+    "description": "国家移民管理局，主管出入境管理、签证与外国人停留居留",
+    "category": "部委",
+    "keywords": "移民局，出入境管理，签证，外国人居留，护照办理，移民管理，边防检查"
+  },
+  {
+    "id": "ssf-gov-cn",
+    "name": "全国社会保障基金理事会",
+    "url": "https://www.ssf.gov.cn",
+    "description": "全国社会保障基金理事会，管理运营全国社保基金的战略储备",
+    "category": "财税民生",
+    "keywords": "社保基金，全国社保基金，社保基金投资，社保战略储备，养老基金"
+  },
+  {
+    "id": "12366-chinatax-gov-cn",
+    "name": "个人所得税",
+    "url": "https://12366.chinatax.gov.cn",
+    "description": "个人所得税，国家税务总局主办，提供个税申报、查询与退税",
+    "category": "财税民生",
+    "keywords": "个人所得税，个税APP，个税查询，个税申报，个税退税，年度汇算，查个税，综合所得，退税"
+  },
+  {
+    "id": "caas-cn",
+    "name": "中国农业科学院",
+    "url": "https://www.caas.cn",
+    "description": "中国农业科学院，国家级农业科研机构，农业科技创新主力军",
+    "category": "农林粮食",
+    "keywords": "农科院，中国农业科学院，农业科研，农业技术，农业创新，农科研究"
+  },
+  {
+    "id": "cafs-ac-cn",
+    "name": "中国水产科学研究院",
+    "url": "https://www.cafs.ac.cn",
+    "description": "中国水产科学研究院，国家级水产科研机构，渔业科技创新主体",
+    "category": "农林粮食",
+    "keywords": "水产科学院，渔业科研，水产研究，渔业技术，水产养殖，海洋渔业"
+  },
+  {
+    "id": "natesc-org-cn",
+    "name": "全国农业技术推广服务中心",
+    "url": "https://natesc.agri.cn",
+    "description": "全国性农技推广与种植业服务事业机构",
+    "category": "农林粮食",
+    "keywords": "农技推广，农业技术，种植业服务，农技推广中心，农业服务"
+  },
+  {
+    "id": "cvh-ac-cn",
+    "name": "中国数字植物标本馆",
+    "url": "https://www.cvh.ac.cn",
+    "description": "中国数字植物标本馆，数字化植物标本与植物图鉴共享平台",
+    "category": "生态保护",
+    "keywords": "数字植物标本馆，植物标本，植物图鉴，植物数据库，植物标本共享"
+  },
+  {
+    "id": "paper-edu-cn",
+    "name": "中国科技论文在线",
+    "url": "https://www.paper.edu.cn",
+    "description": "中国科技论文在线，教育部主办的科技论文预印本与开放获取平台",
+    "category": "科研学术",
+    "keywords": "科技论文在线，论文预印本，开放获取，科技论文，论文发表，学术交流"
+  },
+  {
+    "id": "si-12333-gov-cn",
+    "name": "全国社会保险公共服务平台",
+    "url": "https://si.12333.gov.cn",
+    "description": "全国社会保险公共服务平台，人社部主办，社保查询、转移与认证",
+    "category": "财税民生",
+    "keywords": "12333，养老保险，医疗保险，失业保险，查养老金，查社保，社保查询，社保认证，社保转移"
+  },
+  {
+    "id": "cces-net-cn",
+    "name": "中国土木工程学会",
+    "url": "https://www.cces.net.cn",
+    "description": "中国土木工程学会，土木工程领域全国性学术团体与行业标准制定者",
+    "category": "交通城建",
+    "keywords": "土木工程学会，土木工程，工程标准，建筑工程，土木学术，工程规范"
+  },
+  {
+    "id": "cabr-com-cn",
+    "name": "中国建筑科学研究院",
+    "url": "https://www.cabr.com.cn",
+    "description": "中国建筑科学研究院，建筑结构、工程技术与绿色建筑研究的国家级机构",
+    "category": "交通城建",
+    "keywords": "建筑科学研究院，建筑研究，建筑结构，工程技术，绿色建筑，建筑设计"
+  },
+  {
+    "id": "cnpc-com-cn",
+    "name": "中国石油天然气集团",
+    "url": "https://www.cnpc.com.cn",
+    "description": "中国石油天然气集团，上游油气勘探与石油工程为主的国有特大型能源企业",
+    "category": "能源",
+    "keywords": "中石油，石油，天然气，油气勘探，中石油集团，加油站，石油工程"
+  },
+  {
+    "id": "sinopec-com",
+    "name": "中国石油化工集团",
+    "url": "https://www.sinopec.com",
+    "description": "中国石油化工集团，炼化与成品油销售为主的国有特大型能源企业",
+    "category": "能源",
+    "keywords": "中石化，石油化工，炼化，成品油，加油站，中石化集团，化工产品"
+  },
+  {
+    "id": "cnooc-com-cn",
+    "name": "中国海洋石油集团",
+    "url": "https://www.cnooc.com.cn",
+    "description": "中国海洋石油集团，海上油气勘探开发为主的国有特大型能源企业",
+    "category": "能源",
+    "keywords": "中海油，海洋石油，海上油气，油气勘探，中海油集团，海上钻井"
+  },
+  {
+    "id": "spic-com-cn",
+    "name": "国家电力投资集团",
+    "url": "https://www.spic.com.cn",
+    "description": "国家电力投资集团，核电、风电、光伏与火电一体化的国有大型发电集团",
+    "category": "能源",
+    "keywords": "国家电投，核电，风电，光伏，火电，国家电力投资，清洁能源"
+  },
+  {
+    "id": "energychina-com-cn",
+    "name": "中国能源建设集团",
+    "url": "https://www.ceec.net.cn",
+    "description": "电力工程总承包与能源基础设施建设主体",
+    "category": "能源",
+    "keywords": "中国能建，能源建设，电力工程，能源基建，电力总承包，能源工程"
+  },
+  {
+    "id": "chinatelecom-com-cn",
+    "name": "中国电信",
+    "url": "https://www.chinatelecom.com.cn",
+    "description": "中国电信，国有特大基础电信运营商，提供宽带、移动通信与政企服务",
+    "category": "互联网",
+    "keywords": "中国电信，电信宽带，电信服务，电信套餐，电信客服，天翼，电信业务"
+  },
+  {
+    "id": "chinaunicom-com",
+    "name": "中国联通",
+    "url": "https://www.chinaunicom.com",
+    "description": "中国联通，国有特大基础电信运营商，提供移动通信与宽带服务",
+    "category": "互联网",
+    "keywords": "中国联通，联通宽带，联通服务，联通套餐，联通客服，联通业务，沃"
+  },
+  {
+    "id": "chinamobile-com",
+    "name": "中国移动",
+    "url": "https://www.chinamobile.com",
+    "description": "中国移动，国有特大基础电信运营商，用户规模全球最大的移动通信商",
+    "category": "互联网",
+    "keywords": "中国移动，移动通信，移动宽带，移动套餐，10086，移动客服，移动业务"
+  },
+  {
+    "id": "ict-ac-cn",
+    "name": "中国科学院计算技术研究所",
+    "url": "https://www.ict.ac.cn",
+    "description": "中国科学院计算技术研究所，计算机与算力装备研究的国家级科研机构",
+    "category": "人工智能",
+    "keywords": "计算技术研究所，计算机研究，算力装备，计算技术，信息技术研究"
+  },
+  {
+    "id": "mcc-org-cn",
+    "name": "中国博物馆协会",
+    "url": "https://www.chinamuseum.org.cn",
+    "description": "博物馆行业全国性学术团体与行业协作组织",
+    "category": "人文社科",
+    "keywords": "博物馆协会，博物馆行业，博物馆学会，文博行业，博物馆组织"
+  },
+  {
+    "id": "nmdis-gov-cn",
+    "name": "国家海洋信息中心",
+    "url": "https://www.nmdis.org.cn",
+    "description": "海洋情报、数据与档案的国家级机构",
+    "category": "科研学术",
+    "keywords": "海洋信息中心，海洋数据，海洋情报，海洋档案，海洋资料，国家海洋"
+  },
+  {
+    "id": "shenyang-gov-cn",
+    "name": "沈阳市人民政府",
+    "url": "https://www.shenyang.gov.cn",
+    "description": "沈阳市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "沈阳政府，沈阳政务，沈阳便民服务，沈阳政策，沈阳办事"
+  },
+  {
+    "id": "dl-gov-cn",
+    "name": "大连市人民政府",
+    "url": "https://www.dl.gov.cn",
+    "description": "大连市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "大连政府，大连政务，大连便民服务，大连政策，大连办事"
+  },
+  {
+    "id": "changchun-gov-cn",
+    "name": "长春市人民政府",
+    "url": "https://www.changchun.gov.cn",
+    "description": "长春市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "长春政府，长春政务，长春便民服务，长春政策，长春办事"
+  },
+  {
+    "id": "harbin-gov-cn",
+    "name": "哈尔滨市人民政府",
+    "url": "https://www.harbin.gov.cn",
+    "description": "哈尔滨市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "哈尔滨政府，哈尔滨政务，哈尔滨便民，哈尔滨政策，哈尔滨办事"
+  },
+  {
+    "id": "nanjing-gov-cn",
+    "name": "南京市人民政府",
+    "url": "https://www.nanjing.gov.cn",
+    "description": "南京市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "南京政府，南京政务，南京便民服务，南京政策，南京办事"
+  },
+  {
+    "id": "hangzhou-gov-cn",
+    "name": "杭州市人民政府",
+    "url": "https://www.hangzhou.gov.cn",
+    "description": "杭州市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "杭州政府，杭州政务，杭州便民服务，杭州政策，杭州办事"
+  },
+  {
+    "id": "ningbo-gov-cn",
+    "name": "宁波市人民政府",
+    "url": "https://www.ningbo.gov.cn",
+    "description": "宁波市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "宁波政府，宁波政务，宁波便民服务，宁波政策，宁波办事"
+  },
+  {
+    "id": "xm-gov-cn",
+    "name": "厦门市人民政府",
+    "url": "https://www.xm.gov.cn",
+    "description": "厦门市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "厦门政府，厦门政务，厦门便民服务，厦门政策，厦门办事"
+  },
+  {
+    "id": "jinan-gov-cn",
+    "name": "济南市人民政府",
+    "url": "https://www.jinan.gov.cn",
+    "description": "济南市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "济南政府，济南政务，济南便民服务，济南政策，济南办事"
+  },
+  {
+    "id": "qingdao-gov-cn",
+    "name": "青岛市人民政府",
+    "url": "https://www.qingdao.gov.cn",
+    "description": "青岛市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "青岛政府，青岛政务，青岛便民服务，青岛政策，青岛办事"
+  },
+  {
+    "id": "wuhan-gov-cn",
+    "name": "武汉市人民政府",
+    "url": "https://www.wuhan.gov.cn",
+    "description": "武汉市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "武汉政府，武汉政务，武汉便民服务，武汉政策，武汉办事"
+  },
+  {
+    "id": "gz-gov-cn",
+    "name": "广州市人民政府",
+    "url": "https://www.gz.gov.cn",
+    "description": "广州市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "广州政府，广州政务，广州便民服务，广州政策，广州办事"
+  },
+  {
+    "id": "sz-gov-cn",
+    "name": "深圳市人民政府",
+    "url": "https://www.sz.gov.cn",
+    "description": "深圳市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "深圳政府，深圳政务，深圳便民服务，深圳政策，深圳办事"
+  },
+  {
+    "id": "chengdu-gov-cn",
+    "name": "成都市人民政府",
+    "url": "https://www.chengdu.gov.cn",
+    "description": "成都市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "成都政府，成都政务，成都便民服务，成都政策，成都办事"
+  },
+  {
+    "id": "xa-gov-cn",
+    "name": "西安市人民政府",
+    "url": "https://www.xa.gov.cn",
+    "description": "西安市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "西安政府，西安政务，西安便民服务，西安政策，西安办事"
+  },
+  {
+    "id": "sjz-gov-cn",
+    "name": "石家庄市人民政府",
+    "url": "https://www.sjz.gov.cn",
+    "description": "石家庄市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "石家庄政府，石家庄政务，石家庄便民，石家庄政策，石家庄办事"
+  },
+  {
+    "id": "taiyuan-gov-cn",
+    "name": "太原市人民政府",
+    "url": "https://www.taiyuan.gov.cn",
+    "description": "太原市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "太原政府，太原政务，太原便民服务，太原政策，太原办事"
+  },
+  {
+    "id": "huhhot-gov-cn",
+    "name": "呼和浩特市人民政府",
+    "url": "https://www.huhhot.gov.cn",
+    "description": "呼和浩特市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "呼和浩特政府，呼和浩特政务，呼和浩特便民，呼和浩特办事"
+  },
+  {
+    "id": "hefei-gov-cn",
+    "name": "合肥市人民政府",
+    "url": "https://www.hefei.gov.cn",
+    "description": "合肥市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "合肥政府，合肥政务，合肥便民服务，合肥政策，合肥办事"
+  },
+  {
+    "id": "fuzhou-gov-cn",
+    "name": "福州市人民政府",
+    "url": "https://www.fuzhou.gov.cn",
+    "description": "福州市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "福州政府，福州政务，福州便民服务，福州政策，福州办事"
+  },
+  {
+    "id": "nc-gov-cn",
+    "name": "南昌市人民政府",
+    "url": "https://www.nc.gov.cn",
+    "description": "南昌市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "南昌政府，南昌政务，南昌便民服务，南昌政策，南昌办事"
+  },
+  {
+    "id": "zhengzhou-gov-cn",
+    "name": "郑州市人民政府",
+    "url": "https://www.zhengzhou.gov.cn",
+    "description": "郑州市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "郑州政府，郑州政务，郑州便民服务，郑州政策，郑州办事"
+  },
+  {
+    "id": "changsha-gov-cn",
+    "name": "长沙市人民政府",
+    "url": "https://www.changsha.gov.cn",
+    "description": "长沙市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "长沙政府，长沙政务，长沙便民服务，长沙政策，长沙办事"
+  },
+  {
+    "id": "haikou-gov-cn",
+    "name": "海口市人民政府",
+    "url": "https://www.haikou.gov.cn",
+    "description": "海口市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "海口政府，海口政务，海口便民服务，海口政策，海口办事"
+  },
+  {
+    "id": "nanning-gov-cn",
+    "name": "南宁市人民政府",
+    "url": "https://www.nanning.gov.cn",
+    "description": "南宁市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "南宁政府，南宁政务，南宁便民服务，南宁政策，南宁办事"
+  },
+  {
+    "id": "guiyang-gov-cn",
+    "name": "贵阳市人民政府",
+    "url": "https://www.guiyang.gov.cn",
+    "description": "贵阳市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "贵阳政府，贵阳政务，贵阳便民服务，贵阳政策，贵阳办事"
+  },
+  {
+    "id": "km-gov-cn",
+    "name": "昆明市人民政府",
+    "url": "https://www.km.gov.cn",
+    "description": "昆明市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "昆明政府，昆明政务，昆明便民服务，昆明政策，昆明办事"
+  },
+  {
+    "id": "lasa-gov-cn",
+    "name": "拉萨市人民政府",
+    "url": "https://www.lasa.gov.cn",
+    "description": "拉萨市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "拉萨政府，拉萨政务，拉萨便民服务，拉萨政策，拉萨办事"
+  },
+  {
+    "id": "lanzhou-gov-cn",
+    "name": "兰州市人民政府",
+    "url": "https://www.lanzhou.gov.cn",
+    "description": "兰州市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "兰州政府，兰州政务，兰州便民服务，兰州政策，兰州办事"
+  },
+  {
+    "id": "xining-gov-cn",
+    "name": "西宁市人民政府",
+    "url": "https://www.xining.gov.cn",
+    "description": "西宁市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "西宁政府，西宁政务，西宁便民服务，西宁政策，西宁办事"
+  },
+  {
+    "id": "yinchuan-gov-cn",
+    "name": "银川市人民政府",
+    "url": "https://www.yinchuan.gov.cn",
+    "description": "银川市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "银川政府，银川政务，银川便民服务，银川政策，银川办事"
+  },
+  {
+    "id": "wlmq-gov-cn",
+    "name": "乌鲁木齐市人民政府",
+    "url": "https://www.wlmq.gov.cn",
+    "description": "乌鲁木齐市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "乌鲁木齐政府，乌鲁木齐政务，乌鲁木齐便民，乌鲁木齐办事"
+  },
+  {
+    "id": "zhuhai-gov-cn",
+    "name": "珠海市人民政府",
+    "url": "https://www.zhuhai.gov.cn",
+    "description": "珠海市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "珠海政府，珠海政务，珠海便民服务，珠海政策，珠海办事"
+  },
+  {
+    "id": "shantou-gov-cn",
+    "name": "汕头市人民政府",
+    "url": "https://www.shantou.gov.cn",
+    "description": "汕头市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "汕头政府，汕头政务，汕头便民服务，汕头政策，汕头办事"
+  },
+  {
+    "id": "suzhou-gov-cn",
+    "name": "苏州市人民政府",
+    "url": "https://www.suzhou.gov.cn",
+    "description": "苏州市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "苏州政府，苏州政务，苏州便民服务，苏州政策，苏州办事"
+  },
+  {
+    "id": "dg-gov-cn",
+    "name": "东莞市人民政府",
+    "url": "https://www.dg.gov.cn",
+    "description": "东莞市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "东莞政府，东莞政务，东莞便民服务，东莞政策，东莞办事"
+  },
+  {
+    "id": "foshan-gov-cn",
+    "name": "佛山市人民政府",
+    "url": "https://www.foshan.gov.cn",
+    "description": "佛山市人民政府门户网站",
+    "category": "地方政府",
+    "keywords": "佛山政府，佛山政务，佛山便民服务，佛山政策，佛山办事"
+  },
+  {
+    "id": "lswz-gov-cn",
+    "name": "国家粮食和物资储备局",
+    "url": "https://www.lswz.gov.cn",
+    "description": "国家粮食和物资储备局，负责粮食流通、储备物资与战略资源管理",
+    "category": "农林粮食",
+    "keywords": "粮食和物资储备局，粮食储备，战略物资，粮食流通，中央储备，物资管理"
+  },
+  {
+    "id": "sinograin-com-cn",
+    "name": "中国储备粮管理集团",
+    "url": "https://www.sinograin.com.cn",
+    "description": "中国储备粮管理集团，中央储备粮经营管理与国家粮食安全主力军",
+    "category": "农林粮食",
+    "keywords": "中储粮，储备粮，中央储备粮，粮食安全，粮库，粮食管理"
+  },
+  {
+    "id": "cngrain-com",
+    "name": "中华粮网",
+    "url": "https://www.cngrain.com",
+    "description": "中华粮网，粮食行业信息与电子商务服务平台，提供粮价与行情",
+    "category": "农林粮食",
+    "keywords": "中华粮网，粮价，粮食行情，粮食信息，粮食电商，粮油价格"
+  },
+  {
+    "id": "chinacdc-cn",
+    "name": "中国疾病预防控制中心",
+    "url": "https://www.chinacdc.cn",
+    "description": "中国疾病预防控制中心，国家级疾控机构，传染病防控与公共卫生技术支持",
+    "category": "生命健康",
+    "keywords": "中国疾控中心，CDC，传染病防控，公共卫生，疫苗接种，疫情监测，流行病"
+  },
+  {
+    "id": "nihe-org-cn",
+    "name": "中国健康教育中心",
+    "url": "https://www.nihe.org.cn",
+    "description": "中国健康教育中心，卫生部直属的健康教育与健康促进专业机构",
+    "category": "生命健康",
+    "keywords": "健康教育中心，健康教育，健康促进，卫生宣教，健康知识，健康科普"
+  },
+  {
+    "id": "olympic-cn",
+    "name": "中国奥林匹克委员会",
+    "url": "http://www.olympic.cn",
+    "description": "中国奥林匹克委员会，推动奥林匹克运动在中国发展的国家奥委会",
+    "category": "文体艺术",
+    "keywords": "中国奥委会，奥林匹克，奥运，国家奥委会，奥运参赛，奥林匹克运动"
+  },
+  {
+    "id": "sport-org-cn",
+    "name": "中华全国体育总会",
+    "url": "https://www.sport.org.cn",
+    "description": "中华全国体育总会，全国性体育社团联合组织",
+    "category": "文体艺术",
+    "keywords": "体育总会，全国体育组织，体育社团，体育联合，群众体育"
+  },
+  {
+    "id": "cssn-cn",
+    "name": "中国社会科学网",
+    "url": "https://www.cssn.cn",
+    "description": "中国社会科学网，中国社会科学院主办的国家级学术理论网站",
+    "category": "人文社科",
+    "keywords": "中国社会科学网，社科网，社科理论，学术思想，人文社科，理论文章"
+  },
+  {
+    "id": "chinakongzi-org",
+    "name": "中国孔子基金会",
+    "url": "https://www.chinakongzi.org",
+    "description": "中国孔子基金会，推动孔子思想与中华优秀传统文化研究的全国性组织",
+    "category": "人文社科",
+    "keywords": "孔子基金会，孔子思想，儒家文化，传统文化，孔子研究，国学"
+  },
+  {
+    "id": "chncpa-org",
+    "name": "国家大剧院",
+    "url": "https://www.chncpa.org",
+    "description": "国家大剧院，国家表演艺术中心与综合性艺术殿堂",
+    "category": "文体艺术",
+    "keywords": "国家大剧院，大剧院，演出，歌剧，音乐会，话剧，艺术表演，订票"
+  },
+  {
+    "id": "namoc-org",
+    "name": "中国美术馆",
+    "url": "https://www.namoc.org",
+    "description": "中国美术馆，国家造型艺术博物馆，收藏与展示近现代美术作品",
+    "category": "文体艺术",
+    "keywords": "中国美术馆，美术馆，美术展览，近现代美术，艺术展览，国家美术馆"
+  },
+  {
+    "id": "cnarts-com-cn",
+    "name": "中国艺术研究院",
+    "url": "https://www.cnarts.com.cn",
+    "description": "中国艺术研究院，国家级综合性艺术科研机构",
+    "category": "文体艺术",
+    "keywords": "艺术研究院，艺术研究，艺术科研，中国艺术，艺术学术"
+  },
+  {
+    "id": "nppa-gov-cn",
+    "name": "国家新闻出版署",
+    "url": "https://www.nppa.gov.cn",
+    "description": "国家新闻出版署，主管新闻出版事业、著作权管理与游戏审批",
+    "category": "宣传出版",
+    "keywords": "新闻出版署，游戏审批，版号查询，出版管理，著作权管理，新闻管理，游戏版号"
+  },
+  {
+    "id": "chinacaipa-com",
+    "name": "中国音像与数字出版协会",
+    "url": "https://www.chinacaipa.org.cn",
+    "description": "音像与数字出版行业全国性组织",
+    "category": "宣传出版",
+    "keywords": "音像协会，数字出版，音像出版，数字出版行业，出版协会"
+  },
+  {
+    "id": "wenming-cn",
+    "name": "中国文明网",
+    "url": "https://www.wenming.cn",
+    "description": "中国文明网，中央文明办主办的精神文明建设门户网站",
+    "category": "宣传出版",
+    "keywords": "中国文明网，精神文明建设，文明创建，中央文明办，文明城市，文明风尚"
+  },
+  {
+    "id": "12371-cn",
+    "name": "共产党员网",
+    "url": "https://www.12371.cn",
+    "description": "共产党员网，中共中央组织部主办的党员教育服务平台",
+    "category": "宣传出版",
+    "keywords": "共产党员网，党员教育，党建，党员学习，党支部，中组部党员平台"
+  },
+  {
+    "id": "china-caa-org",
+    "name": "中国广告协会",
+    "url": "https://www.china-caa.org",
+    "description": "中国广告协会，全国广告行业性非营利社会组织",
+    "category": "宣传出版",
+    "keywords": "广告协会，广告行业，广告监管，广告自律，广告主，广告从业者"
+  },
+  {
+    "id": "chinaadvertiser-org-cn",
+    "name": "中国广告主协会",
+    "url": "https://www.chinaadvertiser.com.cn",
+    "description": "维护广告主权益的全国性行业组织",
+    "category": "宣传出版",
+    "keywords": "广告主协会，广告主权益，广告主组织，广告投放，广告主"
+  },
+  {
+    "id": "chinabuddhism-com-cn",
+    "name": "中国佛教协会",
+    "url": "https://www.chinabuddhism.com.cn",
+    "description": "中国佛教协会，全国各民族佛教徒联合的爱国团体与教务组织",
+    "category": "宗教事务",
+    "keywords": "佛教协会，中国佛教，佛教徒，寺院，佛教教务，佛教文化"
+  },
+  {
+    "id": "chinadao-org",
+    "name": "中国道教协会",
+    "url": "http://www.taoist.org.cn",
+    "description": "中国道教协会，全国道教徒联合的爱国宗教团体与教务组织",
+    "category": "宗教事务",
+    "keywords": "道教协会，中国道教，道教徒，道观，道教教务，道教文化"
+  },
+  {
+    "id": "chinaislam-net-cn",
+    "name": "中国伊斯兰教协会",
+    "url": "http://www.chinaislam.net.cn",
+    "description": "中国伊斯兰教协会，全国各民族穆斯林联合的爱国宗教团体",
+    "category": "宗教事务",
+    "keywords": "伊斯兰教协会，中国伊斯兰教，穆斯林，清真寺，伊斯兰教务，回族"
+  },
+  {
+    "id": "chinacatholic-cn",
+    "name": "中国天主教爱国会",
+    "url": "http://www.chinacatholic.cn",
+    "description": "中国天主教爱国会，中国天主教神长教友组成的爱国组织",
+    "category": "宗教事务",
+    "keywords": "天主教爱国会，中国天主教，天主教徒，天主教堂，天主教教务"
+  },
+  {
+    "id": "ccctspm-org",
+    "name": "中国基督教协会",
+    "url": "http://www.ccctspm.org",
+    "description": "中国基督教协会，中国基督教全国性教务组织",
+    "category": "宗教事务",
+    "keywords": "基督教协会，中国基督教，基督教徒，基督教堂，基督教教务"
+  },
+  {
+    "id": "12315-cn",
+    "name": "全国12315平台",
+    "url": "https://www.12315.cn",
+    "description": "全国12315平台，市场监管投诉举报平台，受理消费纠纷",
+    "category": "监督建言",
+    "keywords": "12315，举报消费，假冒伪劣，市场监管投诉，投诉，投诉举报，消费投诉，消费纠纷，消费者维权"
+  },
+  {
+    "id": "12321-cn",
+    "name": "12321网络不良与垃圾信息举报",
+    "url": "https://www.12321.cn",
+    "description": "12321网络不良与垃圾信息举报，举报骚扰电话、垃圾短信与不良信息",
+    "category": "监督建言",
+    "keywords": "12321，举报骚扰电话，垃圾短信举报，不良信息举报，网络举报，垃圾信息"
+  },
+  {
+    "id": "12377-cn",
+    "name": "12377违法和不良信息举报中心",
+    "url": "https://www.12377.cn",
+    "description": "12377违法和不良信息举报中心，中央网信办主办，举报网络违法信息",
+    "category": "监督建言",
+    "keywords": "12377，违法信息举报，网络不良信息，举报中心，网络举报，网信办举报"
+  },
+  {
+    "id": "12379-cn",
+    "name": "12379国家预警信息发布",
+    "url": "https://www.12379.cn",
+    "description": "12379国家预警信息发布，国家预警信息发布中心官方平台",
+    "category": "监督建言",
+    "keywords": "12379，国家预警，灾害预警，应急预警，预警发布，国家预警信息"
+  },
+  {
+    "id": "liuyan-people-com-cn",
+    "name": "人民网领导留言板",
+    "url": "https://liuyan.people.com.cn",
+    "description": "人民网领导留言板，群众向各级领导干部留言反映问题",
+    "category": "监督建言",
+    "keywords": "领导留言板，给领导留言，群众留言，人民网留言，反映问题，领导信箱"
+  },
+  {
+    "id": "liuyan-www-gov-cn",
+    "name": "我向总理说句话",
+    "url": "https://liuyan.www.gov.cn",
+    "description": "我向总理说句话，中国政府网开设的网民给总理留言平台",
+    "category": "监督建言",
+    "keywords": "我向总理说句话，给总理留言，总理留言，政府网留言，网民建言"
+  },
+  {
+    "id": "tousu-www-gov-cn",
+    "name": "国务院互联网+督查",
+    "url": "https://tousu.www.gov.cn",
+    "description": "国务院互联网+督查，收集政策措施落实问题线索的督查平台",
+    "category": "监督建言",
+    "keywords": "互联网+督查，国务院督查，政策落实，问题线索，督查举报，国务院投诉"
+  },
+  {
+    "id": "ccdi-gov-cn",
+    "name": "中央纪委国家监委",
+    "url": "https://www.ccdi.gov.cn",
+    "description": "中央纪委国家监委，受理党员违纪举报与公职人员监察",
+    "category": "监督建言",
+    "keywords": "中央纪委，举报贪腐，反腐，廉政举报，监察举报，监察委，纪委举报，纪委监委，纪检举报，违纪举报"
+  },
+  {
+    "id": "gjxfj-gov-cn",
+    "name": "国家信访局",
+    "url": "https://www.gjxfj.gov.cn",
+    "description": "国家信访局，处理群众来信来访与诉求反映",
+    "category": "监督建言",
+    "keywords": "上访，信访，信访举报，信访投诉，反映问题，国家信访局，投诉，网上信访，群众诉求"
+  },
+  {
+    "id": "shdf-gov-cn",
+    "name": "中国扫黄打非网",
+    "url": "https://www.shdf.gov.cn",
+    "description": "中国扫黄打非网，全国扫黄打非工作小组办公室主办",
+    "category": "监督建言",
+    "keywords": "扫黄打非，扫黄打非网，举报色情，举报盗版，文化执法，非法出版"
+  },
+  {
+    "id": "wenshu-court-gov-cn",
+    "name": "中国裁判文书网",
+    "url": "https://wenshu.court.gov.cn",
+    "description": "中国裁判文书网，最高人民法院裁判文书公开平台，可检索各类生效判决",
+    "category": "法律司法",
+    "keywords": "判决书查询，判决文书，查判决书，查法院判决，案件文书，案件查询，法院判决，裁判文书，裁判文书检索，裁判文书网"
+  },
+  {
+    "id": "zxgk-court-gov-cn",
+    "name": "中国执行信息公开网",
+    "url": "http://zxgk.court.gov.cn",
+    "description": "中国执行信息公开网，全国法院失信被执行人名单与执行案件信息平台",
+    "category": "法律司法",
+    "keywords": "失信被执行人，执行信息，查老赖，法院执行，老赖查询，被执行人，限制高消费"
+  },
+  {
+    "id": "splcgk-court-gov-cn",
+    "name": "中国审判流程信息公开网",
+    "url": "https://splcgk.court.gov.cn",
+    "description": "中国审判流程信息公开网，全国法院案件审理进度与流程信息公开",
+    "category": "法律司法",
+    "keywords": "审判流程，案件进度，审理流程，案件信息，法院案件查询，审判公开"
+  },
+  {
+    "id": "tingshen-court-gov-cn",
+    "name": "中国庭审公开网",
+    "url": "http://tingshen.court.gov.cn",
+    "description": "中国庭审公开网，全国法院庭审直播与录像回看平台",
+    "category": "法律司法",
+    "keywords": "庭审直播，庭审公开，庭审回看，法院直播，在线庭审，庭审录像"
+  },
+  {
+    "id": "119-gov-cn",
+    "name": "国家消防救援局",
+    "url": "https://www.119.gov.cn",
+    "description": "国家消防救援局，国家消防救援队伍领导管理机构",
+    "category": "应急防灾",
+    "keywords": "消防救援局，消防，119，火灾报警，消防救援，消防宣传，灭火救援"
+  },
+  {
+    "id": "119-cn",
+    "name": "中国消防在线",
+    "url": "http://www.119.cn",
+    "description": "中国消防在线，消防宣传与安全教育平台",
+    "category": "应急防灾",
+    "keywords": "消防在线，消防宣传，消防安全教育，消防知识，119，防火"
+  },
+  {
+    "id": "cneb-gov-cn",
+    "name": "国家应急广播网",
+    "url": "https://www.cneb.gov.cn",
+    "description": "国家应急广播网，国家应急广播中心主办，灾害预警与应急信息发布",
+    "category": "应急防灾",
+    "keywords": "国家应急广播，广播预警，应急信息，应急广播，查应急，灾害预警，突发事件"
+  },
+  {
+    "id": "cea-gov-cn",
+    "name": "中国地震局",
+    "url": "https://www.cea.gov.cn",
+    "description": "中国地震局，主管全国防震减灾、地震监测与速报工作",
+    "category": "应急防灾",
+    "keywords": "地震，地震局，地震监测，地震速报，地震预警，抗震设防，查地震，防震减灾"
+  },
+  {
+    "id": "ceic-ac-cn",
+    "name": "中国地震台网",
+    "url": "https://www.ceic.ac.cn",
+    "description": "中国地震台网，全国地震监测与速报信息发布平台，实时地震数据",
+    "category": "应急防灾",
+    "keywords": "地震信息，地震台网，地震数据，地震查询，地震速报，实时地震，查地震"
+  },
+  {
+    "id": "xxfb-hydroinfo-gov-cn",
+    "name": "水利部水文情报预报",
+    "url": "http://xxfb.mwr.gov.cn",
+    "description": "全国水情信息与洪水预报发布平台",
+    "category": "应急防灾",
+    "keywords": "水文情报，洪水预报，水情信息，水位查询，水情发布，洪水预警"
+  },
+  {
+    "id": "rfcn-com-cn",
+    "name": "中国人民防空网",
+    "url": "https://www.rfcn.com.cn",
+    "description": "中国人民防空网，国家人民防空办公室主办的人防信息平台",
+    "category": "应急防灾",
+    "keywords": "人民防空，人防工程，防空警报，人防办，民防，防空知识"
+  },
+  {
+    "id": "emss-cn",
+    "name": "中国院前急救网",
+    "url": "http://www.emss.cn",
+    "description": "中国院前急救网，急救医学与院前急救学术资讯平台",
+    "category": "生命健康",
+    "keywords": "院前急救，急救医学，120急救，急救培训，急救技术，院前急救网"
+  },
+  {
+    "id": "cnki-net",
+    "name": "中国知网",
+    "url": "https://www.cnki.net",
+    "description": "中国知网，国家级学术论文与期刊数据库，提供文献检索与下载",
+    "category": "科研学术",
+    "keywords": "中国知网，学术文献，文献查询，期刊数据库，查期刊，查论文，知网，论文下载，论文检索"
+  },
+  {
+    "id": "wanfangdata-com-cn",
+    "name": "万方数据",
+    "url": "https://www.wanfangdata.com.cn",
+    "description": "万方数据，综合性学术文献数据库，收录期刊、学位论文与会议",
+    "category": "科研学术",
+    "keywords": "万方数据，论文检索，学术文献，期刊数据库，学位论文，会议论文"
+  },
+  {
+    "id": "cqvip-com",
+    "name": "维普资讯",
+    "url": "http://www.cqvip.com",
+    "description": "维普资讯，中文科技期刊数据库，收录自然科学与工程技术期刊",
+    "category": "科研学术",
+    "keywords": "维普资讯，维普网，科技期刊，中文期刊，文献检索，期刊数据库"
+  },
+  {
+    "id": "nstl-gov-cn",
+    "name": "国家科技图书文献中心",
+    "url": "https://www.nstl.gov.cn",
+    "description": "国家科技图书文献中心，国家级科技文献信息服务系统，提供外文期刊检索",
+    "category": "科研学术",
+    "keywords": "国家科技图书文献中心，科技文献，外文期刊，文献检索，科技文献服务"
+  },
+  {
+    "id": "yangshipin-cn",
+    "name": "央视频",
+    "url": "https://www.yangshipin.cn",
+    "description": "央视频，中央广播电视总台综合性视听新媒体平台",
+    "category": "视频服务",
+    "keywords": "央视频，央视短视频，中央广电，视听新媒体，央视直播，央视视频"
+  },
+  {
+    "id": "chinanews-com-cn-shipin",
+    "name": "中新网视频",
+    "url": "https://www.chinanews.com.cn/shipin/",
+    "description": "中新网视频，中国新闻网视频频道",
+    "category": "视频服务",
+    "keywords": "中新网视频，中新视频，新闻视频，视频资讯，视频报道"
+  },
+  {
+    "id": "bbs1-people-com-cn",
+    "name": "人民网强国论坛",
+    "url": "http://bbs1.people.com.cn",
+    "description": "人民网强国论坛，人民网主办的时政讨论论坛，网民议政平台",
+    "category": "宣传出版",
+    "keywords": "强国论坛，人民网论坛，时政讨论，网民议政，论坛发帖，百姓发声"
+  },
+  {
+    "id": "baobeihuijia-com",
+    "name": "宝贝回家",
+    "url": "https://www.baobeihuijia.com",
+    "description": "宝贝回家，公益寻亲平台，帮助失踪儿童与家庭团聚",
+    "category": "监督建言",
+    "keywords": "宝贝回家，寻亲，失踪儿童，寻子，打拐，寻人，失踪人口"
+  },
+  {
+    "id": "chinaxunqin-com",
+    "name": "中国寻亲网",
+    "url": "http://www.chinaxunqin.com",
+    "description": "中国寻亲网，全国寻亲信息发布与比对平台",
+    "category": "监督建言",
+    "keywords": "寻亲网，寻人，寻亲信息，寻人比对，失散亲人，寻亲平台"
+  },
+  {
+    "id": "bilibili-gqt-org",
+    "name": "共青团中央（哔哩哔哩）",
+    "url": "https://search.bilibili.com/upuser?keyword=%E5%85%B1%E9%9D%92%E5%9B%A2%E4%B8%AD%E5%A4%AE",
+    "description": "共青团中央（哔哩哔哩），共青团中央在B站的官方账号入口",
+    "category": "视频服务",
+    "keywords": "共青团B站，共青团中央B站，共青团哔哩哔哩，青年视频，团中央账号"
+  },
+  {
+    "id": "douyin-cctv-news",
+    "name": "央视新闻（抖音）",
+    "url": "https://www.douyin.com/search/%E5%A4%AE%E8%A7%86%E6%96%B0%E9%97%BB",
+    "description": "央视新闻（抖音），央视新闻在抖音的官方账号入口",
+    "category": "视频服务",
+    "keywords": "央视新闻抖音，央视抖音，央视短视频，央视抖音号，新闻短视频"
+  },
+  {
+    "id": "kuaishou-cctv-news",
+    "name": "央视新闻（快手）",
+    "url": "https://www.kuaishou.com/search/video?searchKey=%E5%A4%AE%E8%A7%86%E6%96%B0%E9%97%BB",
+    "description": "央视新闻（快手），央视新闻在快手的官方账号入口",
+    "category": "视频服务",
+    "keywords": "央视新闻快手，央视快手，央视短视频，央视快手号，新闻短视频"
+  },
+  {
+    "id": "chinavolunteer-mca-gov-cn",
+    "name": "全国志愿服务信息系统",
+    "url": "https://www.chinavolunteer.mca.gov.cn",
+    "description": "全国志愿服务信息系统，民政部主办，志愿者注册与志愿活动发布",
+    "category": "社会服务",
+    "keywords": "志愿时长，志愿服务，志愿活动，志愿系统，志愿者注册，志愿者记录，查志愿者"
+  },
+  {
+    "id": "chinacharityfederation-org",
+    "name": "中华慈善总会",
+    "url": "http://www.chinacharityfederation.org",
+    "description": "中华慈善总会，全国性公益慈善组织，开展扶贫济困与救灾援助",
+    "category": "社会服务",
+    "keywords": "中华慈善总会，慈善，慈善捐赠，扶贫济困，救灾援助，公益慈善"
+  },
+  {
+    "id": "chinacsw-com",
+    "name": "中国社会工作联合会",
+    "url": "http://www.chinacsw.com",
+    "description": "中国社会工作联合会，全国性社会工作行业组织，推动社工专业化",
+    "category": "社会服务",
+    "keywords": "社会工作联合会，社会工作，社工行业，社工组织，社工专业，社工服务"
+  },
+  {
+    "id": "gongyi-qq-com",
+    "name": "腾讯公益",
+    "url": "https://gongyi.qq.com",
+    "description": "腾讯公益，腾讯公益慈善基金会主办的在线捐赠与公益项目平台",
+    "category": "社会服务",
+    "keywords": "腾讯公益，在线捐赠，公益项目，慈善捐款，公益平台，微信捐步"
+  },
+  {
+    "id": "beian-miit-gov-cn",
+    "name": "工信部ICP备案查询",
+    "url": "https://beian.miit.gov.cn",
+    "description": "工业和信息化部ICP/IP地址/域名信息备案管理系统",
+    "category": "其他",
+    "keywords": "ICP备案查询，ICP查询，域名备案，备案系统，工信部备案，查ICP备案，网站备案"
+  },
+  {
+    "id": "who-int",
+    "name": "世界卫生组织（中文）",
+    "url": "https://www.who.int/zh",
+    "description": "联合国下属国际公共卫生权威机构，发布全球健康指南",
+    "category": "其他",
+    "keywords": "世界卫生组织，WHO，全球健康，国际公共卫生，健康指南，世界卫生"
+  },
+  {
+    "id": "un-org-zh",
+    "name": "联合国（中文）",
+    "url": "https://www.un.org/zh",
+    "description": "联合国官方网站中文版，发布国际事务与可持续发展目标",
+    "category": "其他",
+    "keywords": "联合国，UN，国际事务，可持续发展，国际组织，联合国中文"
+  },
+  {
+    "id": "wto-org",
+    "name": "世界贸易组织",
+    "url": "https://www.wto.org",
+    "description": "全球国际贸易规则制定与争端解决权威机构",
+    "category": "其他",
+    "keywords": "世贸组织，WTO，国际贸易，贸易规则，贸易争端，世界贸易组织"
+  },
+  {
+    "id": "iso-org",
+    "name": "国际标准化组织（ISO）",
+    "url": "https://www.iso.org",
+    "description": "全球国际标准制定机构，发布ISO系列标准",
+    "category": "其他",
+    "keywords": "国际标准化组织，ISO标准，国际标准，ISO认证，标准化，ISO"
+  },
+  {
+    "id": "itu-int",
+    "name": "国际电信联盟",
+    "url": "https://www.itu.int",
+    "description": "联合国下属电信标准化与全球无线电频率分配机构",
+    "category": "其他",
+    "keywords": "国际电信联盟，ITU，电信标准，无线电频率，电信联盟，通信标准"
+  },
+  {
+    "id": "cnnic-com-cn",
+    "name": "中国互联网络发展状况统计",
+    "url": "https://www.cnnic.com.cn",
+    "description": "CNNIC发布的历次中国互联网络发展状况统计报告",
+    "category": "其他",
+    "keywords": "CNNIC报告，互联网统计，网络发展报告，中国互联网络发展，网络统计"
+  },
+  {
+    "id": "chinasafety-ac-cn",
+    "name": "中国安全科学",
+    "url": "https://www.chinasafety.ac.cn",
+    "description": "中国安全生产科学研究院，安全科学与应急技术研究",
+    "category": "其他",
+    "keywords": "安全科学，安全生产，安全研究，安全科学，应急技术，安全科学"
+  },
+  {
+    "id": "cfsa-org-cn",
+    "name": "中国金融学会",
+    "url": "https://www.cfsa.org.cn",
+    "description": "中国人民银行主管的金融学术团体，推动金融研究",
+    "category": "其他",
+    "keywords": "金融学会，金融研究，金融学术，金融理论，人民银行金融学会"
+  },
+  {
+    "id": "scopsr-gov-cn",
+    "name": "中央编办",
+    "url": "https://www.scopsr.gov.cn",
+    "description": "中央机构编制委员会办公室，党政机构改革与编制管理",
+    "category": "其他",
+    "keywords": "中央编办，事业单位编制，党政机构，机构改革，机构编制，查编制，编制管理"
+  },
+  {
+    "id": "cncert-org-cn",
+    "name": "CNCERT",
+    "url": "https://www.cncert.org.cn",
+    "description": "国家互联网应急中心，网络安全事件处置与预警",
+    "category": "互联网",
+    "keywords": "CNCERT，网络安全应急，网络攻击，安全事件，安全预警，应急响应"
+  },
+  {
+    "id": "cnvd-org-cn",
+    "name": "CNVD",
+    "url": "https://www.cnvd.org.cn",
+    "description": "国家信息安全漏洞共享平台，CNCERT主办的漏洞库",
+    "category": "互联网",
+    "keywords": "CNVD，信息安全漏洞，漏洞库，漏洞共享，安全漏洞，漏洞预警"
+  }
+]
