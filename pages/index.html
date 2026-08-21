@@ -45,10 +45,40 @@
             font-weight: 400;
         }
 
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e8e8f0;
+            border-radius: 14px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #1a1a2e;
+            background: #ffffff;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .search-input::placeholder {
+            color: #b0b0be;
+        }
+
+        .search-input:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
         .nav-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
+        }
+
+        .nav-item.hidden {
+            display: none;
         }
 
         .nav-item {
@@ -132,6 +162,10 @@
             <p class="subtitle">实用在线工具集合</p>
         </div>
 
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索工具..." id="searchInput">
+        </div>
+
         <div class="nav-list">
             <a class="nav-item" href="./tools/base64tool.html">
                 <div class="nav-icon icon-base64">64</div>
@@ -154,5 +188,23 @@
 
         <p class="footer">kongqig.github.io</p>
     </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        searchInput.addEventListener('input', function () {
+            const query = this.value.toLowerCase().trim();
+            navItems.forEach(function (item) {
+                const name = item.querySelector('.nav-name').textContent.toLowerCase();
+                const desc = item.querySelector('.nav-desc').textContent.toLowerCase();
+                if (name.includes(query) || desc.includes(query)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

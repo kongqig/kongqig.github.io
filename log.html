@@ -1,22 +1,213 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>更新日志 — 空气kill</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --surface2: #242424;
+      --text: #e0e0e0;
+      --text2: #a0a0a0;
+      --accent: #6c5ce7;
+      --accent2: #a29bfe;
+      --radius: 12px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+      transition: var(--transition);
+    }
+
+    .back:hover {
+      color: #fff;
+    }
+
+    .page-header {
+      margin-bottom: 48px;
+    }
+
+    .page-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .page-header .subtitle {
+      color: var(--text2);
+      font-size: 0.95rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 4px;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 1px;
+    }
+
+    .log-entry {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .log-entry::before {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+      z-index: 1;
+    }
+
+    .log-entry:first-child::before {
+      background: var(--accent2);
+      box-shadow: 0 0 12px rgba(162, 155, 254, 0.5);
+    }
+
+    .log-date {
+      font-size: 0.8rem;
+      color: var(--accent2);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .log-content {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+    }
+
+    .log-content p {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .log-content .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      background: rgba(108, 92, 231, 0.15);
+      color: var(--accent2);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--text2);
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 40px 16px;
+      }
+
+      .page-header h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <title>日志</title>
+  <div class="container">
+    <a href="index.html" class="back">← 返回首页</a>
 
-  <h3>2026年08月20日</h3>
-  <p>添加红色工具箱和调整了一些东西。</p>
-  <h3>2026年8月14日</h3>
-  <p>更改了一些东西。</p>
-  <h3>2023年1月7日</h3>
-  <p>网站被创建。</p>
-  
+    <div class="page-header">
+      <h1>更新日志</h1>
+      <p class="subtitle">记录站点变化。</p>
+    </div>
+
+    <div class="timeline">
+      <div class="log-entry">
+        <div class="log-date">2026年08月21日</div>
+        <div class="log-content">
+          <p><span class="tag">调整</span>页面美化改造。</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">2026年08月20日</div>
+        <div class="log-content">
+          <p><span class="tag">新增</span>添加红色工具箱，调整了一些东西。</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">2026年08月14日</div>
+        <div class="log-content">
+          <p><span class="tag">调整</span>更改了一些东西。</p>
+        </div>
+      </div>
+
+      <div class="log-entry">
+        <div class="log-date">2023年01月07日</div>
+        <div class="log-content">
+          <p><span class="tag">里程碑</span>网站被创建。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 空气kill · Built with ❤️</p>
+  </footer>
 </body>
-
 </html>

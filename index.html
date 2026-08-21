@@ -1,154 +1,412 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-  <title>空气kill的网站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>空气kill</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --surface2: #242424;
+      --text: #e0e0e0;
+      --text2: #a0a0a0;
+      --accent: #6c5ce7;
+      --accent2: #a29bfe;
+      --radius: 12px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		body{
-			font-size: 14px;
-			background: white;
-			color: gainsboro;
-		}
-		.center{
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%,-50%);
-			width: 18px;
-			height: 18px;
-		}
-		.center > div{
-			transform-origin: left center;
-			/* display: none; */
-			position: absolute;
-			height: 18px;
-			transition: 0.5s transform;
-			text-shadow: 0 0 20px orange;
-		}
-		p{	
-			position: absolute;
-			transform-origin: left center;
-			width: 50px;
-			text-align: center;
-			transition: 0.5s color;
-		}
-		.ck{
-			color: yellow;
-		}
-		
-		
-		.m{
-			color: rgba(255, 0, 0, .8);
-		}
-		.d{
-			color: rgba(255, 0, 0, 1);
-		}
-		.h{
-			color: rgba(255, 0, 0, .8);
-		}
-		.mm{
-			color: rgba(255, 0, 0, .8);
-		}
-		.center .s{
-			color: rgba(255, 0, 0, .8);
-		}
-	</style>
-  
-  <!-- HTML -->
-  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css">
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ====== Nav ====== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 15, 15, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+
+    nav .logo span {
+      color: var(--accent2);
+    }
+
+    nav .links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    nav .links a {
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav .links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    nav .links a:hover {
+      color: #fff;
+    }
+
+    nav .links a:hover::after {
+      width: 100%;
+    }
+
+    /* ====== Hero ====== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(108, 92, 231, 0.08) 0%, transparent 70%);
+      animation: heroGlow 8s ease-in-out infinite;
+    }
+
+    @keyframes heroGlow {
+      0%, 100% { transform: translate(0, 0); }
+      33% { transform: translate(30px, -30px); }
+      66% { transform: translate(-20px, 20px); }
+    }
+
+    .hero .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border: 1px solid rgba(108, 92, 231, 0.3);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      color: var(--accent2);
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.8s 0.1s ease forwards;
+      opacity: 0;
+    }
+
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, var(--accent2), #fd79a8, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text2);
+      max-width: 480px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.8s 0.2s ease forwards;
+      opacity: 0;
+    }
+
+    .hero .actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.8s 0.3s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #7c6cf0;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(108, 92, 231, 0.35);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* ====== Sections ====== */
+    section {
+      padding: 100px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--text2);
+      font-size: 1rem;
+      margin-bottom: 48px;
+    }
+
+    /* ====== Tools Grid ====== */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+    }
+
+    .tool-card:hover {
+      background: var(--surface2);
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .tool-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      background: rgba(108, 92, 231, 0.12);
+    }
+
+    .tool-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .tool-card p {
+      font-size: 0.9rem;
+      color: var(--text2);
+      line-height: 1.5;
+    }
+
+    .tool-card .arrow {
+      position: absolute;
+      top: 32px;
+      right: 28px;
+      color: var(--text2);
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: var(--transition);
+    }
+
+    .tool-card:hover .arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 32px 40px;
+      text-align: center;
+      color: var(--text2);
+      font-size: 0.85rem;
+    }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 768px) {
+      nav {
+        padding: 14px 20px;
+      }
+
+      nav .links {
+        gap: 20px;
+      }
+
+      section {
+        padding: 80px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav .links {
+        display: none;
+      }
+
+      .hero .actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<style>
-/*--预设--*/ 
-body { padding:0px;margin: 0px; } 
-#lyrow, #lyrow input, #lyrow textarea { font-size:12px;font-family: 'Microsoft YaHei', '微软雅黑', MicrosoftJhengHei, '华文细黑', STHeiti, MingLiu; } 
-#lyrow { height:100vh;width: 100vw; } 
-#lyrow div { min-height: 18px;  } 
-#lyrow input, #lyrow textarea { border:rgb(235, 235, 235) 1px solid;border-radius: 3px;padding: 5px 8px;outline: 0; } 
-#lyrow input:hover, #lyrow textarea:hover { border: 1px solid #6bc1f2; } 
-/*--编辑--*/ 
-#lyrow .biaotilan { height:60px !important;flex-direction:row;display:flex !important; } 
-#lyrow .zhubuju { width:100%;height:100%;background-image:url(http://www.58html.com/folder/imgcss/202301/2c79add6a38fcf994f4a0dc98e18a5ce.jpg);background-size:auto auto; } 
-#lyrow .html_biaoti { width:200px !important;height:100%;flex-direction:row;display:flex !important; } 
-#lyrow .html_biaoti_wenben { align-items:center;display:flex !important;font-size:25px;color:rgba(0, 0, 0, 1); } 
+  <nav>
+    <div class="logo">空气<span>kill</span></div>
+    <ul class="links">
+      <li><a href="#home">首页</a></li>
+      <li><a href="#tools">工具</a></li>
+      <li><a href="#about">关于</a></li>
+    </ul>
+  </nav>
 
-</style>
-<!--下载font-awesome.css图标包-->
-<!--https://www.58html.com/html/template/font-awesome.zip-->
-<link rel="stylesheet" href="https://www.58html.com/gui/css/font-awesome/css/font-awesome.css">
-<div id="lyrow">
-<div class="biaotilan">
-    <img src="http://www.58html.com/folder/imgs/202301/1eac3a40541dc09a4387335aabb1a2c4.jpg" >
-<div class="html_biaoti"> 
-    <h1 class="html_biaoti_wenben">空气kill的网站</h1></div> </div>
-<div class="zhubuju">
-  <body>
-    <div class="center">
-      <div class="m"></div>
-      <div class="d"></div>
-      <div class="h"></div>
-      <div class="mm"></div>
-      <div class="s"></div>
+  <section class="hero" id="home">
+    <div class="badge">✦ 欢迎来到我的个人站点</div>
+    <h1>
+      用代码<br>
+      <span class="gradient">创造有趣的东西</span>
+    </h1>
+    <p>这里汇集了一些实用的小工具和项目，简单、高效、开箱即用。</p>
+    <div class="actions">
+      <a href="#tools" class="btn btn-primary">探索工具</a>
+      <a href="https://github.com/kongqig" class="btn btn-outline" target="_blank">GitHub</a>
     </div>
-    <script>
-      let is = 0
-      let m = document.querySelector('.m')
-      let d = document.querySelector('.d')
-      let h = document.querySelector('.h')
-      let mm = document.querySelector('.mm')
-      let s = document.querySelector('.s')
-      addText(m,12,30,'月')
-      addText(d,31,65,'日')
-      addText(h,24,100,'时')
-      addText(mm,60,135,'分',true)
-      addText(s,60,170,'秒')
-  
-      function addText(dom,max,trans,txt,ck){
-        for(let i = 0; i < max; i++){
-          let pm = document.createElement('p')
-          pm.innerHTML = (ck ? i : i+1)+txt
-          pm.style.transform = `rotate(${i*(360/max)}deg) translateX(${trans}px)`
-          dom.appendChild(pm)
-        }
-      }
-      
-      setInterval(()=>{
-            let date = new Date()
-          setTime(m,date.getMonth(),12)
-          setTime(d,date.getDate(),31)
-          setTime(h,date.getHours(),24)
-          setTime(mm,date.getMinutes()+1,60)
-          setTime(s,date.getSeconds(),60)
-          
-      },1000)
-      
-      function setTime(dom,timer,max){
-        let p = dom.querySelectorAll('p')
-        dom.style.transform = 'rotate('+(dom==m ? timer : timer -1)*(-360/max)+'deg)'
-        p.forEach(v=>{
-          v.classList.remove('ck')
-        })
-        p[dom==m ? timer : timer-1].classList.add('ck')
-      }
-      
-      
-    </script>
-  </body>
-</div>
-</div>
-  <!-- Project -->
-  <script src="main.js"></script>
+  </section>
+
+  <section id="tools">
+    <h2 class="section-title">页面导航</h2>
+    <p class="section-subtitle">快速跳转到各子页面。</p>
+    <div class="tools-grid">
+      <a href="pages/index.html" class="tool-card">
+        <div class="icon">🧭</div>
+        <h3>工具箱导航</h3>
+        <p>所有工具的入口导航页，一目了然。</p>
+        <span class="arrow">→</span>
+      </a>
+      <a href="log.html" class="tool-card">
+        <div class="icon">📋</div>
+        <h3>更新日志</h3>
+        <p>查看站点更新记录与版本变更。</p>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">关于本站</h2>
+    <p class="section-subtitle">一个存放个人项目与工具的小站，持续更新中。</p>
+    <p style="color: var(--text2); max-width: 600px; line-height: 1.8;">
+      这里记录了一些平时开发中用到的工具和想法，希望对你也能有所帮助。如果你有任何建议或反馈，欢迎通过 GitHub 联系我。
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 空气kill · Built with ❤️</p>
+  </footer>
 </body>
 </html>
