@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>MC 末地传送门 · 三角定位器</title>
+    <style>
+        /* ===== 全局重置 & 主题 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            min-height: 100vh;
+            padding: 16px 12px 40px;
+            transition: background 0.2s;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 网格背景（全局开关） */
+        body.grid-bg {
+            background-image:
+                linear-gradient(rgba(48, 54, 61, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(48, 54, 61, 0.3) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: -1px -1px;
+        }
+
+        .app {
+            max-width: 580px;
+            width: 100%;
+        }
+
+        /* ===== 标题 & 头部 ===== */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #58a6ff, #f0883e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .toggle-btn {
+            background: #21262d;
+            border: 1px solid #30363d;
+            color: #8b949e;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            white-space: nowrap;
+        }
+
+        .toggle-btn.active {
+            background: #1f6feb;
+            border-color: #1f6feb;
+            color: #fff;
+        }
+
+        .toggle-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ===== 数据输入区 ===== */
+        .card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 16px 14px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #8b949e;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .entry-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 12px;
+            max-height: 380px;
+            overflow-y: auto;
+            padding-right: 2px;
+        }
+
+        .entry-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        .entry-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .entry-list::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 8px;
+        }
+
+        .entry-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            background: #0d1117;
+            padding: 8px 10px 8px 12px;
+            border-radius: 12px;
+            border: 1px solid #21262d;
+            transition: border 0.15s;
+            flex-wrap: wrap;
+        }
+
+        .entry-row:focus-within {
+            border-color: #58a6ff;
+        }
+
+        .entry-row .index-badge {
+            font-size: 11px;
+            font-weight: 600;
+            color: #8b949e;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .input-group {
+            flex: 1 1 70px;
+            min-width: 60px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #8b949e;
+            margin-bottom: 1px;
+        }
+
+        .input-group input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #30363d;
+            padding: 4px 0 2px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #e6edf3;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.15s;
+            min-width: 40px;
+        }
+
+        .input-group input:focus {
+            border-bottom-color: #58a6ff;
+        }
+
+        .input-group input::placeholder {
+            color: #484f58;
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        .del-btn {
+            background: none;
+            border: none;
+            color: #484f58;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px 6px;
+            line-height: 1;
+            border-radius: 6px;
+            transition: all 0.15s;
+            flex-shrink: 0;
+        }
+
+        .del-btn:active {
+            color: #f85149;
+            transform: scale(1.2);
+        }
+
+        .row-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .btn {
+            background: #21262d;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            flex: 1 1 auto;
+            min-height: 44px;
+            touch-action: manipulation;
+        }
+
+        .btn:active {
+            transform: scale(0.96);
+        }
+
+        .btn-primary {
+            background: #1f6feb;
+            border-color: #1f6feb;
+            color: #fff;
+            flex: 2;
+        }
+
+        .btn-primary:active {
+            background: #1158c7;
+        }
+
+        .btn-secondary {
+            background: #21262d;
+            border-color: #30363d;
+        }
+
+        .btn-danger {
+            color: #f85149;
+            border-color: #f85149;
+            background: transparent;
+        }
+
+        /* ===== 结果区 ===== */
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .result-item {
+            background: #0d1117;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid #21262d;
+            text-align: center;
+        }
+
+        .result-item .label {
+            font-size: 11px;
+            color: #8b949e;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .result-item .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f0e6d0;
+            margin-top: 2px;
+            font-family: 'JetBrains Mono', 'Consolas', monospace;
+        }
+
+        .result-item .value.highlight {
+            color: #f0883e;
+        }
+
+        .status-msg {
+            background: #0d1117;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #8b949e;
+            border-left: 3px solid #30363d;
+            margin-top: 6px;
+        }
+
+        .status-msg strong {
+            color: #e6edf3;
+        }
+
+        /* ===== 画布 (小地图) ===== */
+        .canvas-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #0d1117;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            overflow: hidden;
+            margin-top: 12px;
+        }
+
+        .canvas-wrapper canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        .canvas-tip {
+            position: absolute;
+            bottom: 8px;
+            right: 12px;
+            font-size: 10px;
+            color: #484f58;
+            background: rgba(13, 17, 23, 0.7);
+            padding: 2px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            pointer-events: none;
+        }
+
+        /* ===== 折叠教程 ===== */
+        .tutorial-toggle {
+            background: none;
+            border: none;
+            color: #58a6ff;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 0 4px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px dashed #30363d;
+            margin-bottom: 12px;
+        }
+
+        .tutorial-toggle::after {
+            content: "▾";
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        .tutorial-toggle.open::after {
+            transform: rotate(180deg);
+        }
+
+        .tutorial-content {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #c9d1d9;
+            display: none;
+            padding: 4px 0 8px;
+        }
+
+        .tutorial-content.open {
+            display: block;
+        }
+
+        .tutorial-content ol {
+            padding-left: 22px;
+            margin: 8px 0 12px;
+        }
+
+        .tutorial-content li {
+            margin-bottom: 6px;
+        }
+
+        .tutorial-content code {
+            background: #21262d;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #f0883e;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tutorial-content .note {
+            background: #1c2333;
+            border-radius: 10px;
+            padding: 10px 14px;
+            border-left: 3px solid #f0883e;
+            color: #b1bac4;
+            margin-top: 12px;
+        }
+
+        /* ===== 响应式微调 ===== */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 18px;
+            }
+            .input-group {
+                flex: 1 1 55px;
+                min-width: 50px;
+            }
+            .input-group input {
+                font-size: 14px;
+            }
+            .btn {
+                font-size: 13px;
+                padding: 6px 12px;
+                min-height: 40px;
+            }
+            .result-item .value {
+                font-size: 17px;
+            }
+            .card {
+                padding: 14px 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .entry-row {
+                padding: 6px 6px;
+                gap: 4px;
+            }
+            .input-group {
+                min-width: 40px;
+                flex-basis: 40px;
+            }
+        }
+
+        /* 滚动条全局 */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app" id="app">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>⛏️ 末地定位</h1>
+            <div class="header-actions">
+                <button class="toggle-btn active" id="gridToggle" aria-label="切换网格背景">▦ 网格</button>
+            </div>
+        </div>
+
+        <!-- 数据卡片 -->
+        <div class="card">
+            <div class="card-title">
+                <span>📐 观测数据</span>
+                <span style="font-weight:400; font-size:12px; color:#484f58;">投掷末影之眼 · 记录F3</span>
+            </div>
+            <div class="entry-list" id="entryList">
+                <!-- 由 JS 动态渲染 -->
+            </div>
+            <div class="row-actions">
+                <button class="btn btn-secondary" id="addEntryBtn">＋ 添加投掷</button>
+                <button class="btn btn-primary" id="calcBtn">🎯 计算交点</button>
+                <button class="btn btn-danger" id="clearBtn" style="flex:0.5;">✕</button>
+            </div>
+        </div>
+
+        <!-- 结果卡片 -->
+        <div class="card" id="resultCard">
+            <div class="card-title">📍 预估要塞坐标</div>
+            <div class="result-grid">
+                <div class="result-item">
+                    <div class="label">X 坐标</div>
+                    <div class="value highlight" id="resultX">—</div>
+                </div>
+                <div class="result-item">
+                    <div class="label">Z 坐标</div>
+                    <div class="value highlight" id="resultZ">—</div>
+                </div>
+            </div>
+            <div class="status-msg" id="statusMsg">💡 输入至少 2 组数据，点击计算。</div>
+
+            <!-- 小地图画布 -->
+            <div class="canvas-wrapper">
+                <canvas id="mapCanvas" width="400" height="400"></canvas>
+                <span class="canvas-tip">俯视图 · 射线交点</span>
+            </div>
+        </div>
+
+        <!-- 教程折叠 -->
+        <div class="card" style="padding-bottom:8px;">
+            <button class="tutorial-toggle" id="tutorialToggle">📖 完整文字教程</button>
+            <div class="tutorial-content" id="tutorialContent">
+                <p><strong>三角定位法 · 原理</strong><br>
+                末影之眼会飞向最近的要塞。在不同位置投掷，记录 <code>X</code>、<code>Z</code> 和 <code>朝向 (Yaw)</code>，
+                就能得到两条射线，其交点即为要塞坐标。</p>
+                <ol>
+                    <li><strong>投掷点 A</strong>：投掷末影之眼，在它悬空的瞬间按 <kbd>F3</kbd> 打开调试屏幕，记下 <code>X</code>、<code>Z</code> 和 <code>Facing</code> 数值（即偏航角）。</li>
+                    <li><strong>投掷点 B</strong>：朝大致垂直的方向移动至少 <strong>200 格</strong>（越远越精准），重复投掷并记录数据。</li>
+                    <li><strong>输入数据</strong>：点击“添加投掷”将每组数据填入，支持多组（建议 3~5 组提高精度）。</li>
+                    <li><strong>计算定位</strong>：点击“计算交点”，工具将用最小二乘交会给出坐标，并在小地图上可视化射线。</li>
+                    <li><strong>验证</strong>：前往计算出的坐标附近，再次投掷末影之眼。若它垂直下落，说明要塞就在脚下。</li>
+                </ol>
+                <div class="note">
+                    ⚠️ <strong>关于“输入种子加载地图”</strong>：您说得完全正确，静态网页无法加载实际 Minecraft 地图（需服务端渲染或本地存档解析）。<br>
+                    本工具专注<strong>纯数学定位</strong>，无需任何服务器，仅凭几组坐标和角度即可精准推算，并附带可视化辅助。
+                </div>
+                <div style="margin-top:10px; font-size:13px; color:#8b949e;">
+                    💡 偏航角 (Yaw) 范围：-180 ~ 180，正北为 -180/180，正东为 -90，正南为 0，正西为 90。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // --- DOM refs ---
+            const entryList = document.getElementById('entryList');
+            const addBtn = document.getElementById('addEntryBtn');
+            const calcBtn = document.getElementById('calcBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const gridToggle = document.getElementById('gridToggle');
+            const resultX = document.getElementById('resultX');
+            const resultZ = document.getElementById('resultZ');
+            const statusMsg = document.getElementById('statusMsg');
+            const canvas = document.getElementById('mapCanvas');
+            const ctx = canvas.getContext('2d');
+            const tutorialToggle = document.getElementById('tutorialToggle');
+            const tutorialContent = document.getElementById('tutorialContent');
+
+            // --- State ---
+            let entries = []; // [{x: number, z: number, yaw: number}]
+            let nextId = 0;
+
+            // --- Grid background ---
+            let gridEnabled = true;
+            gridToggle.addEventListener('click', () => {
+                gridEnabled = !gridEnabled;
+                gridToggle.classList.toggle('active', gridEnabled);
+                document.body.classList.toggle('grid-bg', gridEnabled);
+            });
+            // 默认开启
+            document.body.classList.add('grid-bg');
+            gridToggle.classList.add('active');
+
+            // --- Tutorial toggle ---
+            tutorialToggle.addEventListener('click', () => {
+                const isOpen = tutorialContent.classList.toggle('open');
+                tutorialToggle.classList.toggle('open', isOpen);
+            });
+            // 默认展开教程
+            tutorialContent.classList.add('open');
+            tutorialToggle.classList.add('open');
+
+            // --- Utility: yaw to direction vector (MC coordinate: 0=South(+Z), 90=West(-X)) ---
+            function yawToDir(yawDeg) {
+                const rad = yawDeg * Math.PI / 180;
+                // vx = -sin(yaw), vz = cos(yaw)
+                return { vx: -Math.sin(rad), vz: Math.cos(rad) };
+            }
+
+            // --- Render entry rows ---
+            function renderEntries() {
+                if (entries.length === 0) {
+                    // 默认给两组示例
+                    entries = [
+                        { x: 120, z: 340, yaw: 12 },
+                        { x: -80, z: 200, yaw: -45 }
+                    ];
+                }
+                let html = '';
+                entries.forEach((e, idx) => {
+                    html += `
+                        <div class="entry-row" data-index="${idx}">
+                            <span class="index-badge">#${idx+1}</span>
+                            <div class="input-group">
+                                <label>X</label>
+                                <input type="number" step="any" class="inp-x" value="${e.x}" placeholder="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Z</label>
+                                <input type="number" step="any" class="inp-z" value="${e.z}" placeholder="0">
+                            </div>
+                            <div class="input-group">
+                                <label>偏航 Yaw</label>
+                                <input type="number" step="any" class="inp-yaw" value="${e.yaw}" placeholder="0">
+                            </div>
+                            <button class="del-btn" data-idx="${idx}" aria-label="删除">✕</button>
+                        </div>
+                    `;
+                });
+                entryList.innerHTML = html;
+
+                // 绑定输入事件：实时更新 entries
+                document.querySelectorAll('.entry-row').forEach((row, idx) => {
+                    const inpX = row.querySelector('.inp-x');
+                    const inpZ = row.querySelector('.inp-z');
+                    const inpYaw = row.querySelector('.inp-yaw');
+
+                    const updateEntry = () => {
+                        const x = parseFloat(inpX.value);
+                        const z = parseFloat(inpZ.value);
+                        const yaw = parseFloat(inpYaw.value);
+                        if (!isNaN(x) && !isNaN(z) && !isNaN(yaw)) {
+                            entries[idx].x = x;
+                            entries[idx].z = z;
+                            entries[idx].yaw = yaw;
+                        }
+                    };
+
+                    inpX.addEventListener('input', updateEntry);
+                    inpZ.addEventListener('input', updateEntry);
+                    inpYaw.addEventListener('input', updateEntry);
+                });
+
+                // 绑定删除按钮
+                document.querySelectorAll('.del-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const idx = parseInt(btn.dataset.idx, 10);
+                        if (entries.length <= 2) {
+                            statusMsg.textContent = '⚠️ 至少保留 2 组数据。';
+                            return;
+                        }
+                        entries.splice(idx, 1);
+                        renderEntries();
+                        drawMap(); // 重绘
+                    });
+                });
+            }
+
+            // --- Add entry ---
+            function addEntry() {
+                // 取最后一条的偏移
+                const last = entries.length > 0 ? entries[entries.length - 1] : null;
+                let newX = last ? last.x + (Math.random() * 60 - 30) : 100;
+                let newZ = last ? last.z + (Math.random() * 60 - 30) : 200;
+                let newYaw = last ? last.yaw + (Math.random() * 20 - 10) : 0;
+                // 避免太离谱
+                newX = Math.round(newX);
+                newZ = Math.round(newZ);
+                newYaw = Math.round(newYaw);
+                entries.push({ x: newX, z: newZ, yaw: newYaw });
+                renderEntries();
+                drawMap();
+            }
+
+            // --- Clear all (except keep 2) ---
+            function clearEntries() {
+                if (entries.length <= 2) {
+                    statusMsg.textContent = '⚠️ 已是最少数据（2组）。';
+                    return;
+                }
+                // 保留前两组
+                entries = entries.slice(0, 2);
+                renderEntries();
+                drawMap();
+                statusMsg.textContent = '🧹 已重置为前两组数据。';
+            }
+
+            // --- Calculate intersection ---
+            function calculate() {
+                // 读取当前输入 (保障)
+                const valid = [];
+                for (let i = 0; i < entries.length; i++) {
+                    const row = document.querySelector(`.entry-row[data-index="${i}"]`);
+                    if (!row) continue;
+                    const x = parseFloat(row.querySelector('.inp-x').value);
+                    const z = parseFloat(row.querySelector('.inp-z').value);
+                    const yaw = parseFloat(row.querySelector('.inp-yaw').value);
+                    if (!isNaN(x) && !isNaN(z) && !isNaN(yaw)) {
+                        valid.push({ x, z, yaw });
+                        entries[i] = { x, z, yaw }; // sync
+                    } else {
+                        statusMsg.textContent = `⚠️ 第 ${i+1} 组数据不完整，请检查。`;
+                        return;
+                    }
+                }
+
+                if (valid.length < 2) {
+                    statusMsg.textContent = '❌ 至少需要 2 组有效数据。';
+                    return;
+                }
+
+                // 计算所有射线对的交点，取平均
+                const points = [];
+                for (let i = 0; i < valid.length; i++) {
+                    for (let j = i + 1; j < valid.length; j++) {
+                        const p1 = valid[i];
+                        const p2 = valid[j];
+                        const d1 = yawToDir(p1.yaw);
+                        const d2 = yawToDir(p2.yaw);
+
+                        const det = d1.vx * d2.vz - d1.vz * d2.vx;
+                        if (Math.abs(det) < 1e-10) continue; // 平行
+
+                        const dx = p2.x - p1.x;
+                        const dz = p2.z - p1.z;
+                        const t = (dx * d2.vz - dz * d2.vx) / det;
+                        const ix = p1.x + t * d1.vx;
+                        const iz = p1.z + t * d1.vz;
+                        points.push({ x: ix, z: iz });
+                    }
+                }
+
+                if (points.length === 0) {
+                    statusMsg.textContent = '❌ 所有射线均平行，无法定位。请更换投掷点。';
+                    resultX.textContent = '—';
+                    resultZ.textContent = '—';
+                    drawMap();
+                    return;
+                }
+
+                // 平均
+                let sumX = 0, sumZ = 0;
+                for (const p of points) {
+                    sumX += p.x;
+                    sumZ += p.z;
+                }
+                const avgX = sumX / points.length;
+                const avgZ = sumZ / points.length;
+
+                const roundedX = Math.round(avgX);
+                const roundedZ = Math.round(avgZ);
+
+                resultX.textContent = roundedX;
+                resultZ.textContent = roundedZ;
+                statusMsg.innerHTML = `✅ 基于 <strong>${points.length}</strong> 个交点取平均，预估要塞在 <strong>X=${roundedX}, Z=${roundedZ}</strong>。建议前往验证。`;
+
+                // 绘制地图
+                drawMap(valid, avgX, avgZ);
+            }
+
+            // --- Draw Canvas (map) ---
+            function drawMap(obsPoints = null, centerX = null, centerZ = null) {
+                const w = canvas.width;
+                const h = canvas.height;
+
+                // 获取当前数据
+                if (!obsPoints) {
+                    obsPoints = [];
+                    for (let i = 0; i < entries.length; i++) {
+                        const row = document.querySelector(`.entry-row[data-index="${i}"]`);
+                        if (!row) continue;
+                        const x = parseFloat(row.querySelector('.inp-x').value);
+                        const z = parseFloat(row.querySelector('.inp-z').value);
+                        const yaw = parseFloat(row.querySelector('.inp-yaw').value);
+                        if (!isNaN(x) && !isNaN(z) && !isNaN(yaw)) {
+                            obsPoints.push({ x, z, yaw });
+                        }
+                    }
+                }
+
+                if (!centerX || !centerZ) {
+                    // 从结果取
+                    const rx = parseFloat(resultX.textContent);
+                    const rz = parseFloat(resultZ.textContent);
+                    if (!isNaN(rx) && !isNaN(rz)) {
+                        centerX = rx;
+                        centerZ = rz;
+                    } else {
+                        // fallback: 数据均值
+                        let cx = 0, cz = 0, cnt = 0;
+                        for (const p of obsPoints) { cx += p.x; cz += p.z; cnt++; }
+                        if (cnt > 0) { centerX = cx / cnt; centerZ = cz / cnt; } else { centerX = 0; centerZ = 0; }
+                    }
+                }
+
+                // 计算缩放范围 (包含所有观测点 + 中心)
+                let minX = Infinity, maxX = -Infinity, minZ = Infinity, maxZ = -Infinity;
+                for (const p of obsPoints) {
+                    if (p.x < minX) minX = p.x;
+                    if (p.x > maxX) maxX = p.x;
+                    if (p.z < minZ) minZ = p.z;
+                    if (p.z > maxZ) maxZ = p.z;
+                }
+                if (centerX < minX) minX = centerX;
+                if (centerX > maxX) maxX = centerX;
+                if (centerZ < minZ) minZ = centerZ;
+                if (centerZ > maxZ) maxZ = centerZ;
+
+                let rangeX = maxX - minX || 1;
+                let rangeZ = maxZ - minZ || 1;
+                const margin = Math.max(rangeX, rangeZ) * 0.4 + 30;
+                minX -= margin;
+                maxX += margin;
+                minZ -= margin;
+                maxZ += margin;
+                rangeX = maxX - minX || 1;
+                rangeZ = maxZ - minZ || 1;
+
+                // 映射函数 (画布坐标)
+                const mapX = (x) => ((x - minX) / rangeX) * w;
+                const mapZ = (z) => h - ((z - minZ) / rangeZ) * h; // 翻转 Z 轴向上
+
+                // --- 清空 ---
+                ctx.clearRect(0, 0, w, h);
+
+                // --- 背景网格 (Canvas 内部) ---
+                const gridSize = 30;
+                ctx.strokeStyle = '#21262d';
+                ctx.lineWidth = 0.5;
+                for (let x = 0; x <= w; x += gridSize) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, h);
+                    ctx.stroke();
+                }
+                for (let y = 0; y <= h; y += gridSize) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(w, y);
+                    ctx.stroke();
+                }
+
+                // --- 绘制射线 ---
+                const colors = ['#f0883e', '#58a6ff', '#3fb950', '#f85149', '#d2a8ff', '#ff7b72'];
+                for (let i = 0; i < obsPoints.length; i++) {
+                    const p = obsPoints[i];
+                    const dir = yawToDir(p.yaw);
+                    const color = colors[i % colors.length];
+
+                    // 从观测点沿方向延伸很长
+                    const len = Math.max(rangeX, rangeZ) * 2;
+                    const endX = p.x + dir.vx * len;
+                    const endZ = p.z + dir.vz * len;
+
+                    ctx.beginPath();
+                    ctx.moveTo(mapX(p.x), mapZ(p.z));
+                    ctx.lineTo(mapX(endX), mapZ(endZ));
+                    ctx.strokeStyle = color;
+                    ctx.lineWidth = 2.5;
+                    ctx.globalAlpha = 0.7;
+                    ctx.stroke();
+                    ctx.globalAlpha = 1.0;
+
+                    // 绘制观测点
+                    ctx.beginPath();
+                    ctx.arc(mapX(p.x), mapZ(p.z), 5, 0, 2 * Math.PI);
+                    ctx.fillStyle = color;
+                    ctx.fill();
+                    ctx.strokeStyle = '#0d1117';
+                    ctx.lineWidth = 1.5;
+                    ctx.stroke();
+
+                    // 小标签
+                    ctx.fillStyle = color;
+                    ctx.font = '10px sans-serif';
+                    ctx.fillText(`#${i+1}`, mapX(p.x) + 7, mapZ(p.z) - 5);
+                }
+
+                // --- 绘制交点 (如果存在) ---
+                if (centerX !== undefined && centerX !== null && !isNaN(centerX) && !isNaN(centerZ)) {
+                    const cx = mapX(centerX);
+                    const cy = mapZ(centerZ);
+                    // 发光外圈
+                    ctx.shadowColor = '#f0883e';
+                    ctx.shadowBlur = 18;
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, 10, 0, 2 * Math.PI);
+                    ctx.fillStyle = '#f0883e';
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                    ctx.strokeStyle = '#ffffff';
+                    ctx.lineWidth = 2.5;
+                    ctx.stroke();
+
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = 'bold 13px sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillText('★ 要塞', cx, cy - 18);
+                    ctx.textAlign = 'left';
+                }
+
+                // 图例
+                ctx.fillStyle = '#8b949e';
+                ctx.font = '11px sans-serif';
+                ctx.fillText('✦ 观测点 · 射线', 10, 16);
+                ctx.fillStyle = '#484f58';
+                ctx.fillText('网格背景开关不影响此处', 10, h - 8);
+            }
+
+            // --- 窗口 resize 重绘 ---
+            let resizeTimer;
+            function handleResize() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    // canvas 尺寸已由 css 控制，无需重新设置宽高，只需重绘
+                    drawMap();
+                }, 150);
+            }
+            window.addEventListener('resize', handleResize);
+
+            // --- Init ---
+            function init() {
+                renderEntries();
+                // 默认计算一次
+                setTimeout(() => {
+                    calculate();
+                }, 50);
+
+                // 事件绑定
+                addBtn.addEventListener('click', addEntry);
+                calcBtn.addEventListener('click', calculate);
+                clearBtn.addEventListener('click', clearEntries);
+
+                // 移动端 touch 优化
+                document.querySelectorAll('.btn').forEach(b => {
+                    b.addEventListener('touchstart', function(e) {
+                        // 防止双击缩放干扰
+                    }, { passive: true });
+                });
+            }
+
+            init();
+        })();
+    </script>
+</body>
+</html>

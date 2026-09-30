@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>多城枢纽定位器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #070b12;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100dvh;
+            padding: 12px;
+            touch-action: pan-y;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #111822;
+            border-radius: 28px;
+            padding: 20px 18px 24px;
+            box-shadow: 0 20px 40px -12px #000000cc;
+            border: 1px solid #283141;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        header h1 {
+            font-weight: 650;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f0f4ff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .toggle-wrap {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            color: #8899b4;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+        .toggle {
+            width: 40px;
+            height: 22px;
+            background: #2a3649;
+            border-radius: 40px;
+            position: relative;
+            cursor: pointer;
+            transition: 0.2s;
+            flex-shrink: 0;
+            border: 1px solid #3f4f66;
+        }
+        .toggle.active {
+            background: #4f7aff;
+            border-color: #4f7aff;
+        }
+        .toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 40px;
+            transition: 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .toggle.active::after {
+            left: 20px;
+        }
+
+        .canvas-wrapper {
+            position: relative;
+            background: #0a101a;
+            border-radius: 20px;
+            border: 1px solid #1f2b3d;
+            overflow: hidden;
+            touch-action: none;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, #141e2c, #070b12);
+            touch-action: none;
+            cursor: grab;
+        }
+        canvas:active {
+            cursor: grabbing;
+        }
+
+        .control-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px 10px;
+        }
+        .btn {
+            background: #1f2a3a;
+            border: 1px solid #324156;
+            color: #d1dcec;
+            padding: 10px 18px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: 0.15s;
+            touch-action: manipulation;
+            white-space: nowrap;
+            background: #1a2535;
+            flex: 0 1 auto;
+            min-height: 44px;
+        }
+        .btn:active {
+            transform: scale(0.94);
+            background: #2a3a50;
+        }
+        .btn-primary {
+            background: #2f4b7a;
+            border-color: #4a6a9e;
+            color: white;
+        }
+        .btn-danger {
+            background: #5f2a3a;
+            border-color: #8a3f4f;
+            color: #ffb3b3;
+        }
+        .btn-success {
+            background: #1f4a3a;
+            border-color: #3a7a5a;
+            color: #b3ffd9;
+        }
+        .btn-icon {
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+        .badge-count {
+            background: #2a3649;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #b0c4dd;
+            margin-left: auto;
+            border: 1px solid #384a60;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .info-card {
+            background: #0f1622;
+            border-radius: 18px;
+            padding: 14px 16px;
+            border: 1px solid #1f2b3d;
+        }
+        .info-card .label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #778aa8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-card .value {
+            font-size: 1.3rem;
+            font-weight: 550;
+            margin-top: 4px;
+            font-variant-numeric: tabular-nums;
+            word-break: break-all;
+        }
+        .info-card .sub {
+            font-size: 0.7rem;
+            color: #7f93b0;
+            margin-top: 2px;
+        }
+        .color-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .footer-tip {
+            font-size: 0.65rem;
+            color: #3f526b;
+            text-align: center;
+            border-top: 1px solid #1a2535;
+            padding-top: 12px;
+            margin-top: 4px;
+            letter-spacing: 0.02em;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 14px 12px; }
+            header h1 { font-size: 1.2rem; }
+            .btn { font-size: 0.7rem; padding: 8px 14px; min-height: 40px; }
+            .info-grid { grid-template-columns: 1fr; }
+            .info-card .value { font-size: 1.1rem; }
+            .badge-count { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>⛰️ 多城枢纽定位器</h1>
+        <div class="header-actions">
+            <div class="toggle-wrap">
+                <span>网格</span>
+                <div id="gridToggle" class="toggle active"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="canvas-wrapper">
+        <canvas id="mapCanvas" width="800" height="600"></canvas>
+    </div>
+
+    <div class="control-bar">
+        <button class="btn btn-primary" id="addBtn">➕ 添加</button>
+        <button class="btn btn-success" id="deleteSelectedBtn" disabled>🗑️ 删除选中</button>
+        <button class="btn" id="undoBtn">↩️ 撤销</button>
+        <button class="btn btn-danger" id="clearBtn">✖ 清空</button>
+        <button class="btn" id="resetBtn">🔄 重置</button>
+        <span class="badge-count" id="cityCount">🏙️ 3 城</span>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="label"><span class="color-dot" style="background:#fbbf24;"></span> 几何中位数 (总距最短)</div>
+            <div class="value" id="medianDist">—</div>
+            <div class="sub" id="medianPos">坐标: (—, —)</div>
+        </div>
+        <div class="info-card">
+            <div class="label"><span class="color-dot" style="background:#a78bfa;"></span> 最小外接圆 (均衡最远)</div>
+            <div class="value" id="centerDist">—</div>
+            <div class="sub" id="centerPos">坐标: (—, —) · 半径: —</div>
+        </div>
+    </div>
+    <div class="footer-tip">👆 左键/手指：拖拽移动 · 单击选中/添加 · 双击/Delete删除选中 · 右键无菜单</div>
+</div>
+
+<script>
+    (function() {
+        const canvas = document.getElementById('mapCanvas');
+        const ctx = canvas.getContext('2d');
+        const W = 800, H = 600;
+
+        // ---- 数据 ----
+        let points = [
+            { x: 200, y: 450 },
+            { x: 600, y: 480 },
+            { x: 400, y: 150 }
+        ];
+        let showGrid = true;
+        let selectedIndex = -1;
+        let lastClickIndex = -1;
+        let lastClickTime = 0;
+
+        // ---- DOM ----
+        const medianDistEl = document.getElementById('medianDist');
+        const medianPosEl = document.getElementById('medianPos');
+        const centerDistEl = document.getElementById('centerDist');
+        const centerPosEl = document.getElementById('centerPos');
+        const cityCountEl = document.getElementById('cityCount');
+        const gridToggle = document.getElementById('gridToggle');
+        const deleteSelectedBtn = document.getElementById('deleteSelectedBtn');
+
+        // ---- 工具 ----
+        const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+        const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+        // ---- 几何中位数 (Weiszfeld) ----
+        function calcGeometricMedian(pts) {
+            if (pts.length === 0) return { point: { x: 0, y: 0 }, dist: 0 };
+            if (pts.length === 1) return { point: { ...pts[0] }, dist: 0 };
+            let p = { x: pts.reduce((s, p) => s + p.x, 0) / pts.length, y: pts.reduce((s, p) => s + p.y, 0) / pts.length };
+            for (let iter = 0; iter < 300; iter++) {
+                let numX = 0, numY = 0, denom = 0;
+                let converged = true;
+                for (let pt of pts) {
+                    const d = dist(p, pt);
+                    if (d < 1e-12) continue;
+                    const w = 1 / d;
+                    numX += w * pt.x;
+                    numY += w * pt.y;
+                    denom += w;
+                }
+                if (denom < 1e-12) break;
+                const newP = { x: numX / denom, y: numY / denom };
+                if (dist(p, newP) > 0.001) converged = false;
+                p = newP;
+                if (converged) break;
+            }
+            const total = pts.reduce((s, pt) => s + dist(p, pt), 0);
+            return { point: p, dist: total };
+        }
+
+        // ---- 最小外接圆 (随机增量) ----
+        function calcMinimumEnclosingCircle(pts) {
+            if (pts.length === 0) return { center: { x: 0, y: 0 }, radius: 0 };
+            if (pts.length === 1) return { center: { ...pts[0] }, radius: 0 };
+            let P = pts.map(p => ({ ...p }));
+            for (let i = P.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [P[i], P[j]] = [P[j], P[i]];
+            }
+            let c = { x: P[0].x, y: P[0].y };
+            let r = 0;
+            for (let i = 1; i < P.length; i++) {
+                if (dist(c, P[i]) <= r + 1e-10) continue;
+                c = { x: P[i].x, y: P[i].y };
+                r = 0;
+                for (let j = 0; j < i; j++) {
+                    if (dist(c, P[j]) <= r + 1e-10) continue;
+                    c = { x: (P[i].x + P[j].x) / 2, y: (P[i].y + P[j].y) / 2 };
+                    r = dist(c, P[i]);
+                    for (let k = 0; k < j; k++) {
+                        if (dist(c, P[k]) <= r + 1e-10) continue;
+                        const ax = P[i].x, ay = P[i].y;
+                        const bx = P[j].x, by = P[j].y;
+                        const cx = P[k].x, cy = P[k].y;
+                        const d = 2 * (ax * (by - cy) + bx * (cy - ay) + cx * (ay - by));
+                        if (Math.abs(d) < 1e-12) {
+                            const d1 = dist(P[i], P[j]), d2 = dist(P[j], P[k]), d3 = dist(P[k], P[i]);
+                            let maxD = d1, p1 = P[i], p2 = P[j];
+                            if (d2 > maxD) { maxD = d2; p1 = P[j]; p2 = P[k]; }
+                            if (d3 > maxD) { maxD = d3; p1 = P[k]; p2 = P[i]; }
+                            c = { x: (p1.x + p2.x)/2, y: (p1.y + p2.y)/2 };
+                            r = dist(c, p1);
+                            continue;
+                        }
+                        const ux = ((ax*ax + ay*ay) * (by - cy) + (bx*bx + by*by) * (cy - ay) + (cx*cx + cy*cy) * (ay - by)) / d;
+                        const uy = ((ax*ax + ay*ay) * (cx - bx) + (bx*bx + by*by) * (ax - cx) + (cx*cx + cy*cy) * (bx - ax)) / d;
+                        c = { x: ux, y: uy };
+                        r = dist(c, P[i]);
+                    }
+                }
+            }
+            let maxR = 0;
+            for (let p of pts) {
+                const d = dist(c, p);
+                if (d > maxR) maxR = d;
+            }
+            return { center: c, radius: maxR };
+        }
+
+        // ---- 绘图 ----
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+
+            // 网格
+            if (showGrid) {
+                ctx.strokeStyle = '#1d2a3d';
+                ctx.lineWidth = 0.5;
+                const step = 50;
+                for (let x = 0; x <= W; x += step) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, H);
+                    ctx.stroke();
+                }
+                for (let y = 0; y <= H; y += step) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(W, y);
+                    ctx.stroke();
+                }
+                ctx.strokeStyle = '#2f405a';
+                ctx.lineWidth = 1;
+                ctx.strokeRect(0, 0, W, H);
+            }
+
+            // 城市连线
+            if (points.length > 1) {
+                ctx.beginPath();
+                for (let i = 0; i < points.length; i++) {
+                    const p = points[i];
+                    if (i === 0) ctx.moveTo(p.x, p.y);
+                    else ctx.lineTo(p.x, p.y);
+                }
+                ctx.closePath();
+                ctx.strokeStyle = '#2d4155';
+                ctx.lineWidth = 1.5;
+                ctx.setLineDash([5, 5]);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+
+            // 计算并绘制几何中位数
+            if (points.length > 0) {
+                const medianRes = calcGeometricMedian(points);
+                const mp = medianRes.point;
+                ctx.setLineDash([4, 6]);
+                ctx.strokeStyle = '#fbbf2460';
+                ctx.lineWidth = 1.2;
+                for (let p of points) {
+                    ctx.beginPath();
+                    ctx.moveTo(mp.x, mp.y);
+                    ctx.lineTo(p.x, p.y);
+                    ctx.stroke();
+                }
+                ctx.setLineDash([]);
+                ctx.shadowColor = '#fbbf2480';
+                ctx.shadowBlur = 22;
+                ctx.beginPath();
+                ctx.arc(mp.x, mp.y, 10, 0, 2 * Math.PI);
+                ctx.fillStyle = '#fbbf24';
+                ctx.fill();
+                ctx.shadowBlur = 0;
+                ctx.fillStyle = '#0a101a';
+                ctx.font = 'bold 11px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('G', mp.x, mp.y + 1);
+                medianDistEl.textContent = `⚡ ${medianRes.dist.toFixed(1)} px`;
+                medianPosEl.textContent = `坐标: (${mp.x.toFixed(0)}, ${mp.y.toFixed(0)})`;
+            }
+
+            // 最小外接圆
+            if (points.length > 0) {
+                const circleRes = calcMinimumEnclosingCircle(points);
+                const cp = circleRes.center;
+                const rad = circleRes.radius;
+                ctx.beginPath();
+                ctx.arc(cp.x, cp.y, rad, 0, 2 * Math.PI);
+                ctx.strokeStyle = '#a78bfa60';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([6, 8]);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                ctx.shadowColor = '#a78bfa80';
+                ctx.shadowBlur = 22;
+                ctx.beginPath();
+                ctx.arc(cp.x, cp.y, 10, 0, 2 * Math.PI);
+                ctx.fillStyle = '#a78bfa';
+                ctx.fill();
+                ctx.shadowBlur = 0;
+                ctx.fillStyle = '#0a101a';
+                ctx.font = 'bold 11px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('C', cp.x, cp.y + 1);
+                centerDistEl.textContent = `🎯 ${rad.toFixed(1)} px`;
+                centerPosEl.textContent = `坐标: (${cp.x.toFixed(0)}, ${cp.y.toFixed(0)}) · 半径: ${rad.toFixed(1)}`;
+            }
+
+            // 绘制城市
+            const colors = ['#f87171', '#60a5fa', '#34d399', '#fbbf24', '#f472b6', '#a78bfa', '#fb923c', '#22d3ee'];
+            for (let i = 0; i < points.length; i++) {
+                const p = points[i];
+                const col = colors[i % colors.length];
+                // 选中高亮
+                if (i === selectedIndex) {
+                    ctx.shadowColor = '#ffffff80';
+                    ctx.shadowBlur = 35;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 24, 0, 2 * Math.PI);
+                    ctx.strokeStyle = '#ffffff';
+                    ctx.lineWidth = 3;
+                    ctx.stroke();
+                    ctx.shadowBlur = 0;
+                }
+                ctx.shadowColor = col + '80';
+                ctx.shadowBlur = 30;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 18, 0, 2 * Math.PI);
+                ctx.fillStyle = col;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+                ctx.strokeStyle = '#ffffff30';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                ctx.fillStyle = '#0a101a';
+                ctx.font = 'bold 13px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(i + 1, p.x, p.y + 1);
+            }
+            cityCountEl.textContent = `🏙️ ${points.length} 城`;
+            deleteSelectedBtn.disabled = (selectedIndex === -1 || points.length <= 1);
+        }
+
+        // ---- 交互 (Pointer Events) ----
+        let pointerDownPos = null;
+        let pointerDownTime = 0;
+        let isDragging = false;
+        let dragIndex = -1;
+        let pointerId = null;
+
+        function getCanvasCoords(e) {
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            let clientX = e.clientX;
+            let clientY = e.clientY;
+            // 如果是触摸事件，使用 changedTouches 或 touches
+            if (e.touches) {
+                clientX = e.touches[0].clientX;
+                clientY = e.touches[0].clientY;
+                e.preventDefault();
+            } else if (e.changedTouches) {
+                clientX = e.changedTouches[0].clientX;
+                clientY = e.changedTouches[0].clientY;
+            }
+            let x = (clientX - rect.left) * scaleX;
+            let y = (clientY - rect.top) * scaleY;
+            x = clamp(x, 10, W - 10);
+            y = clamp(y, 10, H - 10);
+            return { x, y };
+        }
+
+        canvas.addEventListener('pointerdown', (e) => {
+            if (e.button !== undefined && e.button !== 0) return; // 只响应左键
+            e.preventDefault();
+            const pos = getCanvasCoords(e);
+            pointerDownPos = { x: pos.x, y: pos.y };
+            pointerDownTime = Date.now();
+            isDragging = false;
+            dragIndex = -1;
+            pointerId = e.pointerId;
+            // 检测是否点到城市
+            for (let i = 0; i < points.length; i++) {
+                if (dist(pos, points[i]) < 30) {
+                    dragIndex = i;
+                    break;
+                }
+            }
+            canvas.setPointerCapture(e.pointerId);
+        });
+
+        window.addEventListener('pointermove', (e) => {
+            if (pointerId === null || e.pointerId !== pointerId) return;
+            const pos = getCanvasCoords(e);
+            if (dragIndex !== -1) {
+                if (!isDragging) {
+                    if (dist(pointerDownPos, pos) > 5) {
+                        isDragging = true;
+                        canvas.style.cursor = 'grabbing';
+                    } else {
+                        return;
+                    }
+                }
+                points[dragIndex].x = pos.x;
+                points[dragIndex].y = pos.y;
+                draw();
+            }
+        });
+
+        window.addEventListener('pointerup', (e) => {
+            if (pointerId === null || e.pointerId !== pointerId) return;
+            const pos = getCanvasCoords(e);
+            if (dragIndex !== -1 && isDragging) {
+                // 拖拽结束
+                dragIndex = -1;
+                isDragging = false;
+                canvas.style.cursor = 'default';
+                draw();
+            } else {
+                // 判断是否为点击（移动小，时间短）
+                const elapsed = Date.now() - pointerDownTime;
+                if (elapsed < 300 && dist(pointerDownPos, pos) < 8) {
+                    // 点击事件
+                    let clickedCity = -1;
+                    for (let i = 0; i < points.length; i++) {
+                        if (dist(pos, points[i]) < 30) {
+                            clickedCity = i;
+                            break;
+                        }
+                    }
+                    if (clickedCity !== -1) {
+                        // 双击检测
+                        if (lastClickIndex === clickedCity && (Date.now() - lastClickTime) < 500) {
+                            // 双击删除
+                            if (points.length > 1) {
+                                points.splice(clickedCity, 1);
+                                selectedIndex = -1;
+                                lastClickIndex = -1;
+                                draw();
+                            }
+                        } else {
+                            selectedIndex = clickedCity;
+                            lastClickIndex = clickedCity;
+                            lastClickTime = Date.now();
+                            draw();
+                        }
+                    } else {
+                        // 点击空白 -> 添加城市
+                        points.push({ x: pos.x, y: pos.y });
+                        // 保持选中不变
+                        draw();
+                    }
+                }
+            }
+            pointerId = null;
+            canvas.releasePointerCapture(e.pointerId);
+        });
+
+        // 右键阻止
+        canvas.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // ---- 键盘删除 ----
+        window.addEventListener('keydown', (e) => {
+            if ((e.key === 'Delete' || e.key === 'Backspace') && selectedIndex !== -1 && points.length > 1) {
+                points.splice(selectedIndex, 1);
+                selectedIndex = -1;
+                lastClickIndex = -1;
+                draw();
+                e.preventDefault();
+            }
+        });
+
+        // ---- 按钮事件 ----
+        document.getElementById('addBtn').addEventListener('click', () => {
+            const x = 150 + Math.random() * 500;
+            const y = 100 + Math.random() * 400;
+            points.push({ x, y });
+            draw();
+        });
+
+        document.getElementById('deleteSelectedBtn').addEventListener('click', () => {
+            if (selectedIndex !== -1 && points.length > 1) {
+                points.splice(selectedIndex, 1);
+                selectedIndex = -1;
+                lastClickIndex = -1;
+                draw();
+            }
+        });
+
+        document.getElementById('undoBtn').addEventListener('click', () => {
+            if (points.length > 1) {
+                points.pop();
+                if (selectedIndex >= points.length) selectedIndex = -1;
+                draw();
+            }
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            if (points.length > 0) {
+                points = [];
+                selectedIndex = -1;
+                lastClickIndex = -1;
+                draw();
+            }
+        });
+
+        document.getElementById('resetBtn').addEventListener('click', () => {
+            points = [
+                { x: 200, y: 450 },
+                { x: 600, y: 480 },
+                { x: 400, y: 150 },
+                { x: 300, y: 300 },
+                { x: 550, y: 220 }
+            ];
+            selectedIndex = -1;
+            lastClickIndex = -1;
+            draw();
+        });
+
+        gridToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showGrid = !showGrid;
+            this.classList.toggle('active', showGrid);
+            draw();
+        });
+
+        // ---- 初始化 ----
+        draw();
+        gridToggle.classList.add('active');
+        showGrid = true;
+    })();
+</script>
+</body>
+</html>

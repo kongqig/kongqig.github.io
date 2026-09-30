@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>单位换算大全 · 全分类版</title>
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--line:#e9ebef;--line2:#f3f4f7;--text:#15181e;--muted:#6b7280;--muted2:#9aa1ad;--accent:#2563eb;--accent-soft:#eff4ff;--radius:16px}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--card:#171a20;--line:#252932;--line2:#1e222a;--text:#e8eaee;--muted:#9ba3b0;--muted2:#6b7382;--accent:#5b8cff;--accent-soft:#1b2438}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.top{position:sticky;top:0;z-index:100;padding:12px 16px;background:var(--bg);border-bottom:1px solid var(--line)}
+@supports (backdrop-filter:blur(1px)){.top{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px)}}
+.search{max-width:820px;margin:0 auto;display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 14px;transition:border-color .15s,box-shadow .15s}
+.search:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search svg{flex:none;width:18px;height:18px;color:var(--muted2)}
+.search input{flex:1;min-width:0;border:0;outline:0;background:transparent;font-size:16px;color:var(--text);font-family:inherit}
+.search input::placeholder{color:var(--muted2)}
+main{max-width:820px;margin:0 auto;padding:16px 16px 90px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.card.hero{border-color:color-mix(in srgb,var(--accent) 30%,var(--line))}
+.head{display:flex;gap:11px;align-items:flex-start}
+.badge{flex:none;min-width:30px;height:30px;padding:0 7px;border-radius:9px;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:700;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+.head-txt{min-width:0;flex:1}
+.title{font-size:17px;font-weight:700;letter-spacing:.2px;display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.tag{font-size:11px;font-weight:500;padding:2px 8px;border-radius:999px;background:var(--line2);color:var(--muted);letter-spacing:0}
+.sub{font-size:12.5px;color:var(--muted2);margin-top:1px}
+.desc{font-size:13.5px;color:var(--muted);margin:11px 0 0;line-height:1.75}
+.units{margin-top:14px;border-top:1px solid var(--line2)}
+.unit{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line2)}
+.unit:last-child{border-bottom:0}
+.un-name{font-size:14px;font-weight:600;min-width:0}
+.un-name .sym{font-weight:400;color:var(--muted2);font-size:12px;margin-left:4px}
+.un-name .alias{font-weight:400;color:var(--muted2);font-size:12px}
+.un-val{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.un-note{grid-column:1/-1;font-size:11.5px;color:var(--muted2);margin-top:2px;line-height:1.6}
+.conv{margin-top:14px;padding:12px;border-radius:12px;background:var(--line2);border:1px solid var(--line)}
+.conv-row{display:flex;gap:8px}
+.conv-row input{flex:1 1 42%;min-width:0;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:9px 11px;font-size:16px;color:var(--text);outline:0;font-family:inherit;font-variant-numeric:tabular-nums}
+.conv-row input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.conv-row select{flex:1 1 58%;min-width:0;border:1px solid var(--line);background:var(--card);border-radius:9px;padding:9px 26px 9px 10px;font-size:14px;color:var(--text);outline:0;font-family:inherit;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%239aa1ad' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center;background-size:10px;text-overflow:ellipsis}
+.conv-row select:focus{border-color:var(--accent)}
+.conv-mid{text-align:center;color:var(--muted2);font-size:13px;padding:5px 0;user-select:none}
+.formulas{margin-top:14px;font-size:13px;color:var(--muted)}
+.formulas b{display:block;color:var(--text);font-size:13px;margin-bottom:7px;font-weight:600}
+.formulas code{display:inline-block;background:var(--line2);padding:3px 8px;border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;margin:2px 5px 2px 0;color:var(--text)}
+mark{background:#fde68a;color:inherit;border-radius:3px;padding:0 1px}
+@media (prefers-color-scheme:dark){mark{background:#6b4d00;color:#ffe9a8}}
+.empty{text-align:center;color:var(--muted2);padding:60px 20px;font-size:14px}
+.sub-title{font-size:13px;font-weight:700;color:var(--text);margin:16px 0 0;padding-top:14px;border-top:1px dashed var(--line);display:flex;align-items:center;gap:6px}
+.sub-title:first-of-type{border-top:0;padding-top:0;margin-top:12px}
+.sub-title span{font-weight:400;color:var(--muted2);font-size:12px}
+.special-note{font-size:12.5px;color:var(--muted2);margin-top:10px;padding:8px 12px;background:var(--line2);border-radius:8px;line-height:1.7}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="搜索单位或简介，如：幺米、EB、当量、坎德拉、旦尼尔…" autocomplete="off" spellcheck="false">
+  </div>
+</header>
+
+<main id="app"></main>
+
+<script>
+/* ========== 工具 ========== */
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const SUP={'-':'⁻','0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹'};
+const sup=n=>String(n).split('').map(c=>SUP[c]||c).join('');
+function fmtNum(x){if(x===0)return'0';if(!isFinite(x))return'—';const a=Math.abs(x);if(a>=1e-4&&a<1e9)return String(parseFloat(x.toPrecision(10)));const e=Math.floor(Math.log10(a)),m=x/Math.pow(10,e);return parseFloat(m.toPrecision(6))+'×10'+sup(e)}
+function hl(t,q){t=String(t);if(!q)return esc(t);const i=t.toLowerCase().indexOf(q);if(i<0)return esc(t);return esc(t.slice(0,i))+'<mark>'+esc(t.slice(i,i+q.length))+'</mark>'+esc(t.slice(i+q.length))}
+const U=(n,s,a,k,o)=>({n,s,a:a||'',k,o:o||0});
+const R=(n,s,a,note)=>({n,s,a:a||'',note:note||''});
+
+/* ========== 数据 ========== */
+const DATA=[
+/* ===== 0 常用 ===== */
+{id:'common',type:'common',idx:'0',name:'常用单位',formal:'常用单位速查',alias:'日常高频',
+ desc:'最常用的长度、重量、面积、体积、温度。每个换算器左右两边都能直接输入。',
+ refs:['length','mass','area','volume','temperature']},
+
+/* ===== 1 长度 ===== */
+{id:'length',idx:'1',name:'长度',formal:'长度单位',alias:'距离/尺寸',
+ desc:'从极小的幺米（10⁻²⁴米）到极大的秒差距。公制、市制、英美制三套体系可自由换算。',
+ base:'米',baseSym:'m',
+ units:[U('幺米','ym','',1e-24),U('仄米','zm','',1e-21),U('阿米','am','',1e-18),U('飞米','fm','',1e-15),U('皮米','pm','',1e-12),U('纳米','nm','',1e-9),U('微米','μm','',1e-6),U('毫米','mm','',0.001),U('厘米','cm','公分',0.01),U('英寸','in','吋',0.0254),U('市寸','寸','',1/30),U('分米','dm','',0.1),U('英尺','ft','呎',0.3048),U('市尺','尺','',1/3),U('码','yd','',0.9144),U('米','m','公尺',1),U('市丈','丈','',10/3),U('市里','里','',500),U('千米','km','公里',1000),U('英里','mi','哩',1609.344),U('海里','nmi','',1852),U('天文单位','AU','',1.495978707e11),U('光年','ly','',9.4607304725808e15),U('秒差距','pc','',3.0856775814913673e16)],
+ formulas:['1 千米 = 1000 米；1 米 = 100 厘米 = 1000 毫米','1 市里 = 150 丈 = 500 米；1 丈 = 10 尺；1 尺 = 10 寸','1 英里 = 5280 英尺 ≈ 1609.34 米','1 英寸 = 2.54 厘米','1 光年 ≈ 9.46 万亿千米；1 秒差距 ≈ 3.26 光年']},
+
+/* ===== 2 面积 ===== */
+{id:'area',idx:'2',name:'面积',formal:'面积单位',alias:'地亩/平面大小',
+ desc:'农业生产中最常用亩和分：1 亩 ≈ 666.67 平方米，1 亩 = 10 分，1 分 ≈ 66.67 平方米。',
+ base:'平方米',baseSym:'m²',
+ units:[U('平方毫米','mm²','',1e-6),U('平方厘米','cm²','',1e-4),U('平方英寸','in²','',0.00064516),U('平方分米','dm²','',0.01),U('平方英尺','ft²','',0.09290304),U('平方市尺','尺²','方尺',1/9),U('市毫','毫','地毫',2/3),U('平方米','m²','平米',1),U('市厘','厘','地厘',20/3),U('平方市丈','丈²','方丈',100/9),U('市分','分','地分',200/3),U('公亩','a','',100),U('亩','亩','',2000/3),U('英亩','ac','',4046.8564224),U('公顷','ha','垧',10000),U('平方千米','km²','平方公里',1e6),U('平方英里','mi²','',2589988.110336)],
+ formulas:['1 公顷 = 10000 平方米 = 15 亩','1 亩 = 10 分 ≈ 666.67 平方米','1 分 = 10 厘 ≈ 66.67 平方米','1 平方千米 = 100 公顷 = 1500 亩','1 英亩 ≈ 4046.86 平方米 ≈ 6.07 亩']},
+
+/* ===== 3 体积与容量 ===== */
+{id:'volume',idx:'3',name:'体积与容量',formal:'体积/容积单位',alias:'容量',
+ desc:'公制用立方米、升；中国传统用石斗升合；英美制用加仑、品脱。美制加仑和英制加仑差约 20%。',
+ base:'升',baseSym:'L',
+ units:[U('立方毫米','mm³','',1e-6),U('市撮','撮','',0.001),U('毫升','mL','cc',0.001),U('立方厘米','cm³','',0.001),U('立方英寸','in³','',0.016387064),U('市勺','勺','',0.01),U('美制液量盎司','fl oz','',0.0295735295625),U('市合','合','',0.1),U('美制杯','cup','',0.2365882365),U('美制品脱','pt','',0.473176473),U('美制夸脱','qt','',0.946352946),U('升','L','公升',1),U('立方分米','dm³','',1),U('市升','升','',1),U('美制加仑','gal','',3.785411784),U('英制加仑','gal(UK)','',4.54609),U('市斗','斗','',10),U('立方英尺','ft³','',28.316846592),U('市石','石','',100),U('石油桶','bbl','',158.987294928),U('立方码','yd³','',764.554857984),U('立方米','m³','方',1000)],
+ formulas:['1 立方米 = 1000 升 = 1000000 毫升','1 升 = 1000 毫升 = 1 立方分米','1 石 = 10 斗；1 斗 = 10 升；1 升 = 10 合；1 合 = 10 勺；1 勺 = 10 撮','1 美制加仑 ≈ 3.785 升；1 英制加仑 ≈ 4.546 升']},
+
+/* ===== 4 质量 ===== */
+{id:'mass',idx:'4',name:'质量',formal:'质量单位',alias:'重量',
+ desc:'公制用克、千克、吨；市制用两、斤、担（1 斤 = 500 克）；英美制用磅、盎司。',
+ base:'千克',baseSym:'kg',
+ units:[U('微克','μg','',1e-9),U('毫克','mg','',1e-6),U('克拉','ct','',0.0002),U('克','g','',0.001),U('市钱','钱','',0.005),U('盎司','oz','',0.028349523125),U('市两','两','',0.05),U('磅','lb','',0.45359237),U('市斤','斤','',0.5),U('千克','kg','公斤',1),U('英石','st','',6.35029318),U('市担','担','',50),U('公担','q','',100),U('短吨','ton(US)','',907.18474),U('吨','t','公吨',1000),U('长吨','ton(UK)','',1016.0469088)],
+ formulas:['1 吨 = 1000 千克 = 2000 斤','1 千克 = 1000 克 = 2 斤','1 斤 = 500 克 = 10 两；1 两 = 50 克 = 10 钱；1 钱 = 5 克','1 磅 ≈ 453.59 克 ≈ 0.907 斤；1 盎司 ≈ 28.35 克','1 克拉 = 0.2 克']},
+
+/* ===== 5 温度 ===== */
+{id:'temperature',idx:'5',name:'温度',formal:'温度单位',alias:'冷热',
+ desc:'摄氏度冰点 0°、沸点 100°；华氏度冰点 32°、沸点 212°；开尔文以绝对零度为 0 K。温度换算是"先乘系数再加偏移"。',
+ base:'摄氏度',baseSym:'°C',affine:true,
+ units:[U('摄氏度','°C','摄氏',1,0),U('华氏度','°F','华氏',5/9,-160/9),U('开尔文','K','绝对温度',1,-273.15),U('兰氏度','°R','',5/9,-273.15)],
+ formulas:['华氏度 = 摄氏度 × 9 ÷ 5 + 32','摄氏度 = (华氏度 − 32) × 5 ÷ 9','开尔文 = 摄氏度 + 273.15','摄氏度 = 开尔文 − 273.15','兰氏度 = (摄氏度 + 273.15) × 9 ÷ 5']},
+
+/* ===== 6 时间 ===== */
+{id:'time',idx:'6',name:'时间',formal:'时间单位',alias:'时长',
+ desc:'从纳秒到世纪。注意「月」和「年」没有固定长度，这里按平均 30 天 / 365 天计算。',
+ base:'秒',baseSym:'s',
+ units:[U('纳秒','ns','',1e-9),U('微秒','μs','',1e-6),U('毫秒','ms','',0.001),U('秒','s','',1),U('分钟','min','',60),U('小时','h','',3600),U('天','d','日',86400),U('周','wk','星期',604800),U('月','mo','按30天',2592000),U('年','yr','按365天',31536000),U('世纪','c','',3153600000)],
+ formulas:['1 分钟 = 60 秒；1 小时 = 60 分钟 = 3600 秒','1 天 = 24 小时 = 86400 秒','1 周 = 7 天','1 年 ≈ 365 天；闰年 366 天']},
+
+/* ===== 7 速度 ===== */
+{id:'speed',idx:'7',name:'速度',formal:'速度单位',alias:'快慢',
+ desc:'日常用千米/小时和米/秒；航海航空用节；高速飞行用马赫。',
+ base:'米/秒',baseSym:'m/s',
+ units:[U('厘米/秒','cm/s','',0.01),U('米/分','m/min','',1/60),U('千米/小时','km/h','',1/3.6),U('英尺/秒','ft/s','',0.3048),U('英里/小时','mph','迈',0.44704),U('节','kn','',1852/3600),U('米/秒','m/s','',1),U('马赫','Ma','',340),U('千米/秒','km/s','',1000),U('光速','c','',299792458)],
+ formulas:['1 米/秒 = 3.6 千米/小时','1 千米/小时 ≈ 0.2778 米/秒','1 节 = 1 海里/小时 = 1.852 千米/小时','1 马赫 ≈ 340 米/秒（海平面音速）']},
+
+/* ===== 8 加速度 ===== */
+{id:'accel',idx:'8',name:'加速度',formal:'加速度单位',alias:'加速快慢',
+ desc:'加速度是速度的变化率。国际单位是米/秒²；重力加速度用 g 表示。',
+ base:'米/秒²',baseSym:'m/s²',
+ units:[U('伽利略','Gal','',0.01),U('英尺/秒²','ft/s²','',0.3048),U('米/秒²','m/s²','',1),U('标准重力加速度','g','',9.80665)],
+ formulas:['1 g = 9.80665 米/秒²','1 伽利略 = 0.01 米/秒²','1 英尺/秒² ≈ 0.3048 米/秒²']},
+
+/* ===== 9 力 ===== */
+{id:'force',idx:'9',name:'力',formal:'力的单位',alias:'推力/重力',
+ desc:'国际单位是牛顿；工程用千克力；英美用磅力。',
+ base:'牛顿',baseSym:'N',
+ units:[U('达因','dyn','',1e-5),U('牛顿','N','',1),U('磅力','lbf','',4.4482216152605),U('千克力','kgf','公斤力',9.80665),U('千牛','kN','',1000),U('吨力','tf','',9806.65)],
+ formulas:['1 千克力 = 9.80665 牛顿','1 牛顿 = 100000 达因','1 磅力 ≈ 4.448 牛顿','1 吨力 = 1000 千克力 ≈ 9806.65 牛顿']},
+
+/* ===== 10 压强 ===== */
+{id:'pressure',idx:'10',name:'压强',formal:'压强/压力单位',alias:'气压/水压',
+ desc:'气象用百帕、毫米汞柱；轮胎和管道用巴、千帕、psi；1 标准大气压 = 101325 帕。',
+ base:'帕斯卡',baseSym:'Pa',
+ units:[U('帕斯卡','Pa','',1),U('百帕','hPa','',100),U('毫巴','mbar','',100),U('毫米汞柱','mmHg','托',133.322387415),U('千帕','kPa','',1000),U('磅力/平方英寸','psi','',6894.757293168),U('巴','bar','',100000),U('标准大气压','atm','',101325),U('兆帕','MPa','',1e6)],
+ formulas:['1 标准大气压 = 101325 帕 ≈ 760 毫米汞柱','1 巴 = 100000 帕 = 1000 毫巴','1 千帕 = 1000 帕；1 兆帕 = 1000 千帕','1 psi ≈ 6.895 千帕']},
+
+/* ===== 11 能量 ===== */
+{id:'energy',idx:'11',name:'能量',formal:'能量/热量单位',alias:'功/热量',
+ desc:'物理用焦耳；营养学用千卡；电费单上的「度」是千瓦时；微观粒子用电子伏。',
+ base:'焦耳',baseSym:'J',
+ units:[U('电子伏','eV','',1.602176634e-19),U('尔格','erg','',1e-7),U('焦耳','J','',1),U('卡','cal','卡路里',4.184),U('英热单位','BTU','',1055.05585262),U('千卡','kcal','大卡',4184),U('瓦时','Wh','',3600),U('千瓦时','kWh','度电',3.6e6),U('吨TNT','tTNT','',4.184e9)],
+ formulas:['1 度电 = 1 千瓦时 = 3600000 焦耳','1 卡 = 4.184 焦耳；1 千卡 ≈ 4184 焦耳','1 瓦时 = 3600 焦耳','1 电子伏 ≈ 1.602×10⁻¹⁹ 焦耳']},
+
+/* ===== 12 功率 ===== */
+{id:'power',idx:'12',name:'功率',formal:'功率单位',alias:'马力/做功快慢',
+ desc:'电器用瓦、千瓦；汽车发动机用马力，公制马力（PS）和英制马力（hp）相差约 1.4%。',
+ base:'瓦特',baseSym:'W',
+ units:[U('毫瓦','mW','',0.001),U('瓦特','W','',1),U('卡/秒','cal/s','',4.184),U('英热单位/小时','BTU/h','',0.29307107017222),U('公制马力','PS','',735.49875),U('英制马力','hp','',745.6998715823),U('千瓦','kW','',1000),U('兆瓦','MW','',1e6)],
+ formulas:['1 千瓦 = 1000 瓦特；1 兆瓦 = 1000 千瓦','1 公制马力 = 735.49875 瓦特','1 英制马力 ≈ 745.7 瓦特','功率 = 功 ÷ 时间；电功率 = 电压 × 电流']},
+
+/* ===== 13 密度 ===== */
+{id:'density',idx:'13',name:'密度',formal:'密度单位',alias:'疏密',
+ desc:'密度是单位体积的质量。水在 4°C 时密度约为 1 克/立方厘米 = 1000 千克/立方米。',
+ base:'千克/立方米',baseSym:'kg/m³',
+ units:[U('克/立方厘米','g/cm³','',1000),U('千克/立方分米','kg/dm³','',1000),U('千克/立方米','kg/m³','',1),U('克/升','g/L','',1),U('磅/立方英尺','lb/ft³','',16.01846337396),U('磅/加仑(美)','lb/gal','',119.8264273169)],
+ formulas:['1 克/立方厘米 = 1000 千克/立方米','1 千克/立方米 = 1 克/升','1 磅/立方英尺 ≈ 16.018 千克/立方米']},
+
+/* ===== 14 浓度 ===== */
+{id:'conc',idx:'14',name:'浓度',formal:'浓度单位',alias:'溶液浓度',
+ desc:'化学和医学中常用。摩尔浓度是每升溶液含多少摩尔溶质；当量浓度（N）是旧单位；质量摩尔浓度是每千克溶剂含多少摩尔溶质，不能直接与摩尔浓度换算，需知道密度。',
+ base:'摩尔/升',baseSym:'mol/L',
+ units:[U('微摩尔/升','μmol/L','',1e-6),U('毫摩尔/升','mmol/L','',0.001),U('毫克/升','mg/L','',0.001),U('摩尔/升','mol/L','',1),U('当量浓度','N','',1),U('质量摩尔浓度','mol/kg','',1),U('ppm','ppm','百万分之一',1e-6),U('ppb','ppb','十亿分之一',1e-9)],
+ formulas:['1 mol/L = 1000 mmol/L = 10⁶ μmol/L','1 ppm ≈ 1 mg/L（稀水溶液）','1 ppb = 0.001 ppm','当量浓度 N = 摩尔浓度 × 离子价数','质量摩尔浓度(mol/kg) 与摩尔浓度(mol/L) 不能直接换算，需知道溶液密度']},
+
+/* ===== 15 角度 ===== */
+{id:'angle',idx:'15',name:'角度',formal:'平面角单位',alias:'角',
+ desc:'数学和物理计算常用弧度，日常和工程用度、分、秒。',
+ base:'度',baseSym:'°',
+ units:[U('角秒','″','',1/3600),U('角分','′','',1/60),U('百分度','gon','',0.9),U('度','°','',1),U('弧度','rad','',180/Math.PI),U('周','turn','圈',360)],
+ formulas:['1 度 = 60 角分 = 3600 角秒','1 周 = 360 度 = 2π 弧度','1 弧度 ≈ 57.2958 度','弧度 = 度 × π ÷ 180']},
+
+/* ===== 16 频率 ===== */
+{id:'freq',idx:'16',name:'频率',formal:'频率单位',alias:'赫兹',
+ desc:'频率表示每秒发生多少次。CPU 主频用吉赫兹，无线电广播用千赫、兆赫。',
+ base:'赫兹',baseSym:'Hz',
+ units:[U('赫兹','Hz','次/秒',1),U('千赫','kHz','',1000),U('兆赫','MHz','',1e6),U('吉赫','GHz','',1e9),U('太赫','THz','',1e12)],
+ formulas:['1 千赫 = 1000 赫兹','1 兆赫 = 1000 千赫 = 10⁶ 赫兹','1 吉赫 = 1000 兆赫 = 10⁹ 赫兹','1 太赫 = 1000 吉赫']},
+
+/* ===== 17 电流 ===== */
+{id:'current',idx:'17',name:'电流',formal:'电流单位',alias:'安培',
+ desc:'电流是单位时间内通过导体横截面的电荷量。安培是国际单位制七个基本单位之一。',
+ base:'安培',baseSym:'A',
+ units:[U('纳安','nA','',1e-9),U('微安','μA','',1e-6),U('毫安','mA','',0.001),U('安培','A','',1),U('千安','kA','',1000)],
+ formulas:['1 安培 = 1000 毫安 = 10⁶ 微安','1 毫安 = 1000 微安 = 10⁶ 纳安','电流 = 电荷量 ÷ 时间']},
+
+/* ===== 18 电压 ===== */
+{id:'voltage',idx:'18',name:'电压',formal:'电压/电位差单位',alias:'伏特',
+ desc:'电压是两点之间的电位差，推动电流流动。家用市电 220V，工业用电 380V。',
+ base:'伏特',baseSym:'V',
+ units:[U('微伏','μV','',1e-6),U('毫伏','mV','',0.001),U('伏特','V','',1),U('千伏','kV','',1000),U('兆伏','MV','',1e6)],
+ formulas:['1 千伏 = 1000 伏特','1 伏特 = 1000 毫伏 = 10⁶ 微伏','电压 = 电流 × 电阻（欧姆定律）']},
+
+/* ===== 19 电阻 ===== */
+{id:'resistance',idx:'19',name:'电阻',formal:'电阻单位',alias:'欧姆',
+ desc:'电阻表示导体对电流的阻碍作用。欧姆定律：电压 = 电流 × 电阻。',
+ base:'欧姆',baseSym:'Ω',
+ units:[U('毫欧','mΩ','',0.001),U('欧姆','Ω','',1),U('千欧','kΩ','',1000),U('兆欧','MΩ','',1e6),U('吉欧','GΩ','',1e9)],
+ formulas:['1 千欧 = 1000 欧姆','1 兆欧 = 1000 千欧 = 10⁶ 欧姆','电阻 = 电压 ÷ 电流']},
+
+/* ===== 20 电容 ===== */
+{id:'capacitance',idx:'20',name:'电容',formal:'电容单位',alias:'法拉',
+ desc:'电容表示电容器储存电荷的能力。1 法拉很大，常用微法、纳法、皮法。',
+ base:'法拉',baseSym:'F',
+ units:[U('皮法','pF','',1e-12),U('纳法','nF','',1e-9),U('微法','μF','',1e-6),U('毫法','mF','',0.001),U('法拉','F','',1)],
+ formulas:['1 法拉 = 10⁶ 微法 = 10⁹ 纳法 = 10¹² 皮法','电容 = 电荷量 ÷ 电压']},
+
+/* ===== 21 电感 ===== */
+{id:'inductance',idx:'21',name:'电感',formal:'电感单位',alias:'亨利',
+ desc:'电感表示线圈产生感应电动势的能力。常用毫亨、微亨。',
+ base:'亨利',baseSym:'H',
+ units:[U('纳亨','nH','',1e-9),U('微亨','μH','',1e-6),U('毫亨','mH','',0.001),U('亨利','H','',1)],
+ formulas:['1 亨利 = 1000 毫亨 = 10⁶ 微亨 = 10⁹ 纳亨']},
+
+/* ===== 22 电荷量 ===== */
+{id:'charge',idx:'22',name:'电荷量',formal:'电荷量/电能单位',alias:'电量/电池容量',
+ desc:'电荷量表示带电体带多少电荷。安时（Ah）常用于电池容量；日常「1 度电」是电能，用千瓦时。',
+ base:'库仑',baseSym:'C',
+ units:[U('毫安时','mAh','',3.6),U('安时','Ah','',3600),U('库仑','C','',1)],
+ formulas:['1 安时 = 3600 库仑','1 毫安时 = 3.6 库仑','电荷量 = 电流 × 时间','1 度电 = 1 千瓦时 = 3.6×10⁶ 焦耳（这是电能，不是电荷量）']},
+
+/* ===== 23 磁场 ===== */
+{id:'magnetic',idx:'23',name:'磁场',formal:'磁场单位',alias:'磁感应强度',
+ desc:'磁感应强度用特斯拉；高斯是旧单位，1 特斯拉 = 10000 高斯。磁通量用韦伯。',
+ base:'特斯拉',baseSym:'T',
+ units:[U('高斯','G','',1e-4),U('毫特斯拉','mT','',0.001),U('特斯拉','T','',1),U('韦伯/平方米','Wb/m²','',1),U('韦伯','Wb','磁通量',1)],
+ formulas:['1 特斯拉 = 10000 高斯','1 毫特斯拉 = 10 高斯','1 韦伯 = 1 特斯拉 × 平方米']},
+
+/* ===== 24 光通量 ===== */
+{id:'luminous_flux',idx:'24',name:'光通量',formal:'光通量单位',alias:'流明',
+ desc:'光通量表示光源总共发出多少可见光。普通 LED 灯泡约 800-1500 流明。',
+ base:'流明',baseSym:'lm',special:true,
+ units:[R('流明','lm','','光源总发光量，单位 lm')],
+ formulas:['光通量 = 发光强度 × 立体角','1 流明 = 1 坎德拉 × 1 球面度']},
+
+/* ===== 25 发光强度 ===== */
+{id:'luminous_intensity',idx:'25',name:'发光强度',formal:'发光强度单位',alias:'坎德拉',
+ desc:'发光强度表示光源在某个方向上发光的强弱。坎德拉是国际单位制七个基本单位之一。',
+ base:'坎德拉',baseSym:'cd',special:true,
+ units:[R('坎德拉','cd','烛光','光源在特定方向的发光强度')],
+ formulas:['发光强度 = 光通量 ÷ 立体角']},
+
+/* ===== 26 照度 ===== */
+{id:'illuminance',idx:'26',name:'照度',formal:'照度单位',alias:'勒克斯',
+ desc:'照度表示物体表面被照亮的程度。晴天室外约 10000-100000 lx，室内约 100-500 lx。',
+ base:'勒克斯',baseSym:'lx',special:true,
+ units:[R('勒克斯','lx','米烛光','每平方米接收的光通量')],
+ formulas:['1 勒克斯 = 1 流明 ÷ 1 平方米']},
+
+/* ===== 27 亮度 ===== */
+{id:'luminance',idx:'27',name:'亮度',formal:'亮度单位',alias:'尼特',
+ desc:'亮度表示发光面或反射面在人眼看来有多亮。手机屏幕约 200-1000 尼特。',
+ base:'坎德拉/平方米',baseSym:'cd/m²',special:true,
+ units:[R('尼特','nit','坎德拉/平方米','屏幕、灯光表面的亮度')],
+ formulas:['1 尼特 = 1 坎德拉 ÷ 1 平方米']},
+
+/* ===== 28 声压级 ===== */
+{id:'spl',idx:'28',name:'声压级',formal:'声压级单位',alias:'分贝/声量',
+ desc:'声压级用分贝（dB）表示声音强弱。0 dB 是听阈，正常说话约 60 dB，85 dB 以上长期暴露会损伤听力。',
+ base:'分贝',baseSym:'dB',special:true,
+ units:[R('分贝','dB','','声压级、声强级、声功率级都可能用 dB，但参考基准不同')],
+ formulas:['声压级(dB) = 20 × log₁₀(声压 ÷ 2×10⁻⁵ 帕)','声压级 +10 dB，声压约 3.16 倍，主观响度约翻倍']},
+
+/* ===== 29 声强 ===== */
+{id:'sound_intensity',idx:'29',name:'声强',formal:'声强单位',alias:'声音能量',
+ desc:'声强表示单位面积上通过的声功率，单位瓦/平方米。',
+ base:'瓦/平方米',baseSym:'W/m²',special:true,
+ units:[R('瓦/平方米','W/m²','','单位面积通过的声功率')],
+ formulas:['声强 = 声功率 ÷ 面积','声强级(dB) = 10 × log₁₀(声强 ÷ 参考声强)']},
+
+/* ===== 30 声功率 ===== */
+{id:'sound_power',idx:'30',name:'声功率',formal:'声功率单位',alias:'声音总能量',
+ desc:'声功率表示声源总共发出多少声能，单位瓦特。',
+ base:'瓦特',baseSym:'W',special:true,
+ units:[R('瓦特','W','','声源辐射的总声能功率')],
+ formulas:['声功率级(dB) = 10 × log₁₀(声功率 ÷ 参考声功率)']},
+
+/* ===== 31 放射性 ===== */
+{id:'radioactivity',idx:'31',name:'放射性',formal:'放射性单位',alias:'核辐射',
+ desc:'贝克勒尔表示每秒衰变次数；居里是旧单位；戈瑞表示吸收剂量；希沃特表示等效剂量。',
+ base:'贝克勒尔',baseSym:'Bq',
+ units:[U('贝克勒尔','Bq','',1),U('居里','Ci','',3.7e10),U('戈瑞','Gy','吸收剂量',1),U('希沃特','Sv','等效剂量',1),U('毫希沃特','mSv','',0.001),U('微希沃特','μSv','',1e-6)],
+ formulas:['1 居里 = 3.7×10¹⁰ 贝克勒尔','1 希沃特 = 1 戈瑞 × 辐射权重因子','1 mSv = 1000 μSv']},
+
+/* ===== 32 物质的量 ===== */
+{id:'amount',idx:'32',name:'物质的量',formal:'物质的量单位',alias:'摩尔',
+ desc:'摩尔表示含有阿伏伽德罗常数个粒子的集合，是国际单位制七个基本单位之一。',
+ base:'摩尔',baseSym:'mol',
+ units:[U('毫摩尔','mmol','',0.001),U('微摩尔','μmol','',1e-6),U('摩尔','mol','',1)],
+ formulas:['1 摩尔 = 1000 毫摩尔 = 10⁶ 微摩尔','1 摩尔 = 6.022×10²³ 个粒子（阿伏伽德罗常数）']},
+
+/* ===== 33 流量 ===== */
+{id:'flow',idx:'33',name:'流量',formal:'流量单位',alias:'体积流量',
+ desc:'流量表示单位时间内流过多少体积。水管用升/分，河流用立方米/秒。',
+ base:'立方米/秒',baseSym:'m³/s',
+ units:[U('升/小时','L/h','',1/3600000),U('升/分','L/min','',1/60000),U('升/秒','L/s','',0.001),U('立方米/小时','m³/h','',1/3600),U('立方米/分','m³/min','',1/60),U('立方米/秒','m³/s','',1),U('加仑/分(美)','GPM','',0.0000630901964)],
+ formulas:['1 立方米/秒 = 1000 升/秒 = 60000 升/分','1 立方米/小时 ≈ 0.2778 升/秒','1 美制加仑/分 ≈ 0.0631 升/秒']},
+
+/* ===== 34 油耗 ===== */
+{id:'fuel',idx:'34',name:'油耗',formal:'油耗单位',alias:'汽车耗油',
+ desc:'中国用升/百公里（数字越小越省油）；美国用英里/加仑（数字越大越省油）。',
+ base:'升/百公里',baseSym:'L/100km',
+ units:[U('千米/升','km/L','',100),U('英里/加仑(美)','mpg(US)','',235.214583),U('英里/加仑(英)','mpg(UK)','',282.481),U('升/百公里','L/100km','',1)],
+ formulas:['升/百公里 = 235.214583 ÷ 英里/加仑(美)','升/百公里 = 282.481 ÷ 英里/加仑(英)','升/百公里 = 100 ÷ 千米/升']},
+
+/* ===== 35 数据存储 ===== */
+{id:'data',idx:'35',name:'数据存储',formal:'数据量单位',alias:'文件大小',
+ desc:'最小单位是比特（bit），8 比特 = 1 字节（Byte）。操作系统按 1024 进位，硬盘厂商有时按 1000 进位。',
+ base:'字节',baseSym:'B',
+ units:[U('比特','bit','位',0.125),U('字节','B','',1),U('千字节','KB','',1024),U('兆字节','MB','',1048576),U('吉字节','GB','',1073741824),U('太字节','TB','',1099511627776),U('拍字节','PB','',1125899906842624),U('艾字节','EB','',1152921504606846976),U('泽字节','ZB','',1.180591620717411e21),U('尧字节','YB','',1.208925819614629e24),U('罗字节','RB','',1.23794003928538e27),U('奎字节','QB','',1.267650600228229e30)],
+ formulas:['1 字节 = 8 比特','1 KB = 1024 B；1 MB = 1024 KB','1 GB = 1024 MB；1 TB = 1024 GB','1 PB = 1024 TB；1 EB = 1024 PB','1 ZB = 1024 EB；1 YB = 1024 ZB','1 RB = 1024 YB；1 QB = 1024 RB']},
+
+/* ===== 36 数据传输速率 ===== */
+{id:'data_rate',idx:'36',name:'数据传输速率',formal:'数据传输速率单位',alias:'网速',
+ desc:'表示每秒传输多少比特。家庭宽带 100 Mbps，5G 可达 1 Gbps。注意 bit 和 Byte 差 8 倍。',
+ base:'比特/秒',baseSym:'bps',
+ units:[U('比特/秒','bps','',1),U('千比特/秒','kbps','',1000),U('兆比特/秒','Mbps','',1e6),U('吉比特/秒','Gbps','',1e9),U('太比特/秒','Tbps','',1e12)],
+ formulas:['1 kbps = 1000 bps','1 Mbps = 1000 kbps = 10⁶ bps','1 Gbps = 1000 Mbps = 10⁹ bps','1 字节/秒 = 8 比特/秒']},
+
+/* ===== 37 货币 ===== */
+{id:'currency',idx:'37',name:'货币',formal:'货币单位',alias:'钱',
+ desc:'货币之间的比率（汇率）实时波动，不能固定换算。这里只列出常见货币名称和符号，实际兑换请查当日汇率。',
+ base:'人民币',baseSym:'CNY',special:true,
+ units:[R('人民币','CNY','元','中国法定货币'),R('美元','USD','美金','美国法定货币'),R('欧元','EUR','欧','欧元区货币'),R('英镑','GBP','镑','英国货币'),R('日元','JPY','日圆','日本货币'),R('港币','HKD','港元','中国香港货币'),R('韩元','KRW','','韩国货币'),R('澳元','AUD','','澳大利亚货币'),R('加元','CAD','','加拿大货币'),R('瑞士法郎','CHF','','瑞士货币')],
+ formulas:['1 元 = 10 角 = 100 分','汇率实时波动，请以银行或支付平台当日牌价为准']},
+
+/* ===== 38 黏度 ===== */
+{id:'viscosity',idx:'38',name:'黏度',formal:'黏度单位',alias:'粘稠度',
+ desc:'动力黏度用帕斯卡·秒或泊；运动黏度用斯托克斯。水在 20°C 时约 1 厘泊。',
+ base:'帕斯卡·秒',baseSym:'Pa·s',
+ units:[U('厘泊','cP','',0.001),U('毫帕·秒','mPa·s','',0.001),U('泊','P','',0.1),U('帕斯卡·秒','Pa·s','',1),U('厘斯托克斯','cSt','',1e-6),U('斯托克斯','St','',1e-4)],
+ formulas:['1 帕斯卡·秒 = 10 泊 = 1000 厘泊','1 泊 = 100 厘泊','运动黏度 = 动力黏度 ÷ 密度']},
+
+/* ===== 39 表面张力 ===== */
+{id:'surface_tension',idx:'39',name:'表面张力',formal:'表面张力单位',alias:'界面张力',
+ desc:'表面张力表示液体表面收缩的力。水在 20°C 时约 72 毫牛顿/米。',
+ base:'牛顿/米',baseSym:'N/m',
+ units:[U('达因/厘米','dyn/cm','',0.001),U('毫牛顿/米','mN/m','',0.001),U('牛顿/米','N/m','',1)],
+ formulas:['1 牛顿/米 = 1000 毫牛顿/米','1 达因/厘米 = 0.001 牛顿/米']},
+
+/* ===== 40 热导率 ===== */
+{id:'thermal_conductivity',idx:'40',name:'热导率',formal:'热导率单位',alias:'导热系数',
+ desc:'热导率表示材料导热能力。铜约 400 W/(m·K)，空气约 0.026 W/(m·K)。',
+ base:'瓦/(米·开)',baseSym:'W/(m·K)',
+ units:[U('千卡/(米·时·度)','kcal/(m·h·°C)','',1.163),U('英热单位/(时·英尺·华氏度)','BTU/(h·ft·°F)','',1.730735),U('瓦/(米·开)','W/(m·K)','',1)],
+ formulas:['1 W/(m·K) ≈ 0.8598 kcal/(m·h·°C)','1 W/(m·K) ≈ 0.5778 BTU/(h·ft·°F)']},
+
+/* ===== 41 比热容 ===== */
+{id:'specific_heat',idx:'41',name:'比热容',formal:'比热容单位',alias:'热容',
+ desc:'比热容表示单位质量物质升高 1 度所需热量。水约 4.184 焦/(克·度)。',
+ base:'焦/(千克·开)',baseSym:'J/(kg·K)',
+ units:[U('卡/(克·度)','cal/(g·°C)','',4184),U('千卡/(千克·度)','kcal/(kg·°C)','',4184),U('英热单位/(磅·华氏度)','BTU/(lb·°F)','',4186.8),U('焦/(千克·开)','J/(kg·K)','',1),U('焦/(克·度)','J/(g·°C)','',1000)],
+ formulas:['1 cal/(g·°C) = 4184 J/(kg·K)','1 J/(g·°C) = 1000 J/(kg·K)','热量 = 质量 × 比热容 × 温差']},
+
+/* ===== 42 动量 ===== */
+{id:'momentum',idx:'42',name:'动量',formal:'动量单位',alias:'运动量',
+ desc:'动量 = 质量 × 速度。国际单位是千克·米/秒。',
+ base:'千克·米/秒',baseSym:'kg·m/s',
+ units:[U('克·厘米/秒','g·cm/s','',1e-5),U('千克·米/秒','kg·m/s','',1)],
+ formulas:['1 千克·米/秒 = 100000 克·厘米/秒','动量 = 质量 × 速度']},
+
+/* ===== 43 角动量 ===== */
+{id:'angular_momentum',idx:'43',name:'角动量',formal:'角动量单位',alias:'动量矩',
+ desc:'角动量 = 转动惯量 × 角速度。国际单位是千克·米²/秒。',
+ base:'千克·米²/秒',baseSym:'kg·m²/s',
+ units:[U('克·厘米²/秒','g·cm²/s','',1e-7),U('千克·米²/秒','kg·m²/s','',1)],
+ formulas:['1 千克·米²/秒 = 10⁷ 克·厘米²/秒','角动量 = 转动惯量 × 角速度']},
+
+/* ===== 44 转动惯量 ===== */
+{id:'moment_inertia',idx:'44',name:'转动惯量',formal:'转动惯量单位',alias:'惯性矩',
+ desc:'转动惯量表示物体转动时惯性的大小。国际单位是千克·米²。',
+ base:'千克·米²',baseSym:'kg·m²',
+ units:[U('克·厘米²','g·cm²','',1e-7),U('千克·米²','kg·m²','',1)],
+ formulas:['1 千克·米² = 10⁷ 克·厘米²','转动惯量 = 质量 × 回转半径²']},
+
+/* ===== 45 力矩 ===== */
+{id:'torque',idx:'45',name:'力矩',formal:'力矩单位',alias:'扭矩',
+ desc:'力矩 = 力 × 力臂。汽车发动机扭矩常用牛顿·米。',
+ base:'牛顿·米',baseSym:'N·m',
+ units:[U('牛顿·米','N·m','',1),U('千克力·米','kgf·m','',9.80665),U('磅力·英尺','lbf·ft','',1.3558179483314)],
+ formulas:['1 千克力·米 = 9.80665 牛顿·米','1 磅力·英尺 ≈ 1.3558 牛顿·米','力矩 = 力 × 力臂']},
+
+/* ===== 46 冲量 ===== */
+{id:'impulse',idx:'46',name:'冲量',formal:'冲量单位',alias:'力的时间积累',
+ desc:'冲量 = 力 × 时间，等于动量的变化量。国际单位是牛顿·秒。',
+ base:'牛顿·秒',baseSym:'N·s',
+ units:[U('达因·秒','dyn·s','',1e-5),U('牛顿·秒','N·s','',1),U('千克力·秒','kgf·s','',9.80665)],
+ formulas:['1 牛顿·秒 = 100000 达因·秒','1 千克力·秒 = 9.80665 牛顿·秒','冲量 = 力 × 时间 = 动量变化']},
+
+/* ===== 47 应力 ===== */
+{id:'stress',idx:'47',name:'应力',formal:'应力/强度单位',alias:'材料受力',
+ desc:'应力是单位面积上的内力。单位与压强相同，常用兆帕（MPa）。钢材屈服强度约 235-400 MPa。',
+ base:'帕斯卡',baseSym:'Pa',
+ units:[U('帕斯卡','Pa','',1),U('千帕','kPa','',1000),U('兆帕','MPa','',1e6),U('吉帕','GPa','',1e9),U('磅力/平方英寸','psi','',6894.757293168)],
+ formulas:['1 兆帕 = 10⁶ 帕；1 吉帕 = 10⁹ 帕','1 psi ≈ 6.895 千帕','应力 = 力 ÷ 面积']},
+
+/* ===== 48 应变 ===== */
+{id:'strain',idx:'48',name:'应变',formal:'应变单位',alias:'形变',
+ desc:'应变是材料受力后的相对形变，长度变化量除以原长度，是无量纲量，常用百分比或微应变表示。',
+ base:'无量纲',baseSym:'—',special:true,
+ units:[R('无量纲','—','','长度变化 ÷ 原长度'),R('百分比','%','','应变 × 100%'),R('微应变','με','','应变 × 10⁶')],
+ formulas:['应变 = 长度变化 ÷ 原长度','1 微应变 = 10⁻⁶ 应变']},
+
+/* ===== 49 弹性模量 ===== */
+{id:'elastic_modulus',idx:'49',name:'弹性模量',formal:'弹性模量单位',alias:'杨氏模量',
+ desc:'弹性模量表示材料抵抗弹性变形的能力，应力与应变的比值。单位与应力相同。',
+ base:'帕斯卡',baseSym:'Pa',
+ units:[U('兆帕','MPa','',1e6),U('吉帕','GPa','',1e9),U('帕斯卡','Pa','',1)],
+ formulas:['弹性模量 = 应力 ÷ 应变','1 GPa = 1000 MPa = 10⁹ Pa']},
+
+/* ===== 50 摩擦系数 ===== */
+{id:'friction',idx:'50',name:'摩擦系数',formal:'摩擦系数',alias:'摩擦因数',
+ desc:'摩擦系数是摩擦力与正压力的比值，无量纲。橡胶与路面约 0.7，冰面约 0.05。',
+ base:'无量纲',baseSym:'—',special:true,
+ units:[R('无量纲','μ','','摩擦力 ÷ 正压力')],
+ formulas:['摩擦力 = 摩擦系数 × 正压力']},
+
+/* ===== 51 雷诺数 ===== */
+{id:'reynolds',idx:'51',name:'雷诺数',formal:'雷诺数',alias:'流体惯性/黏性比',
+ desc:'雷诺数是流体惯性力与黏性力的比值，无量纲。小于 2000 为层流，大于 4000 为湍流。',
+ base:'无量纲',baseSym:'Re',special:true,
+ units:[R('无量纲','Re','','惯性力 ÷ 黏性力')],
+ formulas:['Re = 密度 × 流速 × 特征长度 ÷ 黏度']},
+
+/* ===== 52 质量流量 ===== */
+{id:'mass_flow',idx:'52',name:'质量流量',formal:'质量流量单位',alias:'每秒质量',
+ desc:'质量流量表示单位时间内流过多少质量。',
+ base:'千克/秒',baseSym:'kg/s',
+ units:[U('克/秒','g/s','',0.001),U('千克/分','kg/min','',1/60),U('千克/秒','kg/s','',1),U('吨/小时','t/h','',1000/3600)],
+ formulas:['1 千克/秒 = 1000 克/秒','1 吨/小时 ≈ 0.2778 千克/秒','质量流量 = 体积流量 × 密度']},
+
+/* ===== 53 渗透率 ===== */
+{id:'permeability',idx:'53',name:'渗透率',formal:'渗透率单位',alias:'多孔介质',
+ desc:'渗透率表示多孔介质让流体通过的能力。石油天然气行业常用达西（D）和毫达西（mD）。',
+ base:'平方米',baseSym:'m²',
+ units:[U('毫达西','mD','',9.869233e-16),U('达西','D','',9.869233e-13),U('平方米','m²','',1)],
+ formulas:['1 达西 ≈ 9.87×10⁻¹³ 平方米','1 达西 = 1000 毫达西']},
+
+/* ===== 54 热容 ===== */
+{id:'heat_capacity',idx:'54',name:'热容',formal:'热容单位',alias:'物体储热',
+ desc:'热容表示物体温度升高 1 度所需的热量。',
+ base:'焦/开',baseSym:'J/K',
+ units:[U('焦/开','J/K','',1),U('千焦/开','kJ/K','',1000),U('卡/度','cal/°C','',4.184),U('千卡/度','kcal/°C','',4184)],
+ formulas:['1 千焦/开 = 1000 焦/开','1 千卡/度 = 4184 焦/开']},
+
+/* ===== 55 潜热 ===== */
+{id:'latent_heat',idx:'55',name:'潜热',formal:'潜热单位',alias:'相变热',
+ desc:'潜热表示单位质量物质发生相变时吸收或放出的热量。',
+ base:'焦/千克',baseSym:'J/kg',
+ units:[U('焦/千克','J/kg','',1),U('千焦/千克','kJ/kg','',1000),U('卡/克','cal/g','',4184),U('千卡/千克','kcal/kg','',4184)],
+ formulas:['1 千焦/千克 = 1000 焦/千克','1 千卡/千克 = 4184 焦/千克']},
+
+/* ===== 56 热流密度 ===== */
+{id:'heat_flux',idx:'56',name:'热流密度',formal:'热流密度单位',alias:'热通量',
+ desc:'热流密度表示单位面积上通过的热功率。',
+ base:'瓦/平方米',baseSym:'W/m²',
+ units:[U('瓦/平方米','W/m²','',1),U('千瓦/平方米','kW/m²','',1000),U('卡/(秒·平方厘米)','cal/(s·cm²)','',41840)],
+ formulas:['1 千瓦/平方米 = 1000 瓦/平方米','1 cal/(s·cm²) = 41840 W/m²']},
+
+/* ===== 57 传热系数 ===== */
+{id:'heat_transfer',idx:'57',name:'传热系数',formal:'传热系数单位',alias:'换热系数',
+ desc:'传热系数表示对流换热的强弱。空气自然对流约 5-25 W/(m²·K)，水约 500-10000。',
+ base:'瓦/(平方米·开)',baseSym:'W/(m²·K)',
+ units:[U('瓦/(平方米·开)','W/(m²·K)','',1),U('千卡/(平方米·时·度)','kcal/(m²·h·°C)','',1.163)],
+ formulas:['1 W/(m²·K) ≈ 0.8598 kcal/(m²·h·°C)']},
+
+/* ===== 58 热阻 ===== */
+{id:'thermal_resistance',idx:'58',name:'热阻',formal:'热阻单位',alias:'阻热',
+ desc:'热阻表示物体阻碍热量传递的能力。',
+ base:'开/瓦',baseSym:'K/W',
+ units:[U('开/瓦','K/W','',1),U('开/千瓦','K/kW','',0.001)],
+ formulas:['1 开/瓦 = 1000 开/千瓦','热阻 = 温差 ÷ 热功率']},
+
+/* ===== 59 热扩散率 ===== */
+{id:'thermal_diffusivity',idx:'59',name:'热扩散率',formal:'热扩散率单位',alias:'导温系数',
+ desc:'热扩散率表示温度在材料中扩散的快慢。',
+ base:'平方米/秒',baseSym:'m²/s',
+ units:[U('平方毫米/秒','mm²/s','',1e-6),U('平方米/秒','m²/s','',1)],
+ formulas:['1 平方米/秒 = 10⁶ 平方毫米/秒','热扩散率 = 热导率 ÷ (密度 × 比热容)']},
+
+/* ===== 60 熵 ===== */
+{id:'entropy',idx:'60',name:'熵',formal:'熵单位',alias:'无序度',
+ desc:'熵表示系统的无序程度。国际单位是焦/开。',
+ base:'焦/开',baseSym:'J/K',
+ units:[U('焦/开','J/K','',1),U('千焦/开','kJ/K','',1000)],
+ formulas:['1 千焦/开 = 1000 焦/开']},
+
+/* ===== 61 焓 ===== */
+{id:'enthalpy',idx:'61',name:'焓',formal:'焓单位',alias:'热含量',
+ desc:'焓是热力学状态函数，表示系统的总热含量。国际单位是焦耳。',
+ base:'焦耳',baseSym:'J',
+ units:[U('焦耳','J','',1),U('千焦','kJ','',1000)],
+ formulas:['1 千焦 = 1000 焦耳','焓变 = 内能变化 + 压力 × 体积变化']},
+
+/* ===== 62 热膨胀系数 ===== */
+{id:'thermal_expansion',idx:'62',name:'热膨胀系数',formal:'热膨胀系数单位',alias:'膨胀率',
+ desc:'热膨胀系数表示温度升高 1 度时长度或体积的相对变化。',
+ base:'1/开',baseSym:'1/K',
+ units:[U('1/开','1/K','',1),U('1/摄氏度','1/°C','',1),U('微应变/度','με/°C','',1e-6)],
+ formulas:['1/开 与 1/摄氏度 数值相同','1 微应变/度 = 10⁻⁶ /度']},
+
+/* ===== 63 电导 ===== */
+{id:'conductance',idx:'63',name:'电导',formal:'电导单位',alias:'西门子',
+ desc:'电导是电阻的倒数，表示导体导电能力。单位西门子（S）。',
+ base:'西门子',baseSym:'S',
+ units:[U('微西门子','μS','',1e-6),U('毫西门子','mS','',0.001),U('西门子','S','',1)],
+ formulas:['1 西门子 = 1000 毫西门子 = 10⁶ 微西门子','电导 = 1 ÷ 电阻']},
+
+/* ===== 64 电导率 ===== */
+{id:'conductivity',idx:'64',name:'电导率',formal:'电导率单位',alias:'导电能力',
+ desc:'电导率表示材料的导电能力。铜约 5.96×10⁷ S/m。',
+ base:'西门子/米',baseSym:'S/m',
+ units:[U('微西门子/厘米','μS/cm','',1e-4),U('毫西门子/厘米','mS/cm','',0.1),U('西门子/米','S/m','',1)],
+ formulas:['1 S/m = 10000 μS/cm = 10 mS/cm']},
+
+/* ===== 65 电阻率 ===== */
+{id:'resistivity',idx:'65',name:'电阻率',formal:'电阻率单位',alias:'电阻系数',
+ desc:'电阻率是电导率的倒数，表示材料阻碍电流的能力。铜约 1.68×10⁻⁸ Ω·m。',
+ base:'欧姆·米',baseSym:'Ω·m',
+ units:[U('欧姆·平方毫米/米','Ω·mm²/m','',1e-6),U('欧姆·厘米','Ω·cm','',0.01),U('欧姆·米','Ω·m','',1)],
+ formulas:['1 Ω·m = 100 Ω·cm','1 Ω·mm²/m = 10⁻⁶ Ω·m']},
+
+/* ===== 66 电场强度 ===== */
+{id:'electric_field',idx:'66',name:'电场强度',formal:'电场强度单位',alias:'场强',
+ desc:'电场强度表示单位电荷受到的电场力。单位伏特/米。',
+ base:'伏特/米',baseSym:'V/m',
+ units:[U('伏特/米','V/m','',1),U('千伏/米','kV/m','',1000),U('伏特/厘米','V/cm','',100)],
+ formulas:['1 千伏/米 = 1000 伏特/米','1 伏特/厘米 = 100 伏特/米','电场强度 = 电压 ÷ 距离']},
+
+/* ===== 67 电位 ===== */
+{id:'potential',idx:'67',name:'电位',formal:'电位单位',alias:'电势',
+ desc:'电位表示电场中某点的电势能。单位伏特，与电压同单位。',
+ base:'伏特',baseSym:'V',
+ units:[U('毫伏','mV','',0.001),U('伏特','V','',1),U('千伏','kV','',1000)],
+ formulas:['1 千伏 = 1000 伏特','1 伏特 = 1000 毫伏']},
+
+/* ===== 68 电动势 ===== */
+{id:'emf',idx:'68',name:'电动势',formal:'电动势单位',alias:'电源电压',
+ desc:'电动势表示电源把其他形式能转化为电能的本领。单位伏特。',
+ base:'伏特',baseSym:'V',
+ units:[U('毫伏','mV','',0.001),U('伏特','V','',1),U('千伏','kV','',1000)],
+ formulas:['1 千伏 = 1000 伏特','电动势 ≈ 电源开路电压']},
+
+/* ===== 69 磁通量 ===== */
+{id:'magnetic_flux',idx:'69',name:'磁通量',formal:'磁通量单位',alias:'磁通',
+ desc:'磁通量表示穿过某个面积的磁感线条数。单位韦伯（Wb）。',
+ base:'韦伯',baseSym:'Wb',
+ units:[U('麦克斯韦','Mx','',1e-8),U('韦伯','Wb','',1)],
+ formulas:['1 韦伯 = 10⁸ 麦克斯韦','磁通量 = 磁感应强度 × 面积']},
+
+/* ===== 70 磁通密度 ===== */
+{id:'magnetic_flux_density',idx:'70',name:'磁通密度',formal:'磁通密度单位',alias:'磁感应强度',
+ desc:'磁通密度即磁感应强度，表示单位面积的磁通量。单位特斯拉。',
+ base:'特斯拉',baseSym:'T',
+ units:[U('高斯','G','',1e-4),U('毫特斯拉','mT','',0.001),U('特斯拉','T','',1)],
+ formulas:['1 特斯拉 = 10000 高斯','磁通密度 = 磁通量 ÷ 面积']},
+
+/* ===== 71 磁场强度 ===== */
+{id:'magnetic_field_strength',idx:'71',name:'磁场强度',formal:'磁场强度单位',alias:'磁化力',
+ desc:'磁场强度表示外加磁场的强弱，与磁感应强度不同。单位安培/米。',
+ base:'安培/米',baseSym:'A/m',
+ units:[U('安培/米','A/m','',1),U('安培/厘米','A/cm','',100),U('奥斯特','Oe','',1000/(4*Math.PI))],
+ formulas:['1 安培/厘米 = 100 安培/米','1 奥斯特 ≈ 79.577 安培/米']},
+
+/* ===== 72 磁导率 ===== */
+{id:'permeability_mag',idx:'72',name:'磁导率',formal:'磁导率单位',alias:'导磁能力',
+ desc:'磁导率表示材料导磁能力。真空磁导率 μ₀ = 4π×10⁻⁷ H/m。',
+ base:'亨利/米',baseSym:'H/m',
+ units:[U('亨利/米','H/m','',1),U('相对磁导率','μr','',1)],
+ formulas:['真空磁导率 μ₀ = 4π×10⁻⁷ H/m','相对磁导率 = 材料磁导率 ÷ 真空磁导率']},
+
+/* ===== 73 介电常数 ===== */
+{id:'permittivity',idx:'73',name:'介电常数',formal:'介电常数单位',alias:'电容率',
+ desc:'介电常数表示材料储存电场能的能力。真空介电常数 ε₀ ≈ 8.854×10⁻¹² F/m。',
+ base:'法拉/米',baseSym:'F/m',
+ units:[U('法拉/米','F/m','',1),U('相对介电常数','εr','',1)],
+ formulas:['真空介电常数 ε₀ ≈ 8.854×10⁻¹² F/m','相对介电常数 = 材料介电常数 ÷ 真空介电常数']},
+
+/* ===== 74 极化强度 ===== */
+{id:'polarization',idx:'74',name:'极化强度',formal:'极化强度单位',alias:'电偶极矩密度',
+ desc:'极化强度表示电介质单位体积内的电偶极矩。单位库仑/平方米。',
+ base:'库仑/平方米',baseSym:'C/m²',
+ units:[U('库仑/平方米','C/m²','',1)],
+ formulas:['极化强度 = 电偶极矩 ÷ 体积']},
+
+/* ===== 75 电偶极矩 ===== */
+{id:'dipole_moment',idx:'75',name:'电偶极矩',formal:'电偶极矩单位',alias:'偶极矩',
+ desc:'电偶极矩表示正负电荷分离的程度。单位库仑·米。',
+ base:'库仑·米',baseSym:'C·m',
+ units:[U('德拜','D','',3.33564e-30),U('库仑·米','C·m','',1)],
+ formulas:['1 德拜 ≈ 3.336×10⁻³⁰ 库仑·米','电偶极矩 = 电荷量 × 距离']},
+
+/* ===== 76 声压 ===== */
+{id:'sound_pressure',idx:'76',name:'声压',formal:'声压单位',alias:'声音压力',
+ desc:'声压是声波引起的压强变化。人耳听阈约 2×10⁻⁵ 帕，痛阈约 20 帕。',
+ base:'帕斯卡',baseSym:'Pa',special:true,
+ units:[R('帕斯卡','Pa','','声波引起的压强变化'),R('微帕','μPa','','1 μPa = 10⁻⁶ Pa')],
+ formulas:['声压级(dB) = 20 × log₁₀(声压 ÷ 2×10⁻⁵ 帕)','听阈约 2×10⁻⁵ 帕；痛阈约 20 帕']},
+
+/* ===== 77 声阻抗 ===== */
+{id:'acoustic_impedance',idx:'77',name:'声阻抗',formal:'声阻抗单位',alias:'声阻',
+ desc:'声阻抗表示声波传播时介质对声波的阻碍。单位帕·秒/米。',
+ base:'帕·秒/米',baseSym:'Pa·s/m',special:true,
+ units:[R('帕·秒/米','Pa·s/m','','声压 ÷ 体积速度')],
+ formulas:['声阻抗 = 声压 ÷ 体积速度','空气特性阻抗约 415 Pa·s/m']},
+
+/* ===== 78 响度 ===== */
+{id:'loudness',idx:'78',name:'响度',formal:'响度单位',alias:'主观音量',
+ desc:'响度是人耳对声音强弱的主观感受。单位宋（sone），1 宋 = 40 分贝 1 kHz 纯音的响度。',
+ base:'宋',baseSym:'sone',special:true,
+ units:[R('宋','sone','','主观响度单位'),R('方','phon','','响度级单位，数值等于等响的 1 kHz 纯音声压级')],
+ formulas:['1 宋 = 40 方（1 kHz 纯音）','响度约每增加 10 方翻一倍']},
+
+/* ===== 79 音调 ===== */
+{id:'pitch',idx:'79',name:'音调',formal:'音调单位',alias:'音高',
+ desc:'音调是人耳对声音频率的主观感受。单位美（mel），1000 美 = 1000 Hz 纯音的音调。',
+ base:'美',baseSym:'mel',special:true,
+ units:[R('美','mel','','主观音调单位'),R('巴克','Bark','','听觉临界频带单位')],
+ formulas:['1000 美 = 1000 Hz 纯音的音调','频率越高，音调越高（非线性关系）']},
+
+/* ===== 80 光出射度 ===== */
+{id:'luminous_exitance',idx:'80',name:'光出射度',formal:'光出射度单位',alias:'光发射度',
+ desc:'光出射度表示单位面积光源表面发出的光通量。单位流明/平方米。',
+ base:'流明/平方米',baseSym:'lm/m²',special:true,
+ units:[R('流明/平方米','lm/m²','','每平方米发出的光通量')],
+ formulas:['光出射度 = 光通量 ÷ 面积']},
+
+/* ===== 81 曝光量 ===== */
+{id:'exposure',idx:'81',name:'曝光量',formal:'曝光量单位',alias:'摄影曝光',
+ desc:'曝光量表示感光材料接收的光量。单位勒克斯·秒。',
+ base:'勒克斯·秒',baseSym:'lx·s',special:true,
+ units:[R('勒克斯·秒','lx·s','','照度 × 时间')],
+ formulas:['曝光量 = 照度 × 曝光时间']},
+
+/* ===== 82 色温 ===== */
+{id:'color_temp',idx:'82',name:'色温',formal:'色温单位',alias:'光源颜色',
+ desc:'色温表示光源颜色的冷暖。单位开尔文（K）。烛光约 1800K，正午阳光约 5500K，阴天约 7000K。',
+ base:'开尔文',baseSym:'K',special:true,
+ units:[R('开尔文','K','','光源颜色对应的黑体温度')],
+ formulas:['色温越低越偏暖（黄红），越高越偏冷（蓝白）']},
+
+/* ===== 83 波长 ===== */
+{id:'wavelength',idx:'83',name:'波长',formal:'波长单位',alias:'波的长度',
+ desc:'波长是波在一个周期内传播的距离。可见光约 380-780 纳米。',
+ base:'米',baseSym:'m',
+ units:[U('皮米','pm','',1e-12),U('纳米','nm','',1e-9),U('微米','μm','',1e-6),U('毫米','mm','',0.001),U('米','m','',1)],
+ formulas:['1 米 = 10⁹ 纳米','可见光波长约 380-780 纳米','波长 × 频率 = 波速']},
+
+/* ===== 84 折射率 ===== */
+{id:'refractive_index',idx:'84',name:'折射率',formal:'折射率',alias:'折射系数',
+ desc:'折射率是光在真空中的速度与在介质中速度的比值，无量纲。水约 1.33，玻璃约 1.5。',
+ base:'无量纲',baseSym:'n',special:true,
+ units:[R('无量纲','n','','真空光速 ÷ 介质光速')],
+ formulas:['折射率 = 真空光速 ÷ 介质光速','水约 1.33；玻璃约 1.5；钻石约 2.42']},
+
+/* ===== 85 光密度 ===== */
+{id:'optical_density',idx:'85',name:'光密度',formal:'光密度单位',alias:'OD值',
+ desc:'光密度表示材料阻挡光的能力，是透射率倒数的对数，无量纲。',
+ base:'无量纲',baseSym:'OD',special:true,
+ units:[R('无量纲','OD','','log₁₀(入射光 ÷ 透射光)')],
+ formulas:['OD = log₁₀(入射光强 ÷ 透射光强)','OD 越大，材料越不透明']},
+
+/* ===== 86 吸光度 ===== */
+{id:'absorbance',idx:'86',name:'吸光度',formal:'吸光度单位',alias:'吸收度',
+ desc:'吸光度表示溶液吸收光的程度，与光密度数值相同但用途不同。',
+ base:'无量纲',baseSym:'A',special:true,
+ units:[R('无量纲','A','','log₁₀(入射光 ÷ 透射光)')],
+ formulas:['A = log₁₀(I₀ ÷ I)','A = 吸光系数 × 浓度 × 光程（朗伯-比尔定律）']},
+
+/* ===== 87 透射率 ===== */
+{id:'transmittance',idx:'87',name:'透射率',formal:'透射率',alias:'透过率',
+ desc:'透射率表示光透过材料的比例，无量纲，常用百分比。',
+ base:'无量纲',baseSym:'T',special:true,
+ units:[R('无量纲','T','','透射光 ÷ 入射光'),R('百分比','%','','透射率 × 100%')],
+ formulas:['透射率 = 透射光强 ÷ 入射光强','吸光度 = −log₁₀(透射率)']},
+
+/* ===== 88 反射率 ===== */
+{id:'reflectance',idx:'88',name:'反射率',formal:'反射率',alias:'反射系数',
+ desc:'反射率表示光被表面反射的比例，无量纲，常用百分比。',
+ base:'无量纲',baseSym:'R',special:true,
+ units:[R('无量纲','R','','反射光 ÷ 入射光'),R('百分比','%','','反射率 × 100%')],
+ formulas:['反射率 = 反射光强 ÷ 入射光强','镜面反射率可接近 100%']},
+
+/* ===== 89 摩尔质量 ===== */
+{id:'molar_mass',idx:'89',name:'摩尔质量',formal:'摩尔质量单位',alias:'每摩尔质量',
+ desc:'摩尔质量表示 1 摩尔物质的质量。单位克/摩尔。水的摩尔质量约 18 g/mol。',
+ base:'克/摩尔',baseSym:'g/mol',
+ units:[U('克/摩尔','g/mol','',1),U('千克/摩尔','kg/mol','',1000)],
+ formulas:['1 千克/摩尔 = 1000 克/摩尔','摩尔质量 = 质量 ÷ 物质的量']},
+
+/* ===== 90 摩尔体积 ===== */
+{id:'molar_volume',idx:'90',name:'摩尔体积',formal:'摩尔体积单位',alias:'每摩尔体积',
+ desc:'摩尔体积表示 1 摩尔物质占的体积。标准状况下理想气体约 22.4 升/摩尔。',
+ base:'升/摩尔',baseSym:'L/mol',
+ units:[U('升/摩尔','L/mol','',1),U('立方米/摩尔','m³/mol','',1000)],
+ formulas:['1 立方米/摩尔 = 1000 升/摩尔','标准状况下气体约 22.4 L/mol']},
+
+/* ===== 91 质量摩尔浓度 ===== */
+{id:'molality',idx:'91',name:'质量摩尔浓度',formal:'质量摩尔浓度单位',alias:'mol/kg',
+ desc:'质量摩尔浓度表示每千克溶剂中含多少摩尔溶质。单位摩尔/千克。',
+ base:'摩尔/千克',baseSym:'mol/kg',
+ units:[U('毫摩尔/千克','mmol/kg','',0.001),U('摩尔/千克','mol/kg','',1)],
+ formulas:['1 摩尔/千克 = 1000 毫摩尔/千克','质量摩尔浓度 = 溶质摩尔数 ÷ 溶剂质量(kg)']},
+
+/* ===== 92 当量浓度 ===== */
+{id:'normality',idx:'92',name:'当量浓度',formal:'当量浓度单位',alias:'规度',
+ desc:'当量浓度表示每升溶液含多少克当量溶质。单位 N。现已少用，逐渐被摩尔浓度取代。',
+ base:'当量/升',baseSym:'N',special:true,
+ units:[R('当量/升','N','','每升溶液含多少克当量溶质')],
+ formulas:['当量浓度 = 摩尔浓度 × 离子价数','1 N = 1 mol/L × 价数']},
+
+/* ===== 93 pH ===== */
+{id:'ph',idx:'93',name:'pH',formal:'pH单位',alias:'酸碱度',
+ desc:'pH 表示溶液的酸碱程度，是氢离子浓度的负对数，无量纲。pH=7 中性，小于 7 酸性，大于 7 碱性。',
+ base:'无量纲',baseSym:'pH',special:true,
+ units:[R('pH','pH','','氢离子浓度的负对数')],
+ formulas:['pH = −log₁₀(氢离子浓度)','pH=7 中性；pH<7 酸性；pH>7 碱性']},
+
+/* ===== 94 活度 ===== */
+{id:'activity',idx:'94',name:'活度',formal:'活度单位',alias:'有效浓度',
+ desc:'活度表示溶液中离子的有效浓度，考虑了离子间的相互作用。',
+ base:'摩尔/升',baseSym:'mol/L',special:true,
+ units:[R('摩尔/升','mol/L','','离子的有效浓度')],
+ formulas:['活度 = 活度系数 × 浓度','稀溶液中活度系数接近 1']},
+
+/* ===== 95 反应速率 ===== */
+{id:'reaction_rate',idx:'95',name:'反应速率',formal:'反应速率单位',alias:'化学反应快慢',
+ desc:'反应速率表示单位时间内反应物浓度的减少或生成物浓度的增加。',
+ base:'摩尔/(升·秒)',baseSym:'mol/(L·s)',
+ units:[U('摩尔/(升·秒)','mol/(L·s)','',1),U('摩尔/(升·分)','mol/(L·min)','',1/60),U('摩尔/(立方米·秒)','mol/(m³·s)','',0.001)],
+ formulas:['1 mol/(L·min) = 1/60 mol/(L·s)','反应速率 = 浓度变化 ÷ 时间']},
+
+/* ===== 96 平衡常数 ===== */
+{id:'equilibrium',idx:'96',name:'平衡常数',formal:'平衡常数',alias:'化学平衡',
+ desc:'平衡常数表示可逆反应达到平衡时生成物与反应物浓度的比值。单位取决于反应方程式。',
+ base:'视反应而定',baseSym:'K',special:true,
+ units:[R('视反应而定','K','','不同反应平衡常数单位不同')],
+ formulas:['对于 aA + bB ⇌ cC + dD，K = [C]ᶜ[D]ᵈ ÷ ([A]ᵃ[B]ᵇ)','平衡常数只与温度有关']},
+
+/* ===== 97 强度 ===== */
+{id:'strength',idx:'97',name:'强度',formal:'材料强度单位',alias:'材料受力',
+ desc:'强度表示材料抵抗破坏的能力。常用兆帕（MPa）。',
+ base:'帕斯卡',baseSym:'Pa',
+ units:[U('兆帕','MPa','',1e6),U('吉帕','GPa','',1e9),U('磅力/平方英寸','psi','',6894.757293168)],
+ formulas:['1 GPa = 1000 MPa','强度 = 破坏载荷 ÷ 截面面积']},
+
+/* ===== 98 韧性 ===== */
+{id:'toughness',idx:'98',name:'韧性',formal:'韧性单位',alias:'吸收能量',
+ desc:'韧性表示材料吸收能量而不破坏的能力。单位焦耳/立方米或兆帕·米½。',
+ base:'焦/立方米',baseSym:'J/m³',
+ units:[U('焦/立方米','J/m³','',1),U('兆帕·米½','MPa·m½','断裂韧性',1e6)],
+ formulas:['韧性 = 应力-应变曲线下面积','断裂韧性 K_IC 单位 MPa·m½']},
+
+/* ===== 99 延展性 ===== */
+{id:'ductility',idx:'99',name:'延展性',formal:'延展性',alias:'塑性',
+ desc:'延展性表示材料被拉伸或压缩而不破裂的能力，常用延伸率或断面收缩率表示，无量纲。',
+ base:'无量纲',baseSym:'—',special:true,
+ units:[R('延伸率','%','','拉伸后长度增加 ÷ 原长度'),R('断面收缩率','%','','断口面积减少 ÷ 原面积')],
+ formulas:['延伸率 = (L−L₀) ÷ L₀ × 100%','断面收缩率 = (A₀−A₁) ÷ A₀ × 100%']},
+
+/* ===== 100 疲劳 ===== */
+{id:'fatigue',idx:'100',name:'疲劳',formal:'疲劳强度单位',alias:'循环载荷',
+ desc:'疲劳表示材料在循环载荷下逐渐破坏的现象。用疲劳极限表示，单位与应力相同。',
+ base:'帕斯卡',baseSym:'Pa',
+ units:[U('兆帕','MPa','',1e6),U('帕斯卡','Pa','',1)],
+ formulas:['疲劳极限 = 材料在无限次循环下不破坏的最大应力','钢材疲劳极限约为抗拉强度的 40%-50%']},
+
+/* ===== 101 蠕变 ===== */
+{id:'creep',idx:'101',name:'蠕变',formal:'蠕变',alias:'高温变形',
+ desc:'蠕变表示材料在恒定载荷下随时间缓慢变形的现象。用蠕变速率表示，单位 1/秒。',
+ base:'1/秒',baseSym:'1/s',special:true,
+ units:[R('1/秒','1/s','','蠕变应变 ÷ 时间'),R('%/小时','%/h','','工程常用蠕变速率')],
+ formulas:['蠕变速率 = 蠕变应变 ÷ 时间','高温下蠕变显著']},
+
+/* ===== 102 冲击韧性 ===== */
+{id:'impact_toughness',idx:'102',name:'冲击韧性',formal:'冲击韧性单位',alias:'冲击功',
+ desc:'冲击韧性表示材料抵抗冲击载荷的能力。单位焦耳（J）。',
+ base:'焦耳',baseSym:'J',
+ units:[U('焦耳','J','',1),U('焦耳/平方厘米','J/cm²','',10000)],
+ formulas:['冲击韧性 = 冲击吸收功 ÷ 试样截面积','常用夏比冲击试验测量']},
+
+/* ===== 103 断裂韧性 ===== */
+{id:'fracture_toughness',idx:'103',name:'断裂韧性',formal:'断裂韧性单位',alias:'K_IC',
+ desc:'断裂韧性表示材料抵抗裂纹扩展的能力。单位兆帕·米½。',
+ base:'兆帕·米½',baseSym:'MPa·m½',
+ units:[U('兆帕·米½','MPa·m½','',1)],
+ formulas:['K_IC = 应力强度因子临界值','断裂韧性越高，抗裂纹扩展能力越强']},
+
+/* ===== 104 血压 ===== */
+{id:'blood_pressure',idx:'104',name:'血压',formal:'血压单位',alias:'血压',
+ desc:'血压表示血液对血管壁的压强。常用毫米汞柱（mmHg）。正常成人约 120/80 mmHg。',
+ base:'毫米汞柱',baseSym:'mmHg',special:true,
+ units:[R('毫米汞柱','mmHg','','血压常用单位'),R('千帕','kPa','','1 mmHg ≈ 0.1333 kPa')],
+ formulas:['1 mmHg ≈ 0.1333 kPa','1 kPa ≈ 7.5 mmHg','正常血压约 120/80 mmHg']},
+
+/* ===== 105 心率 ===== */
+{id:'heart_rate',idx:'105',name:'心率',formal:'心率单位',alias:'心跳',
+ desc:'心率表示每分钟心跳次数。单位次/分（bpm）。成人静息心率约 60-100 bpm。',
+ base:'次/分',baseSym:'bpm',special:true,
+ units:[R('次/分','bpm','','每分钟心跳次数'),R('赫兹','Hz','','每秒心跳次数')],
+ formulas:['1 Hz = 60 bpm','成人静息心率约 60-100 bpm']},
+
+/* ===== 106 呼吸频率 ===== */
+{id:'resp_rate',idx:'106',name:'呼吸频率',formal:'呼吸频率单位',alias:'呼吸',
+ desc:'呼吸频率表示每分钟呼吸次数。成人静息约 12-20 次/分。',
+ base:'次/分',baseSym:'次/分',special:true,
+ units:[R('次/分','次/分','','每分钟呼吸次数')],
+ formulas:['成人静息呼吸约 12-20 次/分']},
+
+/* ===== 107 剂量 ===== */
+{id:'dose',idx:'107',name:'剂量',formal:'剂量单位',alias:'用药量',
+ desc:'剂量表示用药量或辐射量。药物用毫克、克；辐射用希沃特、戈瑞。',
+ base:'视场景而定',baseSym:'—',special:true,
+ units:[R('毫克','mg','','药物剂量'),R('克','g','','药物剂量'),R('希沃特','Sv','','辐射等效剂量'),R('戈瑞','Gy','','辐射吸收剂量')],
+ formulas:['药物剂量 = 每次用量 × 次数','辐射剂量参见放射性单位']},
+
+/* ===== 108 酶活性 ===== */
+{id:'enzyme',idx:'108',name:'酶活性',formal:'酶活性单位',alias:'酶活力',
+ desc:'酶活性表示酶的催化能力。国际单位 U：每分钟催化 1 微摩尔底物转化的酶量。',
+ base:'国际单位',baseSym:'U',special:true,
+ units:[R('国际单位','U','','每分钟催化 1 μmol 底物'),R('开特','kat','','每秒催化 1 mol 底物')],
+ formulas:['1 kat = 6×10⁷ U','1 U = 1 μmol/min']},
+
+/* ===== 109 血糖 ===== */
+{id:'blood_sugar',idx:'109',name:'血糖',formal:'血糖单位',alias:'血糖浓度',
+ desc:'血糖表示血液中葡萄糖的浓度。常用毫摩尔/升（mmol/L）。空腹正常约 3.9-6.1 mmol/L。',
+ base:'毫摩尔/升',baseSym:'mmol/L',special:true,
+ units:[R('毫摩尔/升','mmol/L','','中国常用'),R('毫克/分升','mg/dL','','美国常用')],
+ formulas:['1 mmol/L ≈ 18 mg/dL','空腹血糖正常约 3.9-6.1 mmol/L']},
+
+/* ===== 110 血细胞计数 ===== */
+{id:'blood_count',idx:'110',name:'血细胞计数',formal:'血细胞计数单位',alias:'血常规',
+ desc:'血细胞计数表示单位体积血液中的细胞数量。常用个/升或个/微升。',
+ base:'个/升',baseSym:'/L',special:true,
+ units:[R('个/升','/L','','国际单位'),R('个/微升','/μL','','1 /μL = 10⁶ /L')],
+ formulas:['1 /μL = 10⁶ /L','红细胞正常约 4.5-5.5×10¹² /L']},
+
+/* ===== 111 视力 ===== */
+{id:'vision',idx:'111',name:'视力',formal:'视力单位',alias:'视敏度',
+ desc:'视力表示眼睛分辨细节的能力。常用小数记录法（1.0 为正常）或五分记录法（5.0 为正常）。',
+ base:'小数记录',baseSym:'—',special:true,
+ units:[R('小数记录','1.0','','1.0 为正常视力'),R('五分记录','5.0','','5.0 为正常视力'),R('对数记录','logMAR','','0 为正常')],
+ formulas:['五分记录 = 5 + log₁₀(小数记录)','小数记录 1.0 = 五分记录 5.0 = logMAR 0']},
+
+/* ===== 112 听力 ===== */
+{id:'hearing',idx:'112',name:'听力',formal:'听力单位',alias:'听阈',
+ desc:'听力用听力级（dB HL）表示，0 dB HL 为正常青年听阈。',
+ base:'听力级',baseSym:'dB HL',special:true,
+ units:[R('听力级','dB HL','','正常听阈为 0 dB HL')],
+ formulas:['听力损失 = 患者听阈 − 正常听阈','轻度听力损失约 26-40 dB HL']},
+
+/* ===== 113 太阳质量 ===== */
+{id:'solar_mass',idx:'113',name:'太阳质量',formal:'太阳质量单位',alias:'天文质量',
+ desc:'太阳质量是天文学中衡量恒星质量的标准单位。1 太阳质量 ≈ 1.989×10³⁰ 千克。',
+ base:'太阳质量',baseSym:'M☉',
+ units:[U('太阳质量','M☉','',1),U('木星质量','M_J','',1/1047.35),U('地球质量','M_E','',1/332946.0)],
+ formulas:['1 太阳质量 ≈ 1.989×10³⁰ 千克','1 太阳质量 ≈ 333000 地球质量']},
+
+/* ===== 114 星等 ===== */
+{id:'magnitude',idx:'114',name:'星等',formal:'星等单位',alias:'星星亮度',
+ desc:'星等表示天体亮度，数值越小越亮，且是对数尺度。每差 5 等，亮度差 100 倍。',
+ base:'星等',baseSym:'mag',special:true,
+ units:[R('星等','mag','','视星等表示亮度，绝对星等表示真实光度')],
+ formulas:['每差 5 星等，亮度差 100 倍','每差 1 星等，亮度差 ≈ 2.512 倍','太阳视星等约 −26.7']},
+
+/* ===== 115 红移 ===== */
+{id:'redshift',idx:'115',name:'红移',formal:'红移',alias:'宇宙膨胀',
+ desc:'红移表示天体光谱向长波方向移动的程度，是无量纲量。',
+ base:'无量纲',baseSym:'z',special:true,
+ units:[R('红移','z','','波长变化 ÷ 原波长')],
+ formulas:['z = (观测波长 − 原波长) ÷ 原波长','z 越大，天体越远']},
+
+/* ===== 116 经纬度 ===== */
+{id:'coordinates',idx:'116',name:'经纬度',formal:'经纬度单位',alias:'地理坐标',
+ desc:'经度和纬度用度、分、秒表示。纬度范围 −90° 到 90°，经度范围 −180° 到 180°。',
+ base:'度',baseSym:'°',special:true,
+ units:[R('度','°','','1 度 = 60 分 = 3600 秒'),R('度分秒','°′″','','如 39°54′27″')],
+ formulas:['1 度 = 60 分 = 3600 秒','纬度 1 度 ≈ 111 千米','经度 1 度 ≈ 111 × cos(纬度) 千米']},
+
+/* ===== 117 海拔 ===== */
+{id:'altitude',idx:'117',name:'海拔',formal:'海拔单位',alias:'高度',
+ desc:'海拔表示某点高于海平面的垂直距离。',
+ base:'米',baseSym:'m',
+ units:[U('米','m','',1),U('千米','km','',1000),U('英尺','ft','',0.3048)],
+ formulas:['1 千米 = 1000 米','1 英尺 = 0.3048 米','珠峰海拔约 8848.86 米']},
+
+/* ===== 118 坡度 ===== */
+{id:'slope',idx:'118',name:'坡度',formal:'坡度单位',alias:'倾斜度',
+ desc:'坡度表示地面倾斜程度，可用角度、百分比或千分比表示。',
+ base:'度',baseSym:'°',special:true,
+ units:[R('度','°','','倾斜角'),R('百分比','%','','垂直高 ÷ 水平距 × 100%'),R('千分比','‰','','垂直高 ÷ 水平距 × 1000‰')],
+ formulas:['坡度百分比 = 垂直高 ÷ 水平距 × 100%','坡度角度 = arctan(垂直高 ÷ 水平距)','100% 坡度 = 45°']},
+
+/* ===== 119 字长 ===== */
+{id:'word_length',idx:'119',name:'字长',formal:'字长单位',alias:'CPU字长',
+ desc:'字长表示计算机一次能处理的二进制位数。',
+ base:'比特',baseSym:'bit',special:true,
+ units:[R('比特','bit','','二进制位'),R('字节','B','','1 B = 8 bit')],
+ formulas:['1 字节 = 8 比特','常见字长：8/16/32/64 位']},
+
+/* ===== 120 运算速度 ===== */
+{id:'computing_speed',idx:'120',name:'运算速度',formal:'运算速度单位',alias:'算力',
+ desc:'运算速度表示计算机每秒执行的运算次数。',
+ base:'次/秒',baseSym:'OPS',special:true,
+ units:[R('次/秒','OPS','','每秒运算次数'),R('千次/秒','KOPS','','10³ OPS'),R('百万次/秒','MOPS','','10⁶ OPS'),R('十亿次/秒','GOPS','','10⁹ OPS'),R('万亿次/秒','TOPS','','10¹² OPS')],
+ formulas:['1 KOPS = 1000 OPS','1 MOPS = 10⁶ OPS','1 GOPS = 10⁹ OPS','1 TOPS = 10¹² OPS']},
+
+/* ===== 121 分辨率 ===== */
+{id:'resolution',idx:'121',name:'分辨率',formal:'分辨率单位',alias:'像素数',
+ desc:'分辨率表示图像或屏幕的像素数量，通常写成宽×高。',
+ base:'像素',baseSym:'px',special:true,
+ units:[R('像素','px','','图像最小单位'),R('百万像素','MP','','10⁶ 像素')],
+ formulas:['总像素 = 宽 × 高','1 MP = 100 万像素','1920×1080 ≈ 207 万像素 ≈ 2.07 MP']},
+
+/* ===== 122 像素密度 ===== */
+{id:'pixel_density',idx:'122',name:'像素密度',formal:'像素密度单位',alias:'dpi/ppi',
+ desc:'dpi 表示每英寸打印点数（打印），ppi 表示每英寸像素数（屏幕）。',
+ base:'ppi',baseSym:'ppi',special:true,
+ units:[R('dpi','dpi','','每英寸打印点数'),R('ppi','ppi','','每英寸屏幕像素数')],
+ formulas:['ppi = 屏幕对角线像素数 ÷ 屏幕对角线英寸数','手机屏幕通常 300-500 ppi']},
+
+/* ===== 123 帧率 ===== */
+{id:'frame_rate',idx:'123',name:'帧率',formal:'帧率单位',alias:'刷新率',
+ desc:'帧率表示每秒显示的画面数。单位 fps（帧/秒）。',
+ base:'帧/秒',baseSym:'fps',
+ units:[U('帧/秒','fps','',1),U('赫兹','Hz','',1)],
+ formulas:['1 fps = 1 Hz','电影常用 24 fps；游戏常用 60/120/144 fps']},
+
+/* ===== 124 采样率 ===== */
+{id:'sample_rate',idx:'124',name:'采样率',formal:'采样率单位',alias:'音频采样',
+ desc:'采样率表示每秒对模拟信号采样的次数。CD 音质 44100 Hz。',
+ base:'赫兹',baseSym:'Hz',
+ units:[U('赫兹','Hz','',1),U('千赫','kHz','',1000),U('兆赫','MHz','',1e6)],
+ formulas:['1 kHz = 1000 Hz','CD 音质 44.1 kHz；高清音频 96/192 kHz']},
+
+/* ===== 125 比特率 ===== */
+{id:'bitrate',idx:'125',name:'比特率',formal:'比特率单位',alias:'码率',
+ desc:'比特率表示每秒传输或处理的比特数。音频常用 kbps，视频常用 Mbps。',
+ base:'比特/秒',baseSym:'bps',
+ units:[U('比特/秒','bps','',1),U('千比特/秒','kbps','',1000),U('兆比特/秒','Mbps','',1e6),U('吉比特/秒','Gbps','',1e9)],
+ formulas:['1 kbps = 1000 bps','1 Mbps = 1000 kbps','MP3 常用 128-320 kbps；1080p 视频常用 5-10 Mbps']},
+
+/* ===== 126 酒精度 ===== */
+{id:'alcohol',idx:'126',name:'酒精度',formal:'酒精度单位',alias:'酒精含量',
+ desc:'酒精度表示酒中乙醇的体积分数或质量分数。中国常用体积分数 %vol。',
+ base:'体积分数',baseSym:'%vol',special:true,
+ units:[R('体积分数','%vol','','每 100 毫升酒含多少毫升乙醇'),R('美制酒度','proof','','= 体积分数 × 2'),R('英制酒度','proof(UK)','','≈ 体积分数 × 1.75')],
+ formulas:['1 体积分数 = 2 美制 proof','美制 proof = 体积分数 × 2','啤酒约 3-5%vol；白酒约 38-52%vol']},
+
+/* ===== 127 糖度 ===== */
+{id:'brix',idx:'127',name:'糖度',formal:'糖度单位',alias:'白利度',
+ desc:'糖度表示溶液中蔗糖的质量分数。单位 °Bx（白利度）。',
+ base:'白利度',baseSym:'°Bx',special:true,
+ units:[R('白利度','°Bx','','每 100 克溶液含多少克蔗糖'),R('波美度','°Bé','','另一种浓度表示法')],
+ formulas:['1 °Bx = 1 克蔗糖 / 100 克溶液','果汁糖度常用折光仪测量']},
+
+/* ===== 128 盐度 ===== */
+{id:'salinity',idx:'128',name:'盐度',formal:'盐度单位',alias:'含盐量',
+ desc:'盐度表示水中溶解盐的质量分数。海水约 3.5%。',
+ base:'千分比',baseSym:'‰',special:true,
+ units:[R('千分比','‰','','每千克水含多少克盐'),R('实用盐度','PSU','','海洋学常用')],
+ formulas:['海水盐度约 35‰ = 3.5%','1 PSU ≈ 1‰']},
+
+/* ===== 129 浊度 ===== */
+{id:'turbidity',idx:'129',name:'浊度',formal:'浊度单位',alias:'浑浊度',
+ desc:'浊度表示水的浑浊程度。单位 NTU（散射浊度单位）。',
+ base:'NTU',baseSym:'NTU',special:true,
+ units:[R('NTU','NTU','散射浊度单位','饮用水浊度通常要求 <1 NTU'),R('FTU','FTU','','与 NTU 近似')],
+ formulas:['饮用水浊度通常要求小于 1 NTU']},
+
+/* ===== 130 色度 ===== */
+{id:'color',idx:'130',name:'色度',formal:'色度单位',alias:'颜色深浅',
+ desc:'色度表示水的颜色深浅。单位度（铂钴标准）。',
+ base:'度',baseSym:'度',special:true,
+ units:[R('度','度','铂钴标准','饮用水色度通常要求 <15 度')],
+ formulas:['1 度 = 1 毫克铂/升（以氯铂酸钾计）']},
+
+/* ===== 131 汇率 ===== */
+{id:'exchange_rate',idx:'131',name:'汇率',formal:'汇率',alias:'兑换比率',
+ desc:'汇率是两种货币之间的兑换比率，实时波动，无法固定换算。',
+ base:'视货币对而定',baseSym:'—',special:true,
+ units:[R('汇率','—','','一种货币兑换另一种货币的比率')],
+ formulas:['目标货币金额 = 源货币金额 × 汇率','汇率实时波动，请查当日牌价']},
+
+/* ===== 132 利率 ===== */
+{id:'interest',idx:'132',name:'利率',formal:'利率单位',alias:'利息率',
+ desc:'利率表示利息与本金的比率，常用百分比或千分比表示。',
+ base:'百分比',baseSym:'%',special:true,
+ units:[R('年利率','%','','一年期利率'),R('月利率','‰','','一月期利率'),R('日利率','‱','','一日期利率')],
+ formulas:['年利率 = 月利率 × 12 = 日利率 × 360','利息 = 本金 × 利率 × 时间']},
+
+/* ===== 133 税率 ===== */
+{id:'tax_rate',idx:'133',name:'税率',formal:'税率',alias:'税收比率',
+ desc:'税率表示应纳税额与计税依据的比率，用百分比表示。',
+ base:'百分比',baseSym:'%',special:true,
+ units:[R('百分比','%','','应纳税额 ÷ 计税依据 × 100%')],
+ formulas:['应纳税额 = 计税依据 × 税率']},
+
+/* ===== 134 折扣 ===== */
+{id:'discount',idx:'134',name:'折扣',formal:'折扣',alias:'打折',
+ desc:'折扣表示商品降价的比例。中国常说「几折」，如 8 折 = 原价的 80%。',
+ base:'折',baseSym:'折',special:true,
+ units:[R('折','折','','8 折 = 原价 × 0.8'),R('百分比','%','','80% = 8 折')],
+ formulas:['折后价 = 原价 × 折扣 ÷ 10','8 折 = 原价 × 0.8 = 原价 × 80%']},
+
+/* ===== 135 支数 ===== */
+{id:'yarn_count',idx:'135',name:'支数',formal:'纱线支数单位',alias:'纱支',
+ desc:'支数表示纱线的粗细。支数越高，纱越细。分英制支数（S）和公制支数（Nm）。',
+ base:'英制支数',baseSym:'S',special:true,
+ units:[R('英制支数','S','','1 磅纱有多少个 840 码'),R('公制支数','Nm','','1 千克纱有多少千米')],
+ formulas:['支数越高，纱线越细','40S 比 20S 细']},
+
+/* ===== 136 旦尼尔 ===== */
+{id:'denier',idx:'136',name:'旦尼尔',formal:'旦尼尔单位',alias:'丹尼尔',
+ desc:'旦尼尔表示纤维或纱线的线密度。单位 D。旦数越大，纤维越粗。',
+ base:'旦尼尔',baseSym:'D',
+ units:[U('旦尼尔','D','',1),U('分特克斯','dtex','',0.9)],
+ formulas:['1 旦尼尔 = 9000 米纤维重 1 克','1 dtex ≈ 0.9 D','旦数越大，纤维越粗']},
+
+/* ===== 137 特克斯 ===== */
+{id:'tex',idx:'137',name:'特克斯',formal:'特克斯单位',alias:'线密度',
+ desc:'特克斯表示每 1000 米纤维的质量（克）。单位 tex。',
+ base:'特克斯',baseSym:'tex',
+ units:[U('分特克斯','dtex','',0.1),U('特克斯','tex','',1),U('千特克斯','ktex','',1000)],
+ formulas:['1 tex = 1000 米纤维重 1 克','1 dtex = 0.1 tex','特数越大，纤维越粗']},
+
+/* ===== 138 克重 ===== */
+{id:'grammage',idx:'138',name:'克重',formal:'克重单位',alias:'平方米克重',
+ desc:'克重表示每平方米材料的质量。纸张、布料常用。单位 g/m²。',
+ base:'克/平方米',baseSym:'g/m²',
+ units:[U('克/平方米','g/m²','',1),U('千克/平方米','kg/m²','',1000),U('盎司/平方码','oz/yd²','',33.90574745)],
+ formulas:['1 kg/m² = 1000 g/m²','A4 纸约 70-80 g/m²']},
+
+/* ===== 139 令 ===== */
+{id:'ream',idx:'139',name:'令',formal:'纸张令数单位',alias:'纸令',
+ desc:'令是纸张的计量单位。1 令 = 500 张全开纸。',
+ base:'令',baseSym:'令',special:true,
+ units:[R('令','令','','500 张全开纸'),R('张','张','','单张纸')],
+ formulas:['1 令 = 500 张','1 令 = 20 刀；1 刀 = 25 张']},
+
+/* ===== 140 开数 ===== */
+{id:'folio',idx:'140',name:'开数',formal:'开数单位',alias:'开本',
+ desc:'开数表示印刷品是整张纸的几分之一。如 16 开 = 整张纸切成 16 份。',
+ base:'开',baseSym:'开',special:true,
+ units:[R('全开','1开','','整张纸'),R('对开','2开','','整张纸的 1/2'),R('4开','4开','','整张纸的 1/4'),R('8开','8开','','整张纸的 1/8'),R('16开','16开','','整张纸的 1/16'),R('32开','32开','','整张纸的 1/32')],
+ formulas:['开数越大，纸张越小','16 开约 210×285 毫米；32 开约 140×210 毫米']},
+
+/* ===== 141 金位 ===== */
+{id:'karat',idx:'141',name:'金位',formal:'金位单位',alias:'开金',
+ desc:'金位表示黄金合金中黄金的比例。24K 为纯金。',
+ base:'K',baseSym:'K',special:true,
+ units:[R('24K','24K','','含金量 99.9% 以上'),R('18K','18K','','含金量 75%'),R('14K','14K','','含金量 58.3%'),R('9K','9K','','含金量 37.5%')],
+ formulas:['含金量 = K数 ÷ 24 × 100%','24K = 99.9% 以上；18K = 75%；14K = 58.3%']},
+
+/* ===== 142 株距 ===== */
+{id:'plant_spacing',idx:'142',name:'株距',formal:'株距单位',alias:'植株间距',
+ desc:'株距表示同一行相邻两株作物之间的距离。',
+ base:'厘米',baseSym:'cm',special:true,
+ units:[R('厘米','cm','','常用单位'),R('米','m','','1 m = 100 cm'),R('寸','寸','','1 寸 ≈ 3.33 cm')],
+ formulas:['1 米 = 100 厘米','株距根据作物种类和地力调整']},
+
+/* ===== 143 行距 ===== */
+{id:'row_spacing',idx:'143',name:'行距',formal:'行距单位',alias:'行间距',
+ desc:'行距表示相邻两行作物之间的距离。',
+ base:'厘米',baseSym:'cm',special:true,
+ units:[R('厘米','cm','','常用单位'),R('米','m','','1 m = 100 cm')],
+ formulas:['1 米 = 100 厘米','玉米行距通常 50-70 厘米']},
+
+/* ===== 144 播种量 ===== */
+{id:'seeding_rate',idx:'144',name:'播种量',formal:'播种量单位',alias:'用种量',
+ desc:'播种量表示单位面积需要播撒的种子质量。',
+ base:'千克/亩',baseSym:'kg/亩',special:true,
+ units:[R('千克/亩','kg/亩','','每亩用种千克数'),R('克/平方米','g/m²','','每平方米用种克数')],
+ formulas:['1 kg/亩 ≈ 1.5 g/m²（1 亩 ≈ 666.67 m²）']},
+
+/* ===== 145 施肥量 ===== */
+{id:'fertilizer',idx:'145',name:'施肥量',formal:'施肥量单位',alias:'用肥量',
+ desc:'施肥量表示单位面积施用的肥料质量。',
+ base:'千克/亩',baseSym:'kg/亩',special:true,
+ units:[R('千克/亩','kg/亩','','每亩施肥千克数'),R('克/平方米','g/m²','','每平方米施肥克数')],
+ formulas:['1 kg/亩 ≈ 1.5 g/m²','施肥量根据作物需求和土壤肥力确定']},
+
+/* ===== 146 产量 ===== */
+{id:'yield',idx:'146',name:'产量',formal:'产量单位',alias:'收成',
+ desc:'产量表示单位面积生产的农产品质量。',
+ base:'千克/亩',baseSym:'kg/亩',special:true,
+ units:[R('千克/亩','kg/亩','','每亩产量千克数'),R('吨/公顷','t/ha','','每公顷产量吨数'),R('斤/亩','斤/亩','','每亩产量斤数')],
+ formulas:['1 吨/公顷 = 1000 kg ÷ 15 亩 ≈ 66.7 kg/亩','1 kg/亩 = 2 斤/亩']}
+];
+
+const COMMON_DEFAULTS={length:['米','厘米'],mass:['千克','市斤'],area:['亩','平方米'],volume:['升','毫升'],temperature:['摄氏度','华氏度']};
+
+/* ========== 渲染 ========== */
+const app=document.getElementById('app');
+const searchInput=document.getElementById('q');
+const catById={};DATA.forEach(c=>{catById[c.id]=c});
+
+function converterHTML(units,defA,defB){
+  const opts=units.map(u=>`<option value="${esc(u.n)}">${esc(u.n)}${u.s?' '+esc(u.s):''}</option>`).join('');
+  return `<div class="conv" data-a="${esc(defA)}" data-b="${esc(defB)}">
+    <div class="conv-row"><input class="cv-in" type="text" inputmode="decimal" value="1" aria-label="数值"><select class="cv-sel" aria-label="单位">${opts}</select></div>
+    <div class="conv-mid">⇅</div>
+    <div class="conv-row"><input class="cv-in" type="text" inputmode="decimal" aria-label="数值"><select class="cv-sel" aria-label="单位">${opts}</select></div>
+  </div>`;
+}
+
+function initConverter(conv,units){
+  const inputs=conv.querySelectorAll('.cv-in'),sels=conv.querySelectorAll('.cv-sel');
+  sels[0].value=conv.dataset.a;sels[1].value=conv.dataset.b;
+  const get=n=>units.find(u=>u.n===n);
+  const toBase=(v,u)=>v*u.k+(u.o||0);
+  const fromBase=(b,u)=>(b-(u.o||0))/u.k;
+  function calc(from){
+    const to=1-from,uA=get(sels[from].value),uB=get(sels[to].value);
+    if(!uA||!uB)return;
+    const raw=inputs[from].value.replace(/[,，\s]/g,''),v=parseFloat(raw);
+    if(!isFinite(v)){inputs[to].value='';return}
+    inputs[to].value=fmtNum(fromBase(toBase(v,uA),uB));
+  }
+  inputs[0].addEventListener('input',()=>calc(0));
+  inputs[1].addEventListener('input',()=>calc(1));
+  sels.forEach((s,i)=>s.addEventListener('change',()=>calc(i)));
+  calc(0);
+}
+
+function unitsHTML(cat,q){
+  const sorted=cat.affine||cat.special?cat.units:cat.units.slice().sort((a,b)=>a.k-b.k);
+  return sorted.map(u=>{
+    const nameHtml=hl(u.n,q)+(u.s?`<span class="sym">${hl(u.s,q)}</span>`:'')+(u.a?`<span class="alias">（${hl(u.a,q)}）</span>`:'');
+    let valHtml='',noteHtml='';
+    if(cat.special){valHtml='<span style="color:var(--muted2)">参考</span>';if(u.note)noteHtml=`<div class="un-note">${hl(u.note,q)}</div>`}
+    else if(cat.affine){valHtml='<span style="color:var(--muted2)">按公式</span>'}
+    else{valHtml=`= ${fmtNum(u.k)} ${esc(cat.base)}`}
+    return `<div class="unit"><div class="un-name">${nameHtml}</div><div class="un-val">${valHtml}</div>${noteHtml}</div>`;
+  }).join('');
+}
+
+function cardHTML(cat,q){
+  const realUnits=cat.affine||cat.special?cat.units:cat.units.slice().sort((a,b)=>a.k-b.k);
+  const defs=COMMON_DEFAULTS[cat.id]||[realUnits[0].n,realUnits[1]?realUnits[1].n:realUnits[0].n];
+  const defA=realUnits.find(u=>u.n===defs[0])?defs[0]:realUnits[0].n;
+  const defB=realUnits.find(u=>u.n===defs[1])?defs[1]:realUnits[Math.min(1,realUnits.length-1)].n;
+  const convHTML=cat.special?'':converterHTML(cat.units,defA,defB);
+  const note=cat.special?'<div class="special-note">此分类为无量纲、参考性或汇率波动类，不提供自动换算，请查看下方公式和说明。</div>':'';
+  const formulas=cat.formulas?`<div class="formulas"><b>换算公式 / 说明</b>${cat.formulas.map(f=>`<code>${esc(f)}</code>`).join('')}</div>`:'';
+  return `<section class="card" data-cat="${cat.id}">
+    <div class="head"><div class="badge">${cat.idx}</div>
+      <div class="head-txt"><div class="title">${hl(cat.name,q)}<span class="tag">${hl(cat.alias,q)}</span></div>
+      <div class="sub">${hl(cat.formal,q)}</div></div></div>
+    <p class="desc">${hl(cat.desc,q)}</p>${convHTML}${note}
+    <div class="units">${unitsHTML(cat,q)}</div>${formulas}</section>`;
+}
+
+function commonHTML(cat,q){
+  const blocks=cat.refs.map(id=>{
+    const sub=catById[id],d=COMMON_DEFAULTS[id];
+    const realUnits=sub.units.slice().sort((a,b)=>a.k-b.k);
+    const defA=realUnits.find(u=>u.n===d[0])?d[0]:realUnits[0].n;
+    const defB=realUnits.find(u=>u.n===d[1])?d[1]:realUnits[Math.min(1,realUnits.length-1)].n;
+    return `<div class="sub-title">${esc(sub.name)}<span>${esc(sub.alias)}</span></div>${converterHTML(sub.units,defA,defB)}`;
+  }).join('');
+  return `<section class="card hero" data-cat="common">
+    <div class="head"><div class="badge">${cat.idx}</div>
+      <div class="head-txt"><div class="title">${esc(cat.name)}<span class="tag">${esc(cat.alias)}</span></div>
+      <div class="sub">${esc(cat.formal)}</div></div></div>
+    <p class="desc">${esc(cat.desc)}</p>${blocks}</section>`;
+}
+
+function render(){
+  const q=searchInput.value.trim().toLowerCase();
+  let html='';
+  DATA.forEach(cat=>{
+    if(cat.type==='common'){if(!q)html+=commonHTML(cat,'');return}
+    let hit=false;
+    if(!q)hit=true;
+    else{
+      const hay=[cat.name,cat.formal,cat.alias,cat.desc].join(' ').toLowerCase();
+      if(hay.includes(q))hit=true;
+      else{
+        for(const u of cat.units){const uh=[u.n,u.s,u.a||''].join(' ').toLowerCase();if(uh.includes(q)){hit=true;break}}
+        if(!hit&&cat.formulas){for(const f of cat.formulas){if(f.toLowerCase().includes(q)){hit=true;break}}}
+      }
+    }
+    if(hit)html+=cardHTML(cat,q);
+  });
+  if(!html.trim())html=`<div class="empty">没有找到匹配的单位 😕<br>换个关键词试试，比如「幺米」「EB」「当量」「坎德拉」「旦尼尔」</div>`;
+  app.innerHTML=html;
+  app.querySelectorAll('.conv').forEach(conv=>{
+    const catEl=conv.closest('[data-cat]'),catId=catEl.dataset.cat;
+    let units;
+    if(catId==='common'){
+      const allConvs=Array.from(catEl.querySelectorAll('.conv'));
+      const idx=allConvs.indexOf(conv);
+      units=catById[catById.common.refs[idx]].units;
+    }else{units=catById[catId].units}
+    initConverter(conv,units);
+  });
+}
+
+let timer=null;
+searchInput.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(render,120)});
+render();
+</script>
+</body>
+</html>
