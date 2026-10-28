@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>当前时间</title>
+</head>
+<body bgcolor="#ffffff" text="#000000">
+<center>
+<h1>当前日期时间</h1>
+<font size="7" id="t">--</font>
+</center>
+
+<script>
+function s(){
+  document.getElementById("t").innerHTML = new Date().toLocaleString();
+}
+s();
+setInterval(s, 1000);
+</script>
+</body>
+</html>
