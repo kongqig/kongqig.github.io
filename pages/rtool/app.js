@@ -196,7 +196,10 @@
 
         card.innerHTML = `
           <div class="card-top">
-            <span class="card-cat">${esc(w.category)}</span>
+            <span class="card-top-left">
+              <span class="card-cat">${esc(w.category)}</span>
+              ${w.official === false ? '<span class="badge-3rd" title="非官方运营的网站">第三方</span>' : ""}
+            </span>
             <span class="card-id">${esc(w.id)}</span>
           </div>
           <h3 class="card-name">${esc(w.name)}</h3>

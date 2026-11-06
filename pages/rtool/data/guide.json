@@ -142,7 +142,7 @@
     {"situation": "查退役军人安置", "department": "退役军人部", "website_id": "mva-gov-cn"},
     {"situation": "查消防/报火警", "department": "消防", "website_id": "119-gov-cn"},
     {"situation": "查应急避难/防灾", "department": "应急部", "website_id": "cneb-gov-cn"},
-    {"situation": "查志愿者/志愿服务", "department": "民政部", "website_id": "chinavolunteer-mca-gov-cn"},
+    {"situation": "查志愿者/志愿服务", "department": "中国志愿协同平台（原中国志愿服务网已关停，业务迁移至 cvf.org.cn）", "website_id": "cvf-org-cn"},
     {"situation": "查慈善捐赠", "department": "中华慈善总会", "website_id": "chinacharityfederation-org"},
     {"situation": "查残疾人服务", "department": "残联", "website_id": "cdpf-org-cn"},
     {"situation": "查天气预报/台风路径", "department": "气象局", "website_id": "nmc-cn"},

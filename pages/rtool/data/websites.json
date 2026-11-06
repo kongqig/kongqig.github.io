@@ -637,7 +637,8 @@
     "url": "https://www.icourse163.org",
     "description": "中国大学MOOC，教育部主管的在线开放课程平台，提供高校优质课程",
     "category": "教育",
-    "keywords": "中国大学MOOC，慕课，在线课程，高校公开课，免费课程，大学网课，MOOC平台"
+    "keywords": "中国大学MOOC，慕课，在线课程，高校公开课，免费课程，大学网课，MOOC平台",
+    "official": false
   },
   {
     "id": "neea-edu-cn",
@@ -954,8 +955,8 @@
   {
     "id": "nationalpark-gov-cn",
     "name": "国家公园管理局",
-    "url": "https://www.forestry.gov.cn/nationalpark/",
-    "description": "统一管理国家公园与自然保护地的机构（隶属国家林草局）",
+    "url": "https://www.forestry.gov.cn/c/www/gjgy.jhtml",
+    "description": "国家公园专栏（隶属国家林草局），发布国家公园政策、建设动态与自然保护地信息",
     "category": "生态保护",
     "keywords": "国家公园，自然保护区，自然保护地，生态保护，国家公园管理，自然遗产"
   },
@@ -1650,8 +1651,8 @@
   {
     "id": "cabr-com-cn",
     "name": "中国建筑科学研究院",
-    "url": "https://www.cabr.com.cn",
-    "description": "中国建筑科学研究院，建筑结构、工程技术与绿色建筑研究的国家级机构",
+    "url": "https://www.cabr.cn",
+    "description": "中国建筑科学研究院（中国建研院），建筑结构、工程技术与绿色建筑研究的国家级机构",
     "category": "交通城建",
     "keywords": "建筑科学研究院，建筑研究，建筑结构，工程技术，绿色建筑，建筑设计"
   },
@@ -2061,7 +2062,8 @@
     "url": "https://www.cngrain.com",
     "description": "中华粮网，粮食行业信息与电子商务服务平台，提供粮价与行情",
     "category": "农林粮食",
-    "keywords": "中华粮网，粮价，粮食行情，粮食信息，粮食电商，粮油价格"
+    "keywords": "中华粮网，粮价，粮食行情，粮食信息，粮食电商，粮油价格",
+    "official": false
   },
   {
     "id": "chinacdc-cn",
@@ -2122,7 +2124,7 @@
   {
     "id": "namoc-org",
     "name": "中国美术馆",
-    "url": "https://www.namoc.org",
+    "url": "http://www.namoc.cn",
     "description": "中国美术馆，国家造型艺术博物馆，收藏与展示近现代美术作品",
     "category": "文体艺术",
     "keywords": "中国美术馆，美术馆，美术展览，近现代美术，艺术展览，国家美术馆"
@@ -2130,8 +2132,8 @@
   {
     "id": "cnarts-com-cn",
     "name": "中国艺术研究院",
-    "url": "https://www.cnarts.com.cn",
-    "description": "中国艺术研究院，国家级综合性艺术科研机构",
+    "url": "https://www.zgysyjy.org.cn",
+    "description": "中国艺术研究院，国家级综合性艺术科研机构（原 cnarts.com.cn 域名已弃用）",
     "category": "文体艺术",
     "keywords": "艺术研究院，艺术研究，艺术科研，中国艺术，艺术学术"
   },
@@ -2146,8 +2148,8 @@
   {
     "id": "chinacaipa-com",
     "name": "中国音像与数字出版协会",
-    "url": "https://www.chinacaipa.org.cn",
-    "description": "音像与数字出版行业全国性组织",
+    "url": "https://www.cadpa.org.cn",
+    "description": "音像与数字出版行业全国性组织（原 chinacaipa.org.cn 域名已弃用）",
     "category": "宣传出版",
     "keywords": "音像协会，数字出版，音像出版，数字出版行业，出版协会"
   },
@@ -2174,14 +2176,6 @@
     "description": "中国广告协会，全国广告行业性非营利社会组织",
     "category": "宣传出版",
     "keywords": "广告协会，广告行业，广告监管，广告自律，广告主，广告从业者"
-  },
-  {
-    "id": "chinaadvertiser-org-cn",
-    "name": "中国广告主协会",
-    "url": "https://www.chinaadvertiser.com.cn",
-    "description": "维护广告主权益的全国性行业组织",
-    "category": "宣传出版",
-    "keywords": "广告主协会，广告主权益，广告主组织，广告投放，广告主"
   },
   {
     "id": "chinabuddhism-com-cn",
@@ -2377,17 +2371,17 @@
   },
   {
     "id": "xxfb-hydroinfo-gov-cn",
-    "name": "水利部水文情报预报",
-    "url": "http://xxfb.mwr.gov.cn",
-    "description": "全国水情信息与洪水预报发布平台",
+    "name": "水利部水文服务",
+    "url": "http://swgl.mwr.gov.cn/swfw/",
+    "description": "水利部水文服务专栏：全国水雨情信息、实时水情、水文年报与泥沙公报（原 xxfb.mwr.gov.cn 已停用）",
     "category": "应急防灾",
     "keywords": "水文情报，洪水预报，水情信息，水位查询，水情发布，洪水预警"
   },
   {
     "id": "rfcn-com-cn",
-    "name": "中国人民防空网",
-    "url": "https://www.rfcn.com.cn",
-    "description": "中国人民防空网，国家人民防空办公室主办的人防信息平台",
+    "name": "人民防空（国防部专栏）",
+    "url": "http://www.mod.gov.cn/gfbw/gfdy/rmfk/",
+    "description": "国防部网站人民防空栏目，发布人防动态与防空防灾知识（原中国人民防空网已停办）",
     "category": "应急防灾",
     "keywords": "人民防空，人防工程，防空警报，人防办，民防，防空知识"
   },
@@ -2397,7 +2391,8 @@
     "url": "http://www.emss.cn",
     "description": "中国院前急救网，急救医学与院前急救学术资讯平台",
     "category": "生命健康",
-    "keywords": "院前急救，急救医学，120急救，急救培训，急救技术，院前急救网"
+    "keywords": "院前急救，急救医学，120急救，急救培训，急救技术，院前急救网",
+    "official": false
   },
   {
     "id": "cnki-net",
@@ -2405,7 +2400,8 @@
     "url": "https://www.cnki.net",
     "description": "中国知网，国家级学术论文与期刊数据库，提供文献检索与下载",
     "category": "科研学术",
-    "keywords": "中国知网，学术文献，文献查询，期刊数据库，查期刊，查论文，知网，论文下载，论文检索"
+    "keywords": "中国知网，学术文献，文献查询，期刊数据库，查期刊，查论文，知网，论文下载，论文检索",
+    "official": false
   },
   {
     "id": "wanfangdata-com-cn",
@@ -2413,7 +2409,8 @@
     "url": "https://www.wanfangdata.com.cn",
     "description": "万方数据，综合性学术文献数据库，收录期刊、学位论文与会议",
     "category": "科研学术",
-    "keywords": "万方数据，论文检索，学术文献，期刊数据库，学位论文，会议论文"
+    "keywords": "万方数据，论文检索，学术文献，期刊数据库，学位论文，会议论文",
+    "official": false
   },
   {
     "id": "cqvip-com",
@@ -2421,7 +2418,8 @@
     "url": "http://www.cqvip.com",
     "description": "维普资讯，中文科技期刊数据库，收录自然科学与工程技术期刊",
     "category": "科研学术",
-    "keywords": "维普资讯，维普网，科技期刊，中文期刊，文献检索，期刊数据库"
+    "keywords": "维普资讯，维普网，科技期刊，中文期刊，文献检索，期刊数据库",
+    "official": false
   },
   {
     "id": "nstl-gov-cn",
@@ -2461,7 +2459,8 @@
     "url": "https://www.baobeihuijia.com",
     "description": "宝贝回家，公益寻亲平台，帮助失踪儿童与家庭团聚",
     "category": "监督建言",
-    "keywords": "宝贝回家，寻亲，失踪儿童，寻子，打拐，寻人，失踪人口"
+    "keywords": "宝贝回家，寻亲，失踪儿童，寻子，打拐，寻人，失踪人口",
+    "official": false
   },
   {
     "id": "chinaxunqin-com",
@@ -2469,7 +2468,8 @@
     "url": "http://www.chinaxunqin.com",
     "description": "中国寻亲网，全国寻亲信息发布与比对平台",
     "category": "监督建言",
-    "keywords": "寻亲网，寻人，寻亲信息，寻人比对，失散亲人，寻亲平台"
+    "keywords": "寻亲网，寻人，寻亲信息，寻人比对，失散亲人，寻亲平台",
+    "official": false
   },
   {
     "id": "bilibili-gqt-org",
@@ -2477,15 +2477,17 @@
     "url": "https://search.bilibili.com/upuser?keyword=%E5%85%B1%E9%9D%92%E5%9B%A2%E4%B8%AD%E5%A4%AE",
     "description": "共青团中央（哔哩哔哩），共青团中央在B站的官方账号入口",
     "category": "视频服务",
-    "keywords": "共青团B站，共青团中央B站，共青团哔哩哔哩，青年视频，团中央账号"
+    "keywords": "共青团B站，共青团中央B站，共青团哔哩哔哩，青年视频，团中央账号",
+    "official": false
   },
   {
     "id": "douyin-cctv-news",
     "name": "央视新闻（抖音）",
-    "url": "https://www.douyin.com/search/%E5%A4%AE%E8%A7%86%E6%96%B0%E9%97%BB",
-    "description": "央视新闻（抖音），央视新闻在抖音的官方账号入口",
+    "url": "https://www.douyin.com",
+    "description": "央视新闻官方账号在抖音平台，打开后站内搜索「央视新闻」（搜索链接不稳定，故指向抖音首页）",
     "category": "视频服务",
-    "keywords": "央视新闻抖音，央视抖音，央视短视频，央视抖音号，新闻短视频"
+    "keywords": "央视新闻抖音，央视抖音，央视短视频，央视抖音号，新闻短视频",
+    "official": false
   },
   {
     "id": "kuaishou-cctv-news",
@@ -2493,15 +2495,8 @@
     "url": "https://www.kuaishou.com/search/video?searchKey=%E5%A4%AE%E8%A7%86%E6%96%B0%E9%97%BB",
     "description": "央视新闻（快手），央视新闻在快手的官方账号入口",
     "category": "视频服务",
-    "keywords": "央视新闻快手，央视快手，央视短视频，央视快手号，新闻短视频"
-  },
-  {
-    "id": "chinavolunteer-mca-gov-cn",
-    "name": "全国志愿服务信息系统",
-    "url": "https://www.chinavolunteer.mca.gov.cn",
-    "description": "全国志愿服务信息系统，民政部主办，志愿者注册与志愿活动发布",
-    "category": "社会服务",
-    "keywords": "志愿时长，志愿服务，志愿活动，志愿系统，志愿者注册，志愿者记录，查志愿者"
+    "keywords": "央视新闻快手，央视快手，央视短视频，央视快手号，新闻短视频",
+    "official": false
   },
   {
     "id": "chinacharityfederation-org",
@@ -2525,7 +2520,8 @@
     "url": "https://gongyi.qq.com",
     "description": "腾讯公益，腾讯公益慈善基金会主办的在线捐赠与公益项目平台",
     "category": "社会服务",
-    "keywords": "腾讯公益，在线捐赠，公益项目，慈善捐款，公益平台，微信捐步"
+    "keywords": "腾讯公益，在线捐赠，公益项目，慈善捐款，公益平台，微信捐步",
+    "official": false
   },
   {
     "id": "beian-miit-gov-cn",
@@ -2609,9 +2605,9 @@
   },
   {
     "id": "cncert-org-cn",
-    "name": "CNCERT",
-    "url": "https://www.cncert.org.cn",
-    "description": "国家互联网应急中心，网络安全事件处置与预警",
+    "name": "国家互联网应急中心（CNCERT）",
+    "url": "https://www.cert.org.cn",
+    "description": "国家互联网应急中心（CNCERT/CC），网络安全事件处置与预警（原 cncert.org.cn 已弃用）",
     "category": "互联网",
     "keywords": "CNCERT，网络安全应急，网络攻击，安全事件，安全预警，应急响应"
   },
@@ -2726,5 +2722,102 @@
     "description": "教育部直属的远程开放教育高等学校，提供学历继续教育、职业技能培训与全民终身学习服务",
     "category": "教育",
     "keywords": "国家开放大学，电大，学历继续教育，成人教育，开放教育，远程教育，学历提升，终身学习"
+  },
+  {
+    "id": "sgcc-95598",
+    "name": "网上国网（电费）",
+    "url": "https://www.95598.cn",
+    "description": "国家电网官方线上平台，电费查询与缴纳、用电报装、故障报修（覆盖国网经营区26省）",
+    "category": "生活服务",
+    "keywords": "电费查询，电费缴纳，网上国网，国家电网，用电查询，停电报修，95598"
+  },
+  {
+    "id": "csg-95598",
+    "name": "南方电网在线（电费）",
+    "url": "https://95598.csg.cn",
+    "description": "南方电网官方服务平台，电费查询与缴纳、报装报修（覆盖广东、广西、云南、贵州、海南）",
+    "category": "生活服务",
+    "keywords": "电费查询，电费缴纳，南方电网，南网在线，用电查询，95598"
+  },
+  {
+    "id": "alipay-com",
+    "name": "支付宝·生活缴费",
+    "url": "https://www.alipay.com",
+    "official": false,
+    "description": "第三方综合生活缴费平台，可缴纳水费、燃气费、宽带费、物业费等（各地覆盖不同）",
+    "category": "生活服务",
+    "keywords": "水费查询，水费缴纳，燃气费，生活缴费，物业费，宽带费，支付宝"
+  },
+  {
+    "id": "cszg-mca-gov-cn",
+    "name": "慈善中国",
+    "url": "https://cszg.mca.gov.cn",
+    "description": "民政部主办的全国慈善信息公开平台，可查询慈善组织、公开募捐资格与募捐备案",
+    "category": "社会服务",
+    "keywords": "慈善中国，慈善组织查询，募捐资格，慈善捐赠，公开募捐，公益慈善"
+  },
+  {
+    "id": "sswz-spb-gov-cn",
+    "name": "邮政业用户申诉",
+    "url": "https://sswz.spb.gov.cn",
+    "description": "国家邮政局申诉网站，快递丢失、损毁、延误等问题向邮政管理部门申诉",
+    "category": "监督建言",
+    "keywords": "快递投诉，快递申诉，邮政申诉，快递丢失，快递延误，消费者维权"
+  },
+  {
+    "id": "xzqh-mca-gov-cn",
+    "name": "全国行政区划信息查询",
+    "url": "http://xzqh.mca.gov.cn",
+    "description": "民政部主办，查询全国各地行政区划代码、名称与变更信息，可据此找到当地政府",
+    "category": "地方政府",
+    "keywords": "行政区划查询，行政区划代码，地名查询，区划变更，找当地政府"
+  },
+  {
+    "id": "chinapost-com-cn",
+    "name": "中国邮政",
+    "url": "https://www.chinapost.com.cn",
+    "description": "中国邮政集团官网，包裹邮件查询、邮政业务办理与服务网点查询",
+    "category": "交通城建",
+    "keywords": "中国邮政，包裹查询，EMS查询，邮政网点，寄快递，邮票"
+  },
+  {
+    "id": "gfbzb-gov-cn",
+    "name": "全国征兵网",
+    "url": "https://www.gfbzb.gov.cn",
+    "description": "国防部征兵办公室官方平台，兵役登记、应征报名与征兵政策查询",
+    "category": "国防外交",
+    "keywords": "征兵报名，兵役登记，应征入伍，征兵政策，当兵报名，参军"
+  },
+  {
+    "id": "cvf-org-cn",
+    "name": "中国志愿服务（协同平台）",
+    "url": "https://www.cvf.org.cn",
+    "description": "中国志愿服务协同平台，志愿者注册、志愿服务记录与活动发布（原中国志愿服务网已关停，业务迁移至此）",
+    "category": "社会服务",
+    "keywords": "志愿者注册，志愿时长，志愿服务记录，志愿活动，中国志愿，公益服务"
+  },
+  {
+    "id": "legalinfo-moj-gov-cn",
+    "name": "中国普法网（智慧普法平台）",
+    "url": "https://legalinfo.moj.gov.cn",
+    "description": "司法部主办的全国普法平台，法律法规解读、以案释法与法治宣传资源",
+    "category": "法律司法",
+    "keywords": "普法，法律知识，法律解读，以案释法，法治宣传，学法律"
+  },
+  {
+    "id": "etax-chinatax-gov-cn",
+    "name": "自然人电子税务局（个税）",
+    "url": "https://etax.chinatax.gov.cn",
+    "description": "国家税务总局自然人电子税务局，个人所得税查询、专项附加扣除与年度汇算申报",
+    "category": "财税民生",
+    "keywords": "个人所得税，个税查询，个税申报，年度汇算，专项附加扣除，退税"
+  },
+  {
+    "id": "culturedc-cn",
+    "name": "国家公共文化云",
+    "url": "https://www.culturedc.cn",
+    "description": "文化和旅游部公共文化服务云平台，文化活动预约、场馆预约、艺术普及与群众文化活动",
+    "category": "文体艺术",
+    "keywords": "公共文化云，文化活动预约，场馆预约，艺术普及，文化馆，群众文化"
   }
 ]
